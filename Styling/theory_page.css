@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.container {
+  padding-top: 3%;
+  background-image: linear-gradient(to left bottom, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.container .ckt_diagram {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 3% 5%;
+}
+.container .ckt_diagram h1 {
+  text-align: center;
+  color: darkblue;
+  font-size: 1.4rem;
+  padding-bottom: 2%;
+}
+.container .infoBox {
+  width: 70%;
+  margin: 4% 0%;
+  padding: 2% 4%;
+}
+.container .infoBox h3 {
+  color: darkblue;
+  font-size: 1.2rem;
+  padding-bottom: 10px;
+  font-weight: 700;
+}
+.container .infoBox p {
+  text-align: justify;
+  font-size: 1.1rem;
+}
+.container .infoBox ul {
+  margin-left: 3%;
+  list-style-type: circle;
+}
+.container .infoBox ul li {
+  font-size: 1.1rem;
+  margin: 5px 0px;
+}
+.container .accordion {
+  width: 70%;
+}
+.container .accordion .contentBox {
+  position: relative;
+  margin: 3% 0px;
+}
+.container .accordion .contentBox .label {
+  position: relative;
+  padding: 10px;
+  background: blue;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+}
+.container .accordion .contentBox .label::before {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  transition: 1.2s ease;
+}
+.container .accordion .contentBox .content {
+  position: relative;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: whitesmoke;
+  height: 0;
+  overflow: hidden;
+  transition: 0.1s ease-in-out;
+  overflow-y: auto;
+}
+.container .accordion .contentBox.active .label::before {
+  content: "-";
+}
+.container .accordion .contentBox.active .content {
+  min-height: 150px;
+  transition: 0s;
+  padding: 10px 20px;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 20px;
+}/*# sourceMappingURL=theory_page.css.map */

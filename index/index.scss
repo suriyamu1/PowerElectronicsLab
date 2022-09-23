@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
+
+* {
+    font-family: Alice, Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+.main_div {
+    height: 100vh;
+    background-image: linear-gradient(to left bottom, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .container {
+        width: 40%;
+        height: 75%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        border: 2px solid blue;
+        border-radius: 40px;
+
+        h1 {
+            font-size: 1.7rem;
+            font-size: 700;
+            color: darkblue;
+            text-align: center;
+            margin-bottom: 15px;
+        }
+
+        .list {
+
+            .box {
+                padding: 10px 20px;
+                margin: 15px 30px;
+                transition: 0.6s ease-in;
+
+                //Glassmorphism
+                background: rgba( 255, 255, 255, 0.6 );
+                box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                backdrop-filter: blur( 9px );
+                -webkit-backdrop-filter: blur( 9px );
+                border-radius: 5px;
+                border: 1px solid rgba( 255, 255, 255, 0.18 );
+
+                a {
+                    text-decoration: none;
+                    color: black;
+                    font-size: 1.1rem;
+                    font-weight: 700;
+                }
+            }
+
+            .box:hover {
+                background-color: rgb(93, 153, 251);
+                transition:0.3s ease;
+            }
+        }
+
+        
+    }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- <link rel="stylesheet" href="\styling/nav_bar.css"> -->
+        <link rel="stylesheet" href="../Styling/nav_bar.css">
+        <!-- <link rel="stylesheet" href="\styling/theory_page.css"> -->
+        <link rel="stylesheet" href="../Styling/theory_page.css">
+        <link rel="icon" type="image/x-icon" href="\images/TCE_logo.png">
+        <title>1. Semi Converter - Theory</title>
+    </head>
+    <body>
+        <header>
+            <div class="college_logo_name">
+                <img src="\images/TCE_logo.png" alt="Logo" height="50px">
+                <h2>Thiagarajar College of Engineering<br>Department of EEE</h2>
+            </div>
+            
+            <div class="heading_virtual_labs">
+                <h1>Power Electronics Virtual Laboratory</h1>
+            </div>
+
+            <div class="nav_links">
+                <li>
+                    <ul><a href="\index/index.html">Home</a></ul>
+                    <ul><a href="https://www.tce.edu/" target="_blank">About TCE</a></ul>
+                    <ul><a href="#">Contact</a></ul>
+                </li>
+            </div>
+            
+        </header>
+
+        <!-- Experiment Title -->
+        <section class="sub_navigation">
+            <div class="title">
+                <h1>
+                    Single Phase Semi-controlled Converter
+                </h1>
+            </div>
+            <div class="navigation">
+                <li>
+                    <ul><a href="expt1_aim.html">Aim</a></ul>
+                    <ul><a href="#" id="current_link">Theory</a></ul>
+                    <ul><a href="expt1_pre_quiz.html">Pre-Quiz</a></ul>
+                    <ul><a href="#">Circuit Design</a></ul>
+                    <ul><a href="#">Simulation</a></ul>
+                    <ul><a href="#">Post-Quiz</a></ul>
+                    <ul><a href="#">Feedback</a></ul>
+                </li>
+            </div>
+        </section>
+        <section class="container">
+            <div class="ckt_diagram glassmorphism">
+                    <h1>Circuit Diagram</h1>
+                    <img src="\images/expt1/SemiConverter_ckt.png" alt="" width="768px" height="432px">
+                    <!-- size of image = 1920px x 1080px -->
+                    <!-- 1920/2.5 1080/2.5 -->
+            </div>
+            <div class="infoBox glassmorphism">
+                <h3>What is an SCR?</h3>
+                <ul>
+                    <li>SCR stands for Silicon Controlled Rectifier</li>
+                    <li>Like a diode, it allows forward current and block reverse current</li>
+                </ul>
+                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam, impedit, et illum itaque hic optio, rem assumenda neque quos excepturi provident eum. Rem, doloribus, aliquam repudiandae iusto quibusdam fugit asperiores laboriosam reprehenderit modi aperiam impedit unde neque? Est, sapiente explicabo!</p>
+            </div>
+            <div class="accordion">
+                    <div class="contentBox">
+                        <div class="label">List One</div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque ipsam nobis commodi facere accusantium, quibusdam nihil placeat sequi itaque odio veniam modi iste mollitia ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptate reprehenderit, architecto sed earum culpa blanditiis itaque minima iure cumque non ipsam aliquid eligendi enim?</p>
+                        </div> 
+                    </div>
+                    <div class="contentBox">
+                        <div class="label">List Two</div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque ipsam nobis commodi facere accusantium, quibusdam nihil placeat sequi itaque odio veniam modi iste mollitia ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptate reprehenderit, architecto sed earum culpa blanditiis itaque minima iure cumque non ipsam aliquid eligendi enim?</p>
+                        </div> 
+                    </div>
+                    <div class="contentBox">
+                        <div class="label">List Three</div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque ipsam nobis commodi facere accusantium, quibusdam nihil placeat sequi itaque odio veniam modi iste mollitia ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptate reprehenderit, architecto sed earum culpa blanditiis itaque minima iure cumque non ipsam aliquid eligendi enim?</p>
+                        </div> 
+                    </div>
+                    <div class="contentBox">
+                        <div class="label">List Four</div>
+                        <div class="content">
+                            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque ipsam nobis commodi facere accusantium, quibusdam nihil placeat sequi itaque odio veniam modi iste mollitia ipsa! Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis voluptate reprehenderit, architecto sed earum culpa blanditiis itaque minima iure cumque non ipsam aliquid eligendi enim?</p>
+                        </div>                        
+                    </div>
+                    
+            </div>
+        </section>
+        <script>
+            const accordion = document.getElementsByClassName('contentBox');
+
+            for(i = 0; i<accordion.length; i++) {
+                accordion[i].addEventListener('click', function() {
+                    this.classList.toggle('active')
+                })
+            }
+        </script>
+    </body>
+</html>

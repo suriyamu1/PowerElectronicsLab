@@ -20,6 +20,7 @@
   align-items: center;
   justify-content: space-evenly;
   padding: 3% 5%;
+  margin-bottom: 5%;
 }
 .container .ckt_diagram h1 {
   text-align: center;
@@ -29,7 +30,7 @@
 }
 .container .infoBox {
   width: 70%;
-  margin: 4% 0%;
+  margin-bottom: 3%;
   padding: 2% 4%;
 }
 .container .infoBox h3 {
@@ -43,27 +44,38 @@
   font-size: 1.1rem;
 }
 .container .infoBox ul {
-  margin-left: 3%;
+  margin: 0% 3%;
   list-style-type: circle;
 }
 .container .infoBox ul li {
   font-size: 1.1rem;
   margin: 5px 0px;
 }
+.container .infoBox ul ol {
+  margin-left: 5%;
+}
+.container .infoBox ul ol li {
+  list-style: decimal;
+}
+.container .infoBox ul ol li sub {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
 .container .accordion {
   width: 70%;
 }
 .container .accordion .contentBox {
   position: relative;
-  margin: 3% 0px;
+  margin-bottom: 3%;
 }
 .container .accordion .contentBox .label {
   position: relative;
   padding: 10px;
-  background: blue;
+  background: darkblue;
   color: whitesmoke;
   cursor: pointer;
   transition: 0.1s ease-in-out;
+  font-weight: 600;
 }
 .container .accordion .contentBox .label::before {
   content: "+";
@@ -78,19 +90,43 @@
   position: relative;
   border-bottom-right-radius: 15px;
   border-bottom-left-radius: 15px;
-  background-color: whitesmoke;
+  background-color: rgba(255, 255, 255, 0.29);
+  -webkit-backdrop-filter: blur(14px) brightness(116%);
+  backdrop-filter: blur(14px) brightness(116%);
   height: 0;
   overflow: hidden;
   transition: 0.1s ease-in-out;
   overflow-y: auto;
 }
+.container .accordion .contentBox .content ul {
+  margin: 0% 3%;
+  list-style-type: circle;
+}
+.container .accordion .contentBox .content ul li {
+  font-size: 1.1rem;
+  margin: 5px 0px;
+}
+.container .accordion .contentBox .content ul ol {
+  margin-left: 5%;
+}
+.container .accordion .contentBox .content ul ol li {
+  list-style: decimal;
+}
+.container .accordion .contentBox .content ul ol li sub {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
 .container .accordion .contentBox.active .label::before {
   content: "-";
 }
 .container .accordion .contentBox.active .content {
-  min-height: 150px;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   transition: 0s;
   padding: 10px 20px;
+  padding: 2% 5%;
+  font-size: 1.2rem;
 }
 
 .glassmorphism {

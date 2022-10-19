@@ -6,7 +6,187 @@
 }
 
 .container {
-  padding-top: 3%;
+  padding: 5% 0%;
   background-image: linear-gradient(to left bottom, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
-  min-height: 82vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.container .verification_div {
+  border: 1px solid black;
+  width: 55%;
+  min-height: 40vh;
+  padding: 2% 8%;
+}
+.container .verification_div h1 {
+  text-align: center;
+  font-size: 1.4rem;
+}
+.container .verification_div .sliderDiv {
+  border: 1px solid black;
+  margin: 20px 0px;
+  display: flex;
+}
+.container .verification_div .sliderDiv h2 {
+  width: 30%;
+}
+.container .verification_div .sliderDiv h2 span {
+  color: blue;
+}
+.container .verification_div .sliderDiv input {
+  width: 65%;
+}
+.container .verification_div .choose_components {
+  border: 1px solid black;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .verification_div .choose_components .scr_diode {
+  width: 47%;
+  height: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0% 5%;
+}
+.container .verification_div .choose_components .scr_diode .box {
+  display: flex;
+  justify-content: space-between;
+}
+.container .verification_div .choose_components .scr_diode .box h3 {
+  width: 35%;
+  text-align: center;
+}
+.container .verification_div .choose_components .scr_diode .box select {
+  width: 65%;
+}
+.container .verification_div .choose_components .ammeter_voltmeter {
+  width: 50%;
+  height: 100%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.container .verification_div .choose_components .ammeter_voltmeter .box {
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container .verification_div .choose_components .ammeter_voltmeter .box select {
+  width: 60%;
+  height: 150%;
+  padding: 0px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container .verification_div .choose_components .ammeter_voltmeter .box select:focus {
+  border: 3px solid blue;
+  background-color: #eee;
+  outline: none;
+}
+.container .verification_div .choose_components .ammeter_voltmeter .box select option {
+  background-color: #fff;
+}
+.container .explanation_div {
+  width: 30%;
+  border: 1px solid black;
+  min-height: 20vh;
+}
+
+.container2 {
+  padding: 5% 0%;
+  background-image: linear-gradient(to top left, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.accordion {
+  width: 70%;
+}
+.accordion .contentBox {
+  position: relative;
+  margin-bottom: 3%;
+}
+.accordion .contentBox .label {
+  position: relative;
+  padding: 10px;
+  background: darkblue;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+  font-weight: 600;
+}
+.accordion .contentBox .label::before {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  transition: 1.2s ease;
+}
+.accordion .contentBox .content {
+  position: relative;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.29);
+  -webkit-backdrop-filter: blur(14px) brightness(116%);
+  backdrop-filter: blur(14px) brightness(116%);
+  height: 0;
+  overflow: hidden;
+  transition: 0.1s ease-in-out;
+  overflow-y: auto;
+}
+.accordion .contentBox .content table {
+  margin: 0% 0%;
+  width: 100%;
+  border-spacing: 0px;
+}
+.accordion .contentBox .content table th, .accordion .contentBox .content table td {
+  border: 1px solid black;
+  padding: 3px;
+  text-align: center;
+  vertical-align: middle;
+}
+.accordion .contentBox .content table th {
+  background-color: #2d2dfb;
+  color: whitesmoke;
+  font-weight: 700;
+}
+.accordion .contentBox .content ul {
+  margin: 0% 3%;
+  list-style-type: circle;
+}
+.accordion .contentBox .content ul li {
+  font-size: 1.1rem;
+  margin: 5px 0px;
+}
+.accordion .contentBox .content ul ol {
+  margin-left: 5%;
+}
+.accordion .contentBox .content ul ol li {
+  list-style: decimal;
+}
+.accordion .contentBox .content ul ol li sub {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.accordion .contentBox.active .label::before {
+  content: "-";
+}
+.accordion .contentBox.active .content {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  transition: 0s;
+  padding: 10px 20px;
+  padding: 2% 5%;
+  font-size: 1.2rem;
 }/*# sourceMappingURL=circuit_design.css.map */

@@ -6,7 +6,225 @@
 }
 
 .container {
-    padding-top: 3%;
+    padding: 5% 0%;
     background-image: linear-gradient(to left bottom, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
-    min-height: 82vh;
+    // min-height: 82vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+
+    .verification_div {
+        border: 1px solid black;
+        width: 55%;
+        min-height: 40vh;
+        padding: 2% 8%;
+
+        h1 {
+            text-align: center;
+            font-size: 1.4rem;
+        }
+
+        .sliderDiv {
+            border: 1px solid black;
+            margin: 20px 0px;
+            display: flex;
+
+            h2 {
+                width: 30%;
+
+                span {
+                    color: blue;
+                }
+            }
+
+            input {
+                width: 65%;
+            }
+        }
+
+        .choose_components {
+            border: 1px solid black;
+            height: 20vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            .scr_diode {
+                width: 47%;
+                height: 100%;
+                border: 1px solid black;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+                padding: 0% 5%;
+
+                .box {
+                    display: flex;
+                    justify-content: space-between;
+
+                    h3 {
+                        width: 35%;
+                        text-align: center;
+                    }
+
+                    select {
+                        width: 65%;
+                    }
+                }
+            }
+
+            .ammeter_voltmeter {
+                width: 50%;
+                height: 100%;
+                border: 1px solid black;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-evenly;
+
+                .box {
+                    border: 1px solid black;
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+
+                    select {
+                        width: 60%;
+                        height: 150%;
+                        padding: 0px 5px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        // appearance: none;  //removes triangle
+                    }
+
+                    select:focus {
+                        border: 3px solid blue;
+                        background-color: #eee;
+                        outline: none;
+                    }
+
+                    select option {
+                        background-color: #fff;
+                    }
+
+                    
+
+                }
+            }
+        }
+    }
+
+    .explanation_div {
+        width: 30%;
+        border: 1px solid black;
+        min-height: 20vh;
+    }
+}
+.container2 {
+    padding: 5% 0%;
+    background-image: linear-gradient(to top left, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.accordion {
+        width: 70%;
+
+        .contentBox {
+            position: relative;
+            margin-bottom: 3%;
+
+            .label {
+                position: relative;
+                padding: 10px;
+                background: darkblue;
+                color: whitesmoke;
+                cursor: pointer;
+                transition: 0.1s ease-in-out;
+                font-weight: 600;
+            }
+
+            .label::before {
+                content: '+';
+                position: absolute;
+                top: 50%;
+                right: 20px;
+                transform: translateY(-50%);
+                font-size: 1.5rem;
+                transition: 1.2s ease;
+            }
+
+            .content{
+                position: relative;
+                border-bottom-right-radius: 15px;
+                border-bottom-left-radius: 15px;
+                background-color: rgba(255, 255, 255, 0.29);
+                -webkit-backdrop-filter: blur(14px) brightness(116%);
+                backdrop-filter: blur(14px) brightness(116%);
+                height: 0;
+                overflow: hidden;
+                transition: 0.1s ease-in-out;
+                overflow-y: auto;
+
+                table {
+                    margin: 0% 0%;
+                    width: 100%;
+                    border-spacing: 0px;  //to remove gap between cells
+
+                    th, td {
+                        border: 1px solid black;
+                        padding: 3px;
+                        text-align: center;
+                        vertical-align: middle;
+                    }
+
+                    th {
+                        background-color: #2d2dfb;
+                        color: whitesmoke;
+                        font-weight: 700;
+                    }
+                }
+
+                ul {
+                    margin:0% 3%;
+                    list-style-type: circle;
+        
+                    li {
+                        font-size: 1.1rem;
+                        margin: 5px 0px;
+                    }
+        
+                    // this styling is for Expt.1 Mode of operation of SCR
+                    ol {
+                        margin-left: 5%;
+        
+                        li {
+                            list-style:decimal;
+        
+                            sub {
+                                font-size: 0.75rem;
+                                font-weight: 600;
+                            }
+                        }
+                    }
+                }
+        
+            }
+
+        }
+        .contentBox.active .label::before {
+            
+            content: '-';
+        }
+
+        .contentBox.active {
+            .content {
+                // min-height: 150px;
+                height: fit-content;
+                transition: 0s;
+                padding: 10px 20px;
+                padding: 2% 5%;
+                font-size: 1.2rem;
+            }
+        }
 }

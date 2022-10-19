@@ -50,50 +50,207 @@
             </div>
         </section>
         <section class="container">
-            <h1>Available Components</h1>
+
+            <div class="verification_div">
+                <h1>Choose the components and their ratings</h1>
+                <div class="sliderDiv">
+                    <h2>V<sub>in</sub> (RMS) = <span id="voltValue">230 V AC</span></h2>
+                    <input type="range" min="0" max="500" value="230" id="voltSlider">
+                </div>
+
+                <div class="sliderDiv">
+                    <h2>Resistance = <span id="voltValue">500 &#8486;</span></h2>
+                    <input type="range" min="0" max="1000" value="500" id="voltSlider">
+                </div>
+
+                <div class="sliderDiv">
+                    <h2>Inductance = <span id="voltValue">750 mH</span></h2>
+                    <input type="range" min="0" max="2000" value="750" id="voltSlider">
+                </div>
+
+                <div class="choose_components">
+                    <div class="scr_diode">
+                        <div class="box">
+                            <h3>SCR 1</h3>
+                            <select id="scr1">
+                                <option disabled selected>Choose...</option>
+                                <option>S4S1</option><option>H2P4M</option>
+                                <option>S6004V</option><option>SK006L</option>
+                            </select>
+                        </div>
+                        
+                        <div class="box">
+                            <h3>SCR 2</h3>
+                            <select id="scr2">
+                                <option disabled selected>Choose...</option>
+                                <option>S4S1</option><option>H2P4M</option>
+                                <option>S6004V</option><option>SK006L</option>
+                            </select>
+                        </div>
+
+                        <div class="box">
+                            <h3>Diode 1</h3>
+                            <select id="diode1">
+                                <option disabled selected>Choose...</option>
+                                <option>1N4004</option><option>CMF01</option>
+                                <option>PSC406</option><option>6A10</option>
+                            </select>
+                        </div>
+
+                        <div class="box">
+                            <h3>Diode 2</h3>
+                            <select id="diode2">
+                                <option disabled selected>Choose...</option>
+                                <option>1N4004</option><option>CMF01</option>
+                                <option>PSC406</option><option>6A10</option>
+                            </select>
+                        </div>
+
+                    </div>
+                    <div class="ammeter_voltmeter">
+                        <div class="box">
+                            <h3>Ammeter</h3>
+                            <select id="ammeter">
+                                <option disabled selected>Choose...</option>
+                                <option>(0 - 2A) MC</option><option>(0 - 2A) M I</option>
+                                <option>(0 - 5A) MC</option><option>(0 - 5A) M I</option>
+                                <option>(0 - 7.5A) MC</option><option>(0 - 7.5A) M I</option>
+                            </select>
+                        </div>
+                        <div class="box">
+                            <h3>Voltmeter</h3>
+                            <select id="voltmeter">
+                                <option disabled selected>Choose...</option>
+                                <option>(0-200V) MC</option><option>(0-200V) M I</option>
+                                <option>(0-500V) MC</option><option>(0-500V) M I</option>
+                                <option>(0-750V) MC</option><option>(0-750V) M I</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="explanation_div">
+                <h1>Explanation.. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi pariatur ex, accusantium magni odit dolor suscipit! Voluptatibus libero blanditiis laudantium!</h1>
+            </div>
+        </section>
+
+        <section class="container2">
             <div class="accordion">
                 <div class="contentBox">
-                    <div class="label">Modes of Operation of SCR</div>
+                    <div class="label">Available SCRs</div>
                     <div class="content">
-                        <ul>
-                            <li>The following are the conditions for an SCR to conduct,</li>
-                            <ol>
-                                <li>The SCR must be forward biased (V<sub>AK</sub> > 0.6V)</li>
-                                <li>The gate pulse should be fired</li>
-                            </ol>
-                            <br>
-                            <li>Based on the above conditions, we have <b>three modes</b> of operation</li>
-                            <ol>
-                                <li><b>Forward Blocking Mode:</b> SCR is forward biased but gate pulse is not applied.</li>
-                                <li><b>Forward Conduction Mode:</b> SCR is forward biased and gate pulse was applied.</li>
-                                <li><b>Reverse Blocking Mode:</b> SCR is reverse biased.</li>
-                            </ol>
-                            <br>
-                            <li>SCR only conducts in Forward Conduction Mode.</li>
-                            <li>SCR never conducts in Reverse blocking mode regardless of whether the gate pulse is applied or not.</li>
-                        </ul>
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>SCR Name</th>
+                                <th>PIV</th>
+                                <th>I<sub>f max</sub></th>
+                                <th>I<sub>g</sub> max</th>
+                                <th>I<sub>s max</sub></th>
+                                <th>Datasheet</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>S4S1</td>
+                                <td>400 V</td>
+                                <td>0.8 A</td>
+                                <td>1.0 A</td>
+                                <td>20 A for 16ms</td>
+                                <td><a href="../Datasheets/SCRs/S4S1_S6004V_scr_0.8A_4A.pdf" target="_blank">S4S1</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>H2P4M</td>
+                                <td>400 V</td>
+                                <td>2.0 A</td>
+                                <td>0.2 A</td>
+                                <td>20 A for 10ms</td>
+                                <td><a href="../Datasheets/SCRs/H2P4M_SCR_2A.pdf" target="_blank">H2P4M</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>S6004V</td>
+                                <td>600 V</td>
+                                <td>4.0 A</td>
+                                <td>1.0 A</td>
+                                <td>30 A for 25ms</td>
+                                <td><a href="../Datasheets/SCRs/S4S1_S6004V_scr_0.8A_4A.pdf" target="_blank">S6004V</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td>SK006L</td>
+                                <td>1000 V</td>
+                                <td>6.0 A</td>
+                                <td>2.0 A</td>
+                                <td>100 A for 83ms</td>
+                                <td><a href="../Datasheets/SCRs/SK006L_scr_6A.pdf" target="_blank">SK006L</a></td>
+                            </tr>
+                        </table>
                     </div> 
                 </div>
 
                 <div class="contentBox">
-                    <div class="label">Commutation of SCR</div>
+                    <div class="label">Available Diodes</div>
                     <div class="content">
-                        <ul>
-                            <li>The process of turning off the SCR is called commutation.</li>
-                            <li>SCR cannot be turned OFF using the gate terminal.</li>
-                            <li>To turn off the SCR, the anode current must be reduced below the <b>holding current</b> of the SCR or <b>commutation voltage</b> must be applied across the SCR.</li>
-                            <!-- <li>The reverse voltage which turns OFF the SCR is called <b>commutation voltage</b>.</li> -->
-                            <br>
-                            <li>There are two types of commutation</li>
-                            <ol>
-                                <li>Natural Commutation</li>
-                                <li>Forced Commutation</li>
-                            </ol>
-                        </ul>
+                        <table>
+                            <tr>
+                                <th></th>
+                                <th>Diode Name</th>
+                                <th>PIV</th>
+                                <th>V<sub>f</sub></th>
+                                <th>I<sub>f</sub> max</th>
+                                <th>I<sub>s max</sub></th>
+                                <th>Datasheet</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>1N4004</td>
+                                <td>400 V</td>
+                                <td>1.0 V</td>
+                                <td>1.0 A</td>
+                                <td>30 A for 8.3ms</td>
+                                <td><a href="../Datasheets/Diodes/1n4004_diode_1A.pdf" target="_blank">1N4004</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>2</td>
+                                <td>CMF01</td>
+                                <td>600 V</td>
+                                <td>2.0 V</td>
+                                <td>2.0 A</td>
+                                <td>30 A (50Hz)</td>
+                                <td><a href="../Datasheets/Diodes/CMF01_diode_2A.pdf" target="_blank">CMF01</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>3</td>
+                                <td>PSC406</td>
+                                <td>600 V</td>
+                                <td>2.0 V</td>
+                                <td>4.0 A</td>
+                                <td>14 A for 10ms</td>
+                                <td><a href="../Datasheets/Diodes/PSC406_diode_4A.pdf" target="_blank">PSC406</a></td>
+                            </tr>
+
+                            <tr>
+                                <td>4</td>
+                                <td>6A10</td>
+                                <td>1000 V</td>
+                                <td>0.9 V</td>
+                                <td>6.0 A</td>
+                                <td>400 A for 8.3ms</td>
+                                <td><a href="../Datasheets/Diodes/6A10_diode_10A.pdf" target="_blank">6A10</a></td>
+                            </tr>
+                        </table>
                     </div> 
                 </div>
             </div>
         </section>
+
         <script>
             const accordion = document.getElementsByClassName('contentBox');
 
@@ -103,5 +260,6 @@
                 })
             }
         </script>
+        <script src="circuit.js"></script>
     </body>
 </html>

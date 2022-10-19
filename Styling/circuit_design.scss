@@ -15,18 +15,19 @@
     justify-content: space-evenly;
 
     .verification_div {
-        border: 1px solid black;
         width: 55%;
         min-height: 40vh;
-        padding: 2% 8%;
+        padding: 2% 8% 4% 8%;
+        // glassmorphism class is added
+        border-radius: 30px;
 
         h1 {
             text-align: center;
             font-size: 1.4rem;
+            margin-bottom: 3rem;
         }
 
         .sliderDiv {
-            border: 1px solid black;
             margin: 20px 0px;
             display: flex;
 
@@ -44,16 +45,17 @@
         }
 
         .choose_components {
-            border: 1px solid black;
+            margin-top: 2.5rem;
             height: 20vh;
             display: flex;
             align-items: center;
             justify-content: space-between;
 
             .scr_diode {
+                // glassmorphism class is included
+                border-radius: 10px;
                 width: 47%;
                 height: 100%;
-                border: 1px solid black;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
@@ -75,15 +77,15 @@
             }
 
             .ammeter_voltmeter {
+                // glassmorphism class is included
+                border-radius: 10px;
                 width: 50%;
                 height: 100%;
-                border: 1px solid black;
                 display: flex;
                 flex-direction: column;
                 justify-content: space-evenly;
 
                 .box {
-                    border: 1px solid black;
                     display: flex;
                     justify-content: space-evenly;
                     align-items: center;
@@ -227,4 +229,13 @@
                 font-size: 1.2rem;
             }
         }
+}
+
+.glassmorphism {
+    //Glassmorphism
+    background: rgba( 255, 255, 255, 0.4 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 3.5px );
+    -webkit-backdrop-filter: blur( 3.5px );
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
 }

@@ -14,17 +14,17 @@
   justify-content: space-evenly;
 }
 .container .verification_div {
-  border: 1px solid black;
   width: 55%;
   min-height: 40vh;
-  padding: 2% 8%;
+  padding: 2% 8% 4% 8%;
+  border-radius: 30px;
 }
 .container .verification_div h1 {
   text-align: center;
   font-size: 1.4rem;
+  margin-bottom: 3rem;
 }
 .container .verification_div .sliderDiv {
-  border: 1px solid black;
   margin: 20px 0px;
   display: flex;
 }
@@ -38,16 +38,16 @@
   width: 65%;
 }
 .container .verification_div .choose_components {
-  border: 1px solid black;
+  margin-top: 2.5rem;
   height: 20vh;
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
 .container .verification_div .choose_components .scr_diode {
+  border-radius: 10px;
   width: 47%;
   height: 100%;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -65,15 +65,14 @@
   width: 65%;
 }
 .container .verification_div .choose_components .ammeter_voltmeter {
+  border-radius: 10px;
   width: 50%;
   height: 100%;
-  border: 1px solid black;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
 }
 .container .verification_div .choose_components .ammeter_voltmeter .box {
-  border: 1px solid black;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -189,4 +188,12 @@
   padding: 10px 20px;
   padding: 2% 5%;
   font-size: 1.2rem;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
 }/*# sourceMappingURL=circuit_design.css.map */

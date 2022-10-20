@@ -25,11 +25,11 @@
   margin-bottom: 3rem;
 }
 .container .verification_div .sliderDiv {
-  margin: 20px 0px;
+  margin: 20px 10px;
   display: flex;
 }
 .container .verification_div .sliderDiv h2 {
-  width: 30%;
+  width: 40%;
 }
 .container .verification_div .sliderDiv h2 span {
   color: blue;
@@ -63,6 +63,20 @@
 }
 .container .verification_div .choose_components .scr_diode .box select {
   width: 65%;
+  padding: 0px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: darkblue;
+}
+.container .verification_div .choose_components .scr_diode .box select:focus {
+  border: 3px solid blue;
+  background-color: #eee;
+  outline: none;
+}
+.container .verification_div .choose_components .scr_diode .box select option {
+  background-color: #fff;
 }
 .container .verification_div .choose_components .ammeter_voltmeter {
   border-radius: 10px;
@@ -83,6 +97,9 @@
   padding: 0px 5px;
   border-radius: 5px;
   cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: darkblue;
 }
 .container .verification_div .choose_components .ammeter_voltmeter .box select:focus {
   border: 3px solid blue;
@@ -91,6 +108,19 @@
 }
 .container .verification_div .choose_components .ammeter_voltmeter .box select option {
   background-color: #fff;
+}
+.container .verification_div .buttonDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .verification_div .buttonDiv #verify_btn {
+  width: 60%;
+  margin-top: 2rem;
+  padding: 0.5rem 0rem;
+  border-radius: 30px;
+  outline: none;
+  border: 0px;
 }
 .container .explanation_div {
   width: 30%;

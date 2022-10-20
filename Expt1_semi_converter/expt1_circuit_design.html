@@ -54,18 +54,18 @@
             <div class="verification_div glassmorphism">
                 <h1>Choose the components and their ratings</h1>
                 <div class="sliderDiv">
-                    <h2>V<sub>in</sub> (RMS) = <span id="voltValue">230 V AC</span></h2>
+                    <h2>Input Voltage &nbsp;= &nbsp;<span id="voltSpan">230 V AC</span></h2>
                     <input type="range" min="0" max="500" value="230" id="voltSlider">
                 </div>
 
                 <div class="sliderDiv">
-                    <h2>Resistance = <span id="voltValue">500 &#8486;</span></h2>
-                    <input type="range" min="0" max="1000" value="500" id="voltSlider">
+                    <h2>Load Resistance = <span id="resSpan">500 &#8486;</span></h2>
+                    <input type="range" min="1" max="1000" value="500" id="resSlider">
                 </div>
 
                 <div class="sliderDiv">
-                    <h2>Inductance = <span id="voltValue">750 mH</span></h2>
-                    <input type="range" min="0" max="2000" value="750" id="voltSlider">
+                    <h2>Load Inductance = <span id="inductSpan">750 mH</span></h2>
+                    <input type="range" min="0" max="2000" value="750" id="inductSlider">
                 </div>
 
                 <div class="choose_components">
@@ -112,25 +112,29 @@
                             <h3>Ammeter</h3>
                             <select id="ammeter">
                                 <option disabled selected>Choose...</option>
-                                <option>(0 - 2A) MC</option><option>(0 - 2A) M I</option>
-                                <option>(0 - 5A) MC</option><option>(0 - 5A) M I</option>
-                                <option>(0 - 7.5A) MC</option><option>(0 - 7.5A) M I</option>
+                                <option>(0 - 2A) Moving Coil</option><option>(0 - 2A) Moving Iron</option>
+                                <option>(0 - 5A) Moving Coil</option><option>(0 - 5A) Moving Iron</option>
+                                <option>(0 - 7.5A) Moving Coil</option><option>(0 - 7.5A) Moving Iron</option>
                             </select>
                         </div>
                         <div class="box">
                             <h3>Voltmeter</h3>
                             <select id="voltmeter">
                                 <option disabled selected>Choose...</option>
-                                <option>(0-200V) MC</option><option>(0-200V) M I</option>
-                                <option>(0-500V) MC</option><option>(0-500V) M I</option>
-                                <option>(0-750V) MC</option><option>(0-750V) M I</option>
+                                <option>(0-200V) Moving Coil</option><option>(0-200V) Moving Iron</option>
+                                <option>(0-500V) Moving Coil</option><option>(0-500V) Moving Iron</option>
+                                <option>(0-750V) Moving Coil</option><option>(0-750V) Moving Iron</option>
                             </select>
                         </div>
                     </div>
                 </div>
+                <div class="buttonDiv">
+                    <button id="verify_btn" onclick="verification()">Verify your circuit design</button>
+                </div>
+                
             </div>
 
-            <div class="explanation_div">
+            <div class="explanation_div" id="explanation_div">
                 <h1>Explanation.. Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi pariatur ex, accusantium magni odit dolor suscipit! Voluptatibus libero blanditiis laudantium!</h1>
             </div>
         </section>

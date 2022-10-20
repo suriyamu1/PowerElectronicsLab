@@ -28,11 +28,12 @@
         }
 
         .sliderDiv {
-            margin: 20px 0px;
+            margin: 20px 10px;
             display: flex;
 
             h2 {
-                width: 30%;
+                width: 40%;
+                // text-align: center;
 
                 span {
                     color: blue;
@@ -72,6 +73,22 @@
 
                     select {
                         width: 65%;
+                        padding: 0px 5px;
+                        border-radius: 5px;
+                        cursor: pointer;
+                        font-size: 0.95rem;
+                        font-weight: 700;
+                        color: darkblue;
+                    }
+
+                    select:focus {
+                        border: 3px solid blue;
+                        background-color: #eee;
+                        outline: none;
+                    }
+
+                    select option {
+                        background-color: #fff;
                     }
                 }
             }
@@ -96,6 +113,9 @@
                         padding: 0px 5px;
                         border-radius: 5px;
                         cursor: pointer;
+                        font-size: 0.85rem;
+                        font-weight: 700;
+                        color: darkblue;
                         // appearance: none;  //removes triangle
                     }
 
@@ -114,6 +134,21 @@
                 }
             }
         }
+        .buttonDiv {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            #verify_btn {
+                width: 60%;
+                margin-top: 2rem;
+                padding: 0.5rem 0rem;
+                border-radius: 30px;
+                outline: none;
+                border: 0px;
+            }
+        }
+        
     }
 
     .explanation_div {

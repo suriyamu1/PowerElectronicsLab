@@ -8,21 +8,21 @@
 .container {
   padding: 5% 0%;
   background-image: linear-gradient(to left bottom, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
+  height: 82vh;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-evenly;
 }
 .container .verification_div {
-  width: 55%;
-  min-height: 40vh;
-  padding: 2% 8% 4% 8%;
+  width: 50%;
+  padding: 2% 5%;
   border-radius: 30px;
 }
 .container .verification_div h1 {
   text-align: center;
-  font-size: 1.4rem;
-  margin-bottom: 3rem;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
 }
 .container .verification_div .sliderDiv {
   margin: 20px 10px;
@@ -121,14 +121,88 @@
   border-radius: 30px;
   outline: none;
   border: 0px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all ease-in-out 0.3s;
+  box-shadow: 1px 2px 8px 2px rgba(45, 1, 247, 0.7);
+  -webkit-box-shadow: 1px 2px 8px 2px rgba(45, 1, 247, 0.7);
+  -moz-box-shadow: 1px 2px 8px 2px rgba(45, 1, 247, 0.7);
+}
+.container .verification_div .buttonDiv #verify_btn:hover {
+  background-color: darkblue;
+  color: whitesmoke;
+  transition: all ease-in-out 0.3s;
 }
 .container .explanation_div {
-  width: 30%;
-  border: 1px solid black;
-  min-height: 20vh;
+  width: 35%;
+  min-height: 30vh;
+  border-radius: 30px;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container .explanation_div #exp_div1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .explanation_div #exp_div1 img {
+  margin-bottom: 20px;
+}
+.container .explanation_div #crct_img_div, .container .explanation_div #wrong_img_div {
+  display: none;
+}
+.container .explanation_div #exp_div2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.container .explanation_div #exp_div2 h1 {
+  font-size: 1.1rem;
+  text-align: center;
+}
+.container .explanation_div #exp_div2 h1 span {
+  font-weight: 800;
+  color: darkblue;
+}
+.container .explanation_div #exp_div2 h2 {
+  color: red;
+  font-size: 1rem;
+  margin-top: 10px;
+  text-align: center;
+}
+.container .explanation_div #exp_div2 h3 {
+  font-size: 0.8rem;
+  width: 100%;
+  text-align: center;
+  padding: 0.3rem 0.2rem;
+  border-radius: 10px;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+.container .explanation_div #exp_div2 h3 sub {
+  font-size: 0.8rem;
+}
+.container .explanation_div #exp_div2 h4 {
+  font-size: 0.85rem;
+}
+.container .explanation_div #exp_div2 h4 span {
+  font-size: 0.85rem;
+  color: blue;
+}
+.container .explanation_div #exp_div2 .alert_red {
+  background-color: pink;
+}
+.container .explanation_div #exp_div2 .ok_green {
+  background-color: lightgreen;
 }
 
 .container2 {
+  border-top: 1px solid black;
   padding: 5% 0%;
   background-image: linear-gradient(to top left, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
   display: flex;

@@ -73,6 +73,7 @@ body header .nav_links li ul a {
 }
 body .sub_navigation {
   padding-top: 8vh;
+  width: 100%;
 }
 body .sub_navigation .title {
   background-color: whitesmoke;

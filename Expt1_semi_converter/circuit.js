@@ -18,24 +18,19 @@ const exp_div2 = document.getElementById("exp_div2");
 
 const crct_img_div = document.getElementById("crct_img_div");
 const wrong_img_div = document.getElementById("wrong_img_div");
-const intro_text_div = document.getElementById("intro_text_div");
 
 voltSlider.oninput = () => {
     voltSpan.innerHTML = voltSlider.value + "V AC";
     verification();
-};
-
+}
 resSlider.oninput = function(){
     resSpan.innerHTML = this.value + " &#8486;";
     verification();
 }
-
 inductSlider.oninput = () => {
     inductSpan.innerHTML = inductSlider.value + " mH";
     verification();
 }
-
-
 
 function verification() {
     // this is to avoid the display of the images if the display is enabled by the below code.
@@ -166,6 +161,7 @@ function get_i_max(component) {
         return 4;
     if(component == "SK006L" || component == "6A10")
         return 6;
+    return -20;
 }
 
 function verify_PIV(name, component, v_max) {
@@ -187,33 +183,26 @@ function verify_i_max(name, component, i_max) {
 }
 
 function rated_i(ammeter_name) {
-    if(ammeter_name == "(0 - 2A) Moving Coil" || ammeter_name == "(0 - 2A) Moving Iron") {
+    if(ammeter_name == "(0 - 2A) Moving Coil" || ammeter_name == "(0 - 2A) Moving Iron")     
         return 2;
-    }
-    if(ammeter_name == "(0 - 5A) Moving Coil" || ammeter_name == "(0 - 5A) Moving Iron") {
+    if(ammeter_name == "(0 - 5A) Moving Coil" || ammeter_name == "(0 - 5A) Moving Iron")
         return 5;
-    }
-    if(ammeter_name == "(0 - 7.5A) Moving Coil" || ammeter_name == "(0 - 7.5A) Moving Iron") {
+    if(ammeter_name == "(0 - 7.5A) Moving Coil" || ammeter_name == "(0 - 7.5A) Moving Iron")
         return 7.5;
-    }
     return -5;
 } 
 
 function rated_v(voltmeter_name) {
-    if(voltmeter_name == "(0-200V) Moving Coil" || voltmeter_name == "(0-200V) Moving Iron") {
+    if(voltmeter_name == "(0-200V) Moving Coil" || voltmeter_name == "(0-200V) Moving Iron")
         return 200;
-    }
-    if(voltmeter_name == "(0-500V) Moving Coil" || voltmeter_name == "(0-500V) Moving Iron") {
+    if(voltmeter_name == "(0-500V) Moving Coil" || voltmeter_name == "(0-500V) Moving Iron")
         return 500;
-    }
-    if(voltmeter_name == "(0-750V) Moving Coil" || voltmeter_name == "(0-750V) Moving Iron") {
+    if(voltmeter_name == "(0-750V) Moving Coil" || voltmeter_name == "(0-750V) Moving Iron")
         return 750;
-    }
     return -10;
 } 
 
 function meter_type(component_name) {
     let len = component_name.length;
-    //returns "Coil" or "Iron"
-    return component_name.substring(len-4, len);
+    return component_name.substring(len-4, len); //returns "Coil" or "Iron"
 }

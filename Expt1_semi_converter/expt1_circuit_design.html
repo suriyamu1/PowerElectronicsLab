@@ -60,7 +60,7 @@
 
                 <div class="sliderDiv">
                     <h2>Load Resistance = <span id="resSpan">50 &#8486;</span></h2>
-                    <input type="range" min="1" max="1000" value="50" id="resSlider">
+                    <input type="range" min="10" max="1000" value="50" id="resSlider">
                 </div>
 
                 <div class="sliderDiv">
@@ -129,6 +129,7 @@
                     </div>
                 </div>
                 <div class="buttonDiv">
+                    <a href="#section2">View Datasheets</a>
                     <button id="verify_btn" onclick="verification()">Verify your circuit design</button>
                 </div>
                 
@@ -151,7 +152,115 @@
             </div>
         </section>
 
-        <section class="container2">
+        <section class="container2" id="section2">
+
+            <h1 id="availableComponents">Available Components</h1>
+            <div class="specifications glassmorphism">
+                <h2>Available SCRs</h2>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>SCR Name</th>
+                        <th>PIV</th>
+                        <th>I<sub>f max</sub></th>
+                        <th>I<sub>g</sub> max</th>
+                        <th>I<sub>s max</sub></th>
+                        <th>Datasheet</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>S4S1</td>
+                        <td>400 V</td>
+                        <td>0.8 A</td>
+                        <td>1.0 A</td>
+                        <td>20 A for 16ms</td>
+                        <td><a href="../Datasheets/SCRs/S4S1_S6004V_scr_0.8A_4A.pdf" target="_blank">S4S1</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>H2P4M</td>
+                        <td>400 V</td>
+                        <td>2.0 A</td>
+                        <td>0.2 A</td>
+                        <td>20 A for 10ms</td>
+                        <td><a href="../Datasheets/SCRs/H2P4M_SCR_2A.pdf" target="_blank">H2P4M</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>S6004V</td>
+                        <td>600 V</td>
+                        <td>4.0 A</td>
+                        <td>1.0 A</td>
+                        <td>30 A for 25ms</td>
+                        <td><a href="../Datasheets/SCRs/S4S1_S6004V_scr_0.8A_4A.pdf" target="_blank">S6004V</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>SK006L</td>
+                        <td>1000 V</td>
+                        <td>6.0 A</td>
+                        <td>2.0 A</td>
+                        <td>100 A for 83ms</td>
+                        <td><a href="../Datasheets/SCRs/SK006L_scr_6A.pdf" target="_blank">SK006L</a></td>
+                    </tr>
+                </table>
+
+                <h2>Available Diodes</h2>
+                <table>
+                    <tr>
+                        <th></th>
+                        <th>Diode Name</th>
+                        <th>PIV</th>
+                        <th>V<sub>f</sub></th>
+                        <th>I<sub>f</sub> max</th>
+                        <th>I<sub>s max</sub></th>
+                        <th>Datasheet</th>
+                    </tr>
+                    <tr>
+                        <td>1</td>
+                        <td>1N4004</td>
+                        <td>400 V</td>
+                        <td>1.0 V</td>
+                        <td>1.0 A</td>
+                        <td>30 A for 8.3ms</td>
+                        <td><a href="../Datasheets/Diodes/1n4004_diode_1A.pdf" target="_blank">1N4004</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>CMF01</td>
+                        <td>600 V</td>
+                        <td>2.0 V</td>
+                        <td>2.0 A</td>
+                        <td>30 A (50Hz)</td>
+                        <td><a href="../Datasheets/Diodes/CMF01_diode_2A.pdf" target="_blank">CMF01</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>PSC406</td>
+                        <td>600 V</td>
+                        <td>2.0 V</td>
+                        <td>4.0 A</td>
+                        <td>14 A for 10ms</td>
+                        <td><a href="../Datasheets/Diodes/PSC406_diode_4A.pdf" target="_blank">PSC406</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>6A10</td>
+                        <td>1000 V</td>
+                        <td>0.9 V</td>
+                        <td>6.0 A</td>
+                        <td>400 A for 8.3ms</td>
+                        <td><a href="../Datasheets/Diodes/6A10_diode_10A.pdf" target="_blank">6A10</a></td>
+                    </tr>
+                </table>
+
+            </div>
             <div class="accordion">
                 <div class="contentBox">
                     <div class="label">Available SCRs</div>

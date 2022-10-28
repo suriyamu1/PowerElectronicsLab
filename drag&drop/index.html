@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="nav_bar.css">
+        <link rel="stylesheet" href="circuitLayout.css">
+        <!-- <link rel="stylesheet" href="\styling/theory_page.css"> -->
+        <!-- Link simulation_page_css here -->
+        <link rel="icon" type="image/x-icon" href="TCE_logo.png">
+        <title>1. Semi Converter - Simulation</title>
+    </head>
+    <body>
+        <header>
+            <div class="college_logo_name">
+                <img src="TCE_logo.png" alt="Logo" height="50px">
+                <h2>Thiagarajar College of Engineering<br>Department of EEE</h2>
+            </div>
+            
+            <div class="heading_virtual_labs">
+                <h1>Power Electronics Virtual Laboratory</h1>
+            </div>
+
+            <div class="nav_links">
+                <li>
+                    <ul><a href="../index.html">Home</a></ul>
+                    <ul><a href="https://www.tce.edu/" target="_blank">About TCE</a></ul>
+                    <ul><a href="#">Contact</a></ul>
+                </li>
+            </div>
+            
+        </header>
+
+        <!-- Experiment Title -->
+        <section class="main_section">
+            <div class="title">
+                <h1>
+                    Single Phase Semi-controlled Converter
+                </h1>
+            </div>
+            <div class="main_div">
+                <div class="navigation">
+                    <li>
+                        <ul><a href="../Expt1_semi_converter/expt1_aim.html">Aim</a></ul>
+                        <ul><a href="../Expt1_semi_converter/expt1_theory.html">Theory</a></ul>
+                        <ul><a href="../Expt1_semi_converter/expt1_pre_quiz.html">Pre-Quiz</a></ul>
+                        <ul><a href="../Expt1_semi_converter/expt1_circuit_design.html">Circuit Design</a></ul>
+                        <ul><a href="#"  id="current_link">Simulation</a></ul>
+                        <ul><a href="../Expt1_semi_converter/expt1_post_quiz.html">Post-Quiz</a></ul>
+                        <ul><a href="#">Feedback</a></ul>
+                    </li>
+                </div>
+            </div>
+        </section>
+        <section id="simulation" class="simulation">
+            <div class="left">
+                <div class="library">
+                    <div class="pair">
+                        <div>
+                            <img src="images/scr.PNG" alt="scr" draggable="true"  ondragstart="start1(ev)" id="SCR">
+                        </div>
+                        <div id="Diode" draggable="true"></div>
+                    </div>
+                    <div class="pair">
+                        <div id="R-Load" draggable="true"></div>
+                        <div id="RL-Load" draggable="true"></div>
+                    </div>
+                    <div class="pair">
+                        <div id="MC-ammeter" draggable="true"></div>
+                        <div id="MC-voltmeter" draggable="true"></div>
+                    </div>
+                    <div class="pair">   
+                        <div id="MI-ammeter" draggable="true"></div>
+                        <div id="MI-voltmeter" draggable="true"></div>
+                    </div>
+                </div>
+                <div class="firingAngle">
+                    <h1>Firing Angle(&#945;) = <span id="angleDisplay">0&#176;</span></h1>
+                    <input id="alpha" type="range" min="0" max="180" value="0">
+                </div>
+            </div>
+            <div class="main">
+                <div class="circuit" >
+                    <div class="topLeft">
+                        <img src="images/top_left.PNG"  style="pointer-events: none;" alt="top-left"> 
+                    </div>
+                    <div class="topRight">
+                        <img src="images/top_right.PNG" style="pointer-events: none;" alt="top-right">
+                    </div>
+                    <div class="transformer">
+                        <img src="images/transformer.PNG" style="pointer-events: none;" alt="transformer"> 
+                    </div>
+                    <div class="CRO" onclick="showGraph()" style="cursor:pointer;">
+                        <img src="images/cro_image.PNG" alt="CRO">
+                    </div>
+                    <div class="bottomLeft">
+                        <img src="images/bottom_left.PNG" style="pointer-events: none;" alt="bottom-left"> 
+                    </div>
+                    <div class="bottomLine">
+                        <img src="images/bottom-line.PNG" style="pointer-events: none;" alt="bottom-left"> 
+                    </div>
+                    <div class="bottomRight">
+                        <img src="images/bottom_right.PNG" style="pointer-events: none;" alt="bottom-right"> 
+                    </div>
+                    <div class="scr1" id="scr1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="scr2" id="scr2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="diode1"></div>
+                    <div class="diode2"></div>
+                    <div class="ammeter"></div>
+                    <div class="voltmeter"></div>
+                    <div class="load"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="output" class="hide">
+            <span onclick="showCircuit()">X</span>
+            <div style="width:840px;height:600px;" class="graph">
+                <canvas id="waveform" height="600" width="1000">
+                </canvas>
+            </div>
+        </section>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"
+        integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="simulation.js"></script>
+        <script src="drag&drop.js"></script>
+    </body>
+</html>

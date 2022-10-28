@@ -10,7 +10,8 @@
 }
 
 .quiz-container {
-  height: 82vh;
+  padding-top: 23vh;
+  height: 100vh;
   background-image: linear-gradient(to left bottom, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
   display: flex;
   align-items: center;

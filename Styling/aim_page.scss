@@ -6,7 +6,8 @@
 }
 
 .main-container {
-    min-height: 81vh;
+    padding-top: 23vh;
+    min-height: 100vh;
     background-image: linear-gradient(to left bottom, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
     display: flex;
     flex-direction: column;
@@ -16,11 +17,13 @@
 
 
     .container1 {
-        margin: 2% 0%;
+        
+        // margin: 2% 0%;
         display: flex;
         flex-direction: column;
         width: 75%;
         padding: 2% 10%;
+        // padding-top: 23vh;
         //Glassmorphism
         background: rgba( 255, 255, 255, 0.4 );
         box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );

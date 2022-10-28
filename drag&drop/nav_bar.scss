@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Alice&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap'); //poppins font
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+
+    header {
+        position: fixed;
+        background-color: darkblue;
+        height: 8vh;
+        width: 100vw;
+        color: whitesmoke;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        // padding: 0px 10px;
+
+        .college_logo_name {
+            // background-color: black;
+            width: 25%;
+            height: 100%;
+            display: flex;
+            justify-content: left;
+            align-items: center;
+
+            img {
+                height: 100%;
+            }
+
+            h2 {
+                //College name
+                font-family: Alice, Arial, Helvetica, sans-serif;
+                // font-weight: 700;
+                margin-left: 5px;
+                font-size: 0.9rem;
+            }
+        }
+        
+        .heading_virtual_labs {
+            h1 {
+                font-family: Alice, Arial, Helvetica, sans-serif;
+                font-size: 1.3rem;
+                letter-spacing: 0.5px;
+                word-spacing: 4.5px;
+                text-transform: uppercase;
+            }
+            
+        }
+        .nav_links {
+            width: 25%;
+
+            li {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-evenly;
+                align-items: center;
+    
+    
+                ul {
+                    list-style: none;
+                    // margin: 0 10px;
+    
+                    a {
+                        font-family: Alice, Arial, Helvetica, sans-serif;
+                        text-decoration: none;
+                        color: white;
+                        padding: 5px 8px;
+                        // Gradients from EGG GRADIENT WEBSITE
+                        background-color: #2a2a72;
+                        background-image: linear-gradient(315deg, #2a2a72 0%, #0352ff 74%);
+                        letter-spacing: 1px;
+                        font-weight: 600;
+                        font-size: 0.95rem;
+                        border-radius: 15px;
+                    }
+                }
+            }
+        }
+           
+    }
+
+    .main_section {
+        width:100vw; 
+        position: fixed;
+        top:8vh;
+
+        .title {
+            background-color: whitesmoke;
+            text-align: center;
+            
+            h1 {
+                font-size: 1.35rem;
+                padding: 5px 0px;
+                // letter-spacing: 1px;
+                word-spacing: 4px;
+                font-weight: 800;
+                color: blue;
+                font-family: sans-serif;
+            }
+        }
+
+        .main_div {
+            // border: 1px solid black;
+            background-color: whitesmoke;
+            padding: 0% 1%;
+
+
+            .navigation {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                background-image: linear-gradient(to top, #00008b, #2f0da7, #4e1cc4, #6c2be1, #8939ff);
+                height: 5.5vh;     
+                
+                li {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    
+
+                    ul {
+                        // align-items: center;
+                        a {
+                            font-family: Alice, Arial, Helvetica, sans-serif;
+                            text-decoration: none;
+                            // text-transform: uppercase;
+                            background-color: white;
+                            color: darkblue;
+                            padding: 1px 10px;
+                            font-size: 0.95rem;
+                            margin: 0px 25px;
+                            font-weight: 700;
+                            border-radius: 15px;
+
+                            &:hover {
+                                background-color: #2f0da7;
+                                color: whitesmoke;
+                                transition: 0.3s ease all;
+                            }
+                        }
+
+                        #current_link {
+                            background-color: #845EC2;
+                            color: lightgray;
+                            padding: 3px 10px;
+                        }
+                    }
+                }
+            }
+
+            
+            .workspace {
+                display: flex;
+                background-image: linear-gradient(to left bottom, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
+                // background-image: linear-gradient(to bottom, #b3a6e6, #9bc0f1, #9ed4ed, #bae3e6, #ddefe9);
+                // overflow: hidden; // U S E    T H I S
+
+                .left {
+                    // border: 1px solid black;
+                    margin-top: 15px;
+                    // height: 100%;
+                    width: 100%;
+
+                    .circuit_specifications {
+                        margin: 0% 3%;
+
+                        .choose_circuit_type, .choose_ratings, .check_design {
+                            //Glassmorphism
+                            background: rgba( 255, 255, 255, 0.4 );
+                            box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                            backdrop-filter: blur( 3.5px );
+                            -webkit-backdrop-filter: blur( 3.5px );
+                            border-radius: 10px;
+                            border: 1px solid rgba( 255, 255, 255, 0.18 );
+                            padding: 1% 0%;
+                        }
+
+                        .choose_circuit_type {
+                            font-size: 0.9rem;
+                            display: flex;
+                            justify-content: space-evenly;
+                            // border: 1px solid black;
+                            
+    
+                            .choose_sentence {
+                                align-self: center;
+                                
+
+                                h3 {
+                                    font-size: 0.95rem;
+                                }
+                            }
+    
+                            .choices_of_circuits {
+                                h3 {
+                                    font-size: 14px;
+                                    padding: 5px 0px;
+    
+                                    a {
+                                        font-size: 14px;
+                                        color: whitesmoke;
+                                        text-decoration: none;
+                                        padding: 2px 8px;
+                                        border-radius: 15px;
+                                        background-color: rgb(21, 15, 131);
+
+                                        &:hover {
+                                            padding: 2px 8.5px;
+                                            background-color: rgba(21,15,131,0.6);
+                                            transition: ease 0.2s;
+                                        
+                                        }
+                                    }
+                                    
+
+                                    .selected_currently {
+                                        background-color: rgba(76, 75, 108, 0.75);
+                                        
+                                        &:hover {
+                                            background-color: rgba(76, 75, 108, 0.75);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        .circuit_design {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-top: 3%;
+    
+                            .choose_ratings {
+                                width: 43%;
+                                padding: 10px 15px;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: space-around;
+    
+                                h3 {
+                                    color: #000;
+                                    // font-style: italic;
+                                }
+
+                                form {
+                                    
+                                    display: flex;
+                                    flex-direction: column;
+                                    // background-color: lightblue;
+                                    border-radius: 10px;
+                                    padding: 0px 10px;
+                                    padding-top: 3px;
+
+                                    .inputs_from_user {
+
+                                        label {
+                                            font-size: 0.9rem;
+                                            color: blue;
+                                            font-weight: 800;
+                                            display: inline-block;  //to set the width of an inline element
+                                            width: 55%;
+                                        }
+    
+                                        input[type=number], select {
+                                            width: 40%;
+                                            padding: 0px 2px;
+                                            margin: 1px 0;   // spacing between various input entries
+                                            // display: inline-block;
+                                            border: 1px solid #ccc;
+                                            border-radius: 4px;
+                                            // box-sizing: border-box;
+                                            font-size: 13px;
+                                        }
+                                    }
+
+                                    .buttonsDiv {
+                                        margin-top: 5px;
+                                        display: flex;
+                                        flex-direction: row;
+                                        align-items: center;
+                                        justify-content: space-evenly;
+                                        
+                                        button {
+                                            display: inline-block;
+                                            width: 45%;
+                                            font-size: 14px;
+                                        }
+                                    }
+                                }
+                            }
+    
+                            .check_design {
+
+                                font-size: 0.8rem;
+                                font-weight: 500;
+                                width: 53%;
+                                text-align: center;
+                                display: flex;
+                                flex-direction: column;
+                                align-items: center;
+                                justify-content: space-around;
+                                border-radius: 17px;
+                            
+                                padding: 10px 15px;
+                                color: black;
+
+                                h5 {
+                                    text-align: justify;
+                                    font-size: 0.9rem;
+                                    font-weight: 800;
+
+                                    .correct{
+                                        color: rgb(18, 104, 18);
+                                        font-size: 0.9rem;
+                                        font-weight: 900;
+                                    }
+
+                                    .error {
+                                        color: red;
+                                        font-size: 0.9rem;
+                                    }
+
+                                    sub {
+                                        font-size: 0.9rem;
+                                    }
+                                }
+
+                                .acknowledgement {
+                                    border: 1px solid black ;
+                                    border-radius: 15px;
+                                    background-color: green;
+                                    padding: 2px 5px;
+                                    color: whitesmoke;
+                                }
+
+                                
+                            }
+                        }
+                    }
+                    
+
+                    .circuit_diagram {
+                        // border: 1px solid black;
+                        margin-top: 15px;
+                        margin-bottom: 10px;
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: center;
+                        align-items: center;
+
+                        .diagram {
+
+                            img {
+                                border: 2px solid gray;
+                                height: 33vh;
+                            }
+                        }
+
+                        .three_buttons {
+                            padding-top: 15px;
+                            padding-bottom: 10px;
+                            .btn {
+                                padding: 4px 25px;
+                                border-radius: 15px;
+                                margin: 0px 10px;
+                                font-weight: 500;
+                                color: whitesmoke;
+                                border: 0px;
+
+                                
+                                
+                            }
+
+                            .reset {
+                                background-image: linear-gradient(to right, #d01212, #dd3b13, #e95616, #f46e1c, #ff8524);
+
+                                &:hover {
+                                    background-image: linear-gradient(to right, #d01212, #d01212, #d01212, #d01212, #d01212);
+                                    transition: all ease-in-out 0.5s;
+                                }
+                            }
+
+                            .prev {
+                                background-image: linear-gradient(to right, #2c7013, #2d8714, #2c9f15, #25b717, #12d01a);
+
+                                &:hover {
+                                    background-image: linear-gradient(to right, #2c7013, #2c7013, #2c7013, #2c7013, #2c7013);
+                                    transition: all ease-in-out 0.5s;
+                                }
+                            }
+
+                            .next {
+                                background-image: linear-gradient(to right, #2c7013, #2d8714, #2c9f15, #25b717, #12d01a);
+
+                                &:hover {
+                                    background-image: linear-gradient(to right, #2c7013, #2c7013, #2c7013, #2c7013, #2c7013);
+                                    transition: all ease-in-out 0.5s;
+                                }
+                            }
+                        }
+
+                    }
+
+                }
+
+                .right  {
+                    border-left: 1px solid gray;
+                    // height: 100%;
+                    width: 100%;
+
+                    h6 {
+                        color: transparent;
+                    }
+
+                    .output_dashboard, .explanation {
+                        //Glassmorphism
+                        background: rgba( 255, 255, 255, 0.4 );
+                        box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+                        backdrop-filter: blur( 3.5px );
+                        -webkit-backdrop-filter: blur( 3.5px );
+                        border-radius: 10px;
+                        border: 1px solid rgba( 255, 255, 255, 0.18 );
+                    }
+
+                    .output_dashboard {
+
+                        margin: 3% 10%;
+                        padding: 1% 3%;
+                        // border: 1px solid black;
+                        display: flex;
+                        flex-direction: column;
+
+                        
+
+                        .dashboard_name {
+                            padding-bottom: 20px;
+                            h2 {
+                                text-align: center;
+                                color: #00008b;
+                                font-size: 1.5rem;
+                                letter-spacing: 1px;
+                                word-spacing: 3px;
+                            }
+                        }
+
+                        .output_waveform {
+                            display: flex;
+                            flex-direction: column;
+                            padding-bottom: 10px;
+                            h2 {
+                                color: #00008b;
+                            }
+                            img {
+                                height: 30vh;
+                            }
+                        }
+
+                        .values_in_graph {
+                            display: flex;
+                            align-items: center;
+                            justify-content: space-between;
+                            font-size: 0.9rem;
+                        }
+                    }
+
+                    .explanation {
+                        margin: 10px 10%;
+                        padding: 2% 3%;
+                        min-height: 10%;
+                        display: flex;
+
+
+                        h2 {
+                            color: blue;
+                            text-align: justify;
+
+                            .bolder_black {
+                                color: black;
+                                font-weight: 900;
+                                letter-spacing: 0.5px;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer {
+        background-color: whitesmoke;
+        height: 4vh;
+    }
+}

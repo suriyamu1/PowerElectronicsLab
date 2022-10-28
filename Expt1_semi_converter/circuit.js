@@ -41,7 +41,7 @@ function verification() {
     let i_max = v_max / resSlider.value;
     
     //displaying peak voltage and max load current values
-    exp_div2.innerHTML = "<h3 class='glassmorphism'>The peak voltage (V<sub>rms</sub>) = V<sub>max</sub> x 1.414 = "+v_max.toFixed(2)+"V<br>The max load current (I<sub>L</sub>) = "+ v_max.toFixed(2)+"V / " + resSlider.value+"&#8486; = "+ i_max.toFixed(3)+"A </h3>";
+    exp_div2.innerHTML = "<h3 class='glassmorphism'>The peak voltage (V<sub>max</sub>) = V<sub>rms</sub> x 1.414 = "+v_max.toFixed(2)+"V<br>The max load current (I<sub>L</sub>) = "+ v_max.toFixed(2)+"V / " + resSlider.value+"&#8486; = "+ i_max.toFixed(3)+"A </h3>";
 
     // alert message for choosing proper LOAD RESISTANCE
     if(i_max > 6 && i_max < 10) {

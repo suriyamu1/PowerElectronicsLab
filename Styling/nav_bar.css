@@ -72,8 +72,10 @@ body header .nav_links li ul a {
   border-radius: 15px;
 }
 body .sub_navigation {
-  padding-top: 8vh;
-  width: 100%;
+  width: 100vw;
+  position: fixed;
+  top: 8vh;
+  z-index: 5;
 }
 body .sub_navigation .title {
   background-color: whitesmoke;

@@ -1,0 +1,207 @@
+.simulation{
+    width: 100vw;;
+    display: flex;
+}
+
+.left{
+    position: relative;
+    top:20vh;
+}
+
+.library{
+    width: 23vw;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 20px;
+    margin:10px 0 0 5px;
+}
+
+.firingAngle{
+    margin: 40px;
+}
+
+#alpha{
+    margin: 10px;
+    width: 300px;
+}
+
+.pair div{
+    height: 70px;
+    width: 70px;
+    border: 1px solid blueviolet;
+    margin: 10px;
+}
+
+.pair{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pair img{
+    height: 100%;
+    width: 100%;
+}
+
+.main{
+      width: 75vw;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      position: fixed;
+      top:25vh;
+      left:26vw;
+}
+
+.circuit{
+    height:469.44px;
+    width:864px;
+    border:1px solid white;
+    position: relative;
+}
+
+.circuit img{
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.topLeft{
+    position: absolute;
+    height: 60px;
+    width: 195px;
+    right: 400px;
+}
+
+.topRight{
+    position: absolute;
+    height: 60px;
+    width: 300px;
+    right: 0;
+}
+
+.ammeter{
+    position: absolute;
+    border: 1px dashed black;
+    height: 60px;
+    width: 100px;
+    right:300px;
+}
+
+.CRO{
+    position: absolute;
+    height: 320px;
+    width: 119px;
+    top:60px;
+    right:0; 
+}
+
+.load{
+    position: absolute;
+    height: 320px;
+    width: 90px;
+    border: 1px dashed black;
+    right:118.5px;
+    top:60px;
+}
+
+.voltmeter{
+    position: absolute;
+    border: 1px dashed black;
+    height: 320px;
+    width: 90px;
+    right: 209px;
+    top:60px;
+}
+
+.bottomLeft{
+    position: absolute;
+    height:60px;
+    width:195px;
+    right:400px;
+    top:380px ;
+}
+
+.bottomLine{
+    position: absolute;
+    height:60px;
+    width:103px;
+    right:298px;
+    top:380.5px ;
+}
+
+.bottomRight{
+    position: absolute;
+    height:60px;
+    width:298.5px;
+    right:0;
+    top:380px;
+}
+
+.scr1{
+   position: absolute;
+   border: 1px dashed black;
+   height:70px;
+   width:70px;
+   top:59px;
+   right:510px;
+}
+
+.scr2{
+    position: absolute;
+    border: 1px dashed black;
+    height:70px;
+    width:70px;
+    top:59px;
+    right:405px;
+}
+
+.diode1{
+    position: absolute;
+    border: 1px dashed black;
+    height:70px;
+    width:70px;
+    bottom:85px;
+    right:510px;
+}
+
+.diode2{
+    position: absolute;
+    border: 1px dashed black;
+    height:70px;
+    width:70px;
+    bottom:85px;
+    right:405px;
+}
+
+.transformer{
+    position: absolute;
+    height:182px;
+    width:547px;
+    top:130px;
+    left:7px;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+#output{
+    height:81vh;
+    width: 100vw;
+    position: relative;
+    top:19vh;
+    overflow: hidden;
+}
+
+#output span{
+    font-size: larger;
+    color: red;
+    position: absolute;
+    right: 0;
+    margin: 10px;
+    cursor: pointer;
+}
+

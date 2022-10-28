@@ -22,7 +22,7 @@
 
             <div class="nav_links">
                 <li>
-                    <ul><a href="\index/index.html">Home</a></ul>
+                    <ul><a href="../index.html">Home</a></ul>
                     <ul><a href="https://www.tce.edu/" target="_blank">About TCE</a></ul>
                     <ul><a href="#">Contact</a></ul>
                 </li>
@@ -43,8 +43,8 @@
                     <ul><a href="expt1_theory.html">Theory</a></ul>
                     <ul><a href="expt1_pre_quiz.html">Pre-Quiz</a></ul>
                     <ul><a href="#" id="current_link">Circuit Design</a></ul>
-                    <ul><a href="#">Simulation</a></ul>
-                    <ul><a href="#">Post-Quiz</a></ul>
+                    <ul><a href="../drag&drop/index.html">Simulation</a></ul>
+                    <ul><a href="expt1_post_quiz.html">Post-Quiz</a></ul>
                     <ul><a href="#">Feedback</a></ul>
                 </li>
             </div>
@@ -128,9 +128,13 @@
                         </div>
                     </div>
                 </div>
-                <div class="buttonDiv">
-                    <a href="#section2">View Datasheets</a>
-                    <button id="verify_btn" onclick="verification()">Verify your circuit design</button>
+                <div class="buttonDiv1">
+                    <button id="verify_btn" onclick="verification()" class="btn">Verify your circuit design</button>
+                </div>
+                <div class="buttonDiv2">
+                    <a href="#section2" class="btn">View Datasheets</a>
+                    <a href="#section3" class="btn">Learn Circuit Design</a>
+                    
                 </div>
                 
             </div>
@@ -261,116 +265,49 @@
                 </table>
 
             </div>
+        </section>
+
+        <section class="container3" id="section3">
+            <h1>How to choose the right components?</h1>
             <div class="accordion">
                 <div class="contentBox">
-                    <div class="label">Available SCRs</div>
+                    <div class="label">Modes of Operation of SCR</div>
                     <div class="content">
-                        <table>
-                            <tr>
-                                <th></th>
-                                <th>SCR Name</th>
-                                <th>PIV</th>
-                                <th>I<sub>f max</sub></th>
-                                <th>I<sub>g</sub> max</th>
-                                <th>I<sub>s max</sub></th>
-                                <th>Datasheet</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>S4S1</td>
-                                <td>400 V</td>
-                                <td>0.8 A</td>
-                                <td>1.0 A</td>
-                                <td>20 A for 16ms</td>
-                                <td><a href="../Datasheets/SCRs/S4S1_S6004V_scr_0.8A_4A.pdf" target="_blank">S4S1</a></td>
-                            </tr>
-
-                            <tr>
-                                <td>2</td>
-                                <td>H2P4M</td>
-                                <td>400 V</td>
-                                <td>2.0 A</td>
-                                <td>0.2 A</td>
-                                <td>20 A for 10ms</td>
-                                <td><a href="../Datasheets/SCRs/H2P4M_SCR_2A.pdf" target="_blank">H2P4M</a></td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td>S6004V</td>
-                                <td>600 V</td>
-                                <td>4.0 A</td>
-                                <td>1.0 A</td>
-                                <td>30 A for 25ms</td>
-                                <td><a href="../Datasheets/SCRs/S4S1_S6004V_scr_0.8A_4A.pdf" target="_blank">S6004V</a></td>
-                            </tr>
-
-                            <tr>
-                                <td>4</td>
-                                <td>SK006L</td>
-                                <td>1000 V</td>
-                                <td>6.0 A</td>
-                                <td>2.0 A</td>
-                                <td>100 A for 83ms</td>
-                                <td><a href="../Datasheets/SCRs/SK006L_scr_6A.pdf" target="_blank">SK006L</a></td>
-                            </tr>
-                        </table>
+                        <ul>
+                            <li>The following are the conditions for an SCR to conduct,</li>
+                            <ol>
+                                <li>The SCR must be forward biased (V<sub>AK</sub> > 0.6V)</li>
+                                <li>The gate pulse should be fired</li>
+                            </ol>
+                            <br>
+                            <li>Based on the above conditions, we have <b>three modes</b> of operation</li>
+                            <ol>
+                                <li><b>Forward Blocking Mode:</b> SCR is forward biased but gate pulse is not applied.</li>
+                                <li><b>Forward Conduction Mode:</b> SCR is forward biased and gate pulse was applied.</li>
+                                <li><b>Reverse Blocking Mode:</b> SCR is reverse biased.</li>
+                            </ol>
+                            <br>
+                            <li>SCR only conducts in Forward Conduction Mode.</li>
+                            <li>SCR never conducts in Reverse blocking mode regardless of whether the gate pulse is applied or not.</li>
+                        </ul>
                     </div> 
                 </div>
 
                 <div class="contentBox">
-                    <div class="label">Available Diodes</div>
+                    <div class="label">Commutation of SCR</div>
                     <div class="content">
-                        <table>
-                            <tr>
-                                <th></th>
-                                <th>Diode Name</th>
-                                <th>PIV</th>
-                                <th>V<sub>f</sub></th>
-                                <th>I<sub>f</sub> max</th>
-                                <th>I<sub>s max</sub></th>
-                                <th>Datasheet</th>
-                            </tr>
-                            <tr>
-                                <td>1</td>
-                                <td>1N4004</td>
-                                <td>400 V</td>
-                                <td>1.0 V</td>
-                                <td>1.0 A</td>
-                                <td>30 A for 8.3ms</td>
-                                <td><a href="../Datasheets/Diodes/1n4004_diode_1A.pdf" target="_blank">1N4004</a></td>
-                            </tr>
-
-                            <tr>
-                                <td>2</td>
-                                <td>CMF01</td>
-                                <td>600 V</td>
-                                <td>2.0 V</td>
-                                <td>2.0 A</td>
-                                <td>30 A (50Hz)</td>
-                                <td><a href="../Datasheets/Diodes/CMF01_diode_2A.pdf" target="_blank">CMF01</a></td>
-                            </tr>
-
-                            <tr>
-                                <td>3</td>
-                                <td>PSC406</td>
-                                <td>600 V</td>
-                                <td>2.0 V</td>
-                                <td>4.0 A</td>
-                                <td>14 A for 10ms</td>
-                                <td><a href="../Datasheets/Diodes/PSC406_diode_4A.pdf" target="_blank">PSC406</a></td>
-                            </tr>
-
-                            <tr>
-                                <td>4</td>
-                                <td>6A10</td>
-                                <td>1000 V</td>
-                                <td>0.9 V</td>
-                                <td>6.0 A</td>
-                                <td>400 A for 8.3ms</td>
-                                <td><a href="../Datasheets/Diodes/6A10_diode_10A.pdf" target="_blank">6A10</a></td>
-                            </tr>
-                        </table>
+                        <ul>
+                            <li>The process of turning off the SCR is called commutation.</li>
+                            <li>SCR cannot be turned OFF using the gate terminal.</li>
+                            <li>To turn off the SCR, the anode current must be reduced below the <b>holding current</b> of the SCR or <b>commutation voltage</b> must be applied across the SCR.</li>
+                            <!-- <li>The reverse voltage which turns OFF the SCR is called <b>commutation voltage</b>.</li> -->
+                            <br>
+                            <li>There are two types of commutation</li>
+                            <ol>
+                                <li>Natural Commutation</li>
+                                <li>Forced Commutation</li>
+                            </ol>
+                        </ul>
                     </div> 
                 </div>
             </div>

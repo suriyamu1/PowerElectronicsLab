@@ -12,7 +12,7 @@ start1= (ev)=> {
 function drop(ev) {
   ev.preventDefault();
   var img = document.createElement('img');
-  img.src = "/images/scr.PNG";
+  img.src = "images/scr.PNG";
   ev.target.style.border = "none";
   ev.target.appendChild(img);
 }

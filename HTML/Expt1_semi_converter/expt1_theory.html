@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../Styles/nav_bar.css">
+        <link rel="stylesheet" href="../../Styles/theory_page.css">
+        <link rel="icon" type="image/x-icon" href="../../Assets/Images/TCE_logo.png">
+        <title>1. Semi Converter - Theory</title>
+    </head>
+    <body>
+        <header>
+            <div class="college_logo_name">
+                <img src="../../Assets/Images/TCE_logo.png" alt="Logo" height="50px">
+                <h2>Thiagarajar College of Engineering<br>Department of EEE</h2>
+            </div>
+            
+            <div class="heading_virtual_labs">
+                <h1>Power Electronics Virtual Laboratory</h1>
+            </div>
+
+            <div class="nav_links">
+                <li>
+                    <ul><a href="../../index.html">Home</a></ul>
+                    <ul><a href="https://www.tce.edu/" target="_blank">About TCE</a></ul>
+                    <ul><a href="#">Contact</a></ul>
+                </li>
+            </div>
+            
+        </header>
+
+        <!-- Experiment Title -->
+        <section class="sub_navigation">
+            <div class="title">
+                <h1>
+                    Single Phase Semi-controlled Converter
+                </h1>
+            </div>
+            <div class="navigation">
+                <li>
+                    <ul><a href="expt1_aim.html">Aim</a></ul>
+                    <ul><a href="#" id="current_link">Theory</a></ul>
+                    <ul><a href="expt1_pre_quiz.html">Pre-Quiz</a></ul>
+                    <ul><a href="expt1_circuit_design.html">Circuit Design</a></ul>
+                    <ul><a href="expt1_simulation.html">Simulation</a></ul>
+                    <ul><a href="expt1_post_quiz.html">Post-Quiz</a></ul>
+                    <ul><a href="#">Feedback</a></ul>
+                </li>
+            </div>
+        </section>
+        <section class="container">
+            <div class="ckt_diagram glassmorphism">
+                    <h1>Circuit Diagram</h1>
+                    <img src="../../Assets/Images/expt1/SemiConverter_ckt.png" alt="">
+                    <!-- size of image = 1920px x 1080px -->
+                    <!-- 1920/2.5 1080/2.5 -->
+            </div>
+
+            <div class="infoBox glassmorphism">
+                <h3>What is an SCR?</h3>
+                <ul>
+                    <li>SCR stands for Silicon Controlled Rectifier.</li>
+                    <li>Like a diode, it is a uni-directional device (it allows forward current and block reverse current)</li>
+                    <li>It is a three terminal device (Anode, Cathode and Gate)</li>
+                    <li>The SCR can be turned on by applying suitable pulse to the gate terminal.</li>
+                    <li>A commutation circuit is needed to turn off a conducting SCR.</li>
+                </ul>
+            </div>
+
+            <div class="accordion">
+                <div class="contentBox">
+                    <div class="label">Modes of Operation of SCR</div>
+                    <div class="content">
+                        <ul>
+                            <li>The following are the conditions for an SCR to conduct,</li>
+                            <ol>
+                                <li>The SCR must be forward biased (V<sub>AK</sub> > 0.6V)</li>
+                                <li>The gate pulse should be fired</li>
+                            </ol>
+                            <br>
+                            <li>Based on the above conditions, we have <b>three modes</b> of operation</li>
+                            <ol>
+                                <li><b>Forward Blocking Mode:</b> SCR is forward biased but gate pulse is not applied.</li>
+                                <li><b>Forward Conduction Mode:</b> SCR is forward biased and gate pulse was applied.</li>
+                                <li><b>Reverse Blocking Mode:</b> SCR is reverse biased.</li>
+                            </ol>
+                            <br>
+                            <li>SCR only conducts in Forward Conduction Mode.</li>
+                            <li>SCR never conducts in Reverse blocking mode regardless of whether the gate pulse is applied or not.</li>
+                        </ul>
+                    </div> 
+                </div>
+
+                <div class="contentBox">
+                    <div class="label">Commutation of SCR</div>
+                    <div class="content">
+                        <ul>
+                            <li>The process of turning off the SCR is called commutation.</li>
+                            <li>SCR cannot be turned OFF using the gate terminal.</li>
+                            <li>To turn off the SCR, the anode current must be reduced below the <b>holding current</b> of the SCR or <b>commutation voltage</b> must be applied across the SCR.</li>
+                            <!-- <li>The reverse voltage which turns OFF the SCR is called <b>commutation voltage</b>.</li> -->
+                            <br>
+                            <li>There are two types of commutation</li>
+                            <ol>
+                                <li>Natural Commutation</li>
+                                <li>Forced Commutation</li>
+                            </ol>
+                        </ul>
+                    </div> 
+                </div>
+            </div>
+
+            <div class="infoBox glassmorphism">
+                <h3>Natural Commutation</h3>
+                <ul>
+                    <li>The source of commutation voltage is the AC voltage source itself.</li>
+                    <li>This method is also called as <b>Source Commutation</b> or <b>AC Line Commutation</b>.</li>
+                    <li>As the current in the AC circuit goes through the <b>natural zero</b>, a reverse voltage is applied immediately across the SCR</li>
+                    <li>For successful natural commutation, the turn OFF time must be less than the duration of half cycle of the supply.</li>
+                </ul>
+            </div>
+
+            <div class="accordion">
+                <div class="contentBox">
+                    <div class="label">Forced Commutation</div>
+                    <div class="content">
+                        <ul>
+                            <li>In case of DC circuits, there is <b>no natural current zero</b> to turn OFF the SCR.</li>
+                            <li>In this method, forward current must be reduced below holding current or reverse voltage voltage must be applied across the SCR with an external commutation circuit.</li>
+                        </ul>    
+                    </div> 
+                </div>
+            </div>
+
+            <div class="infoBox glassmorphism">
+                <h3>Waveform Image</h3>
+                <h5></h5>
+            </div>
+
+            <div class="infoBox glassmorphism">
+                <h3>Derivation Image</h3>
+                <h5></h5>
+            </div>
+
+            <div class="infoBox glassmorphism">
+                <h3>Single Phase Semi Converter</h3>
+                <ul>
+                    <li>This circuit utilises two SCR and two diodes.</li>
+                    <li>SCRs are controlled rectifers and diodes are uncontrolled rectifiers. That is why semi converter provides limited control over output voltage and is known as semi-converter.</li>
+                    <li>Semi converters are single quadrant converters</li>
+                    <li>When inductor in the load discharges, negative output voltage will occur. The diodes in the circuit provide flywheeling path for the voltage stored in the inductor. Hence negative output voltage is not possible.</li>
+                    <li>Diodes and SCRs will not allow reverse current, so negative current is not possible in semi-converter circuit</li>
+                    <li>Since semi converter can only provide <b>positive voltage and positive current</b>, it always operates in <b>First Quadrant</b></li>
+                </ul>
+            </div>
+        </section>
+        <script>
+            const accordion = document.getElementsByClassName('contentBox');
+
+            for(i = 0; i<accordion.length; i++) {
+                accordion[i].addEventListener('click', function() {
+                    this.classList.toggle('active')
+                })
+            }
+        </script>
+    </body>
+</html>

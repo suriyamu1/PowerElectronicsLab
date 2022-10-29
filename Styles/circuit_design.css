@@ -1,0 +1,366 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-image: linear-gradient(to left bottom, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
+}
+
+.container {
+  padding-top: 19.5vh;
+  padding-bottom: 3vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  height: 100vh;
+}
+.container .verification_div {
+  width: 50%;
+  padding: 2% 5%;
+  border-radius: 30px;
+}
+.container .verification_div h1 {
+  text-align: center;
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+.container .verification_div .sliderDiv {
+  margin: 20px 10px;
+  display: flex;
+}
+.container .verification_div .sliderDiv h2 {
+  width: 40%;
+}
+.container .verification_div .sliderDiv h2 span {
+  color: blue;
+}
+.container .verification_div .sliderDiv input {
+  width: 65%;
+}
+.container .verification_div .choose_components {
+  margin: 2.5rem 0rem;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .verification_div .choose_components .scr_diode {
+  border-radius: 10px;
+  width: 47%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  padding: 0% 5%;
+}
+.container .verification_div .choose_components .scr_diode .box {
+  display: flex;
+  justify-content: space-between;
+}
+.container .verification_div .choose_components .scr_diode .box h3 {
+  width: 35%;
+  text-align: center;
+}
+.container .verification_div .choose_components .scr_diode .box select {
+  width: 65%;
+  padding: 0px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: darkblue;
+}
+.container .verification_div .choose_components .scr_diode .box select:focus {
+  border: 3px solid blue;
+  background-color: #eee;
+  outline: none;
+}
+.container .verification_div .choose_components .scr_diode .box select option {
+  background-color: #fff;
+}
+.container .verification_div .choose_components .ammeter_voltmeter {
+  border-radius: 10px;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.container .verification_div .choose_components .ammeter_voltmeter .box {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.container .verification_div .choose_components .ammeter_voltmeter .box select {
+  width: 60%;
+  height: 150%;
+  padding: 0px 5px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: darkblue;
+}
+.container .verification_div .choose_components .ammeter_voltmeter .box select:focus {
+  border: 3px solid blue;
+  background-color: #eee;
+  outline: none;
+}
+.container .verification_div .choose_components .ammeter_voltmeter .box select option {
+  background-color: #fff;
+}
+.container .verification_div .buttonDiv1, .container .verification_div .buttonDiv2 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.container .verification_div .btn {
+  all: unset;
+  width: 49%;
+  margin: 5px 2px;
+  padding: 0.5rem 0rem;
+  border-radius: 30px;
+  outline: none;
+  border: 0px;
+  cursor: pointer;
+  font-weight: 700;
+  transition: all ease-in-out 0.3s;
+  box-shadow: 1px 2px 8px 2px rgba(45, 1, 247, 0.7);
+  -webkit-box-shadow: 1px 2px 8px 2px rgba(45, 1, 247, 0.7);
+  -moz-box-shadow: 1px 2px 8px 2px rgba(45, 1, 247, 0.7);
+  background-color: white;
+  text-align: center;
+}
+.container .verification_div .btn:hover {
+  background-color: darkblue;
+  color: whitesmoke;
+  transition: all ease-in-out 0.3s;
+}
+.container .verification_div .buttonDiv1 {
+  width: 100%;
+}
+.container .verification_div .buttonDiv1 .btn {
+  width: 100%;
+}
+.container .explanation_div {
+  width: 35%;
+  min-height: 30vh;
+  border-radius: 30px;
+  padding: 3%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container .explanation_div #exp_div1 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .explanation_div #exp_div1 img {
+  margin-bottom: 20px;
+}
+.container .explanation_div #crct_img_div, .container .explanation_div #wrong_img_div {
+  display: none;
+}
+.container .explanation_div #exp_div2 {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.container .explanation_div #exp_div2 h1 {
+  font-size: 1.1rem;
+  text-align: center;
+}
+.container .explanation_div #exp_div2 h1 span {
+  font-weight: 800;
+  color: darkblue;
+}
+.container .explanation_div #exp_div2 h2 {
+  color: red;
+  font-size: 1rem;
+  margin-top: 10px;
+  text-align: center;
+}
+.container .explanation_div #exp_div2 h3 {
+  font-size: 0.8rem;
+  width: 100%;
+  text-align: center;
+  padding: 0.3rem 0.2rem;
+  border-radius: 10px;
+  vertical-align: middle;
+  margin-bottom: 10px;
+}
+.container .explanation_div #exp_div2 h3 sub {
+  font-size: 0.8rem;
+}
+.container .explanation_div #exp_div2 h4 {
+  font-size: 0.85rem;
+}
+.container .explanation_div #exp_div2 h4 span {
+  font-size: 0.85rem;
+  color: blue;
+}
+.container .explanation_div #exp_div2 .alert_red {
+  background-color: pink;
+}
+.container .explanation_div #exp_div2 .ok_green {
+  background-color: lightgreen;
+}
+
+.container2 {
+  padding-top: 23vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container2 h1 {
+  margin: 2rem 0rem;
+  font-size: 1.5rem;
+  letter-spacing: 1px;
+}
+.container2 .specifications {
+  width: 70%;
+  padding: 1% 8% 5% 8%;
+  border-radius: 30px;
+  margin: 1rem 0rem;
+}
+.container2 .specifications h2 {
+  color: darkblue;
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+  margin: 35px 0px 15px 0px;
+  text-align: center;
+}
+.container2 .specifications table {
+  margin: 0% 0%;
+  width: 100%;
+  border-spacing: 0px;
+}
+.container2 .specifications table th, .container2 .specifications table td {
+  border: 1px solid black;
+  padding: 3px;
+  text-align: center;
+  vertical-align: middle;
+}
+.container2 .specifications table th {
+  background-color: #2d2dfb;
+  color: whitesmoke;
+  font-weight: 700;
+}
+
+.container3 {
+  padding-top: 23vh;
+  padding-bottom: 4vh;
+  min-height: 90vh;
+  padding: 4% 0%;
+  display: flex;
+  flex-direction: column;
+}
+.container3 h1 {
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.accordion {
+  width: 70%;
+}
+.accordion .contentBox {
+  position: relative;
+  margin-bottom: 3%;
+}
+.accordion .contentBox .label {
+  position: relative;
+  padding: 10px;
+  background: darkblue;
+  color: whitesmoke;
+  cursor: pointer;
+  transition: 0.1s ease-in-out;
+  font-weight: 600;
+}
+.accordion .contentBox .label::before {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  transition: 1.2s ease;
+}
+.accordion .contentBox .content {
+  position: relative;
+  border-bottom-right-radius: 15px;
+  border-bottom-left-radius: 15px;
+  background-color: rgba(255, 255, 255, 0.29);
+  -webkit-backdrop-filter: blur(14px) brightness(116%);
+  backdrop-filter: blur(14px) brightness(116%);
+  height: 0;
+  overflow: hidden;
+  transition: 0.1s ease-in-out;
+  overflow-y: auto;
+}
+.accordion .contentBox .content table {
+  margin: 0% 0%;
+  width: 100%;
+  border-spacing: 0px;
+}
+.accordion .contentBox .content table th, .accordion .contentBox .content table td {
+  border: 1px solid black;
+  padding: 3px;
+  text-align: center;
+  vertical-align: middle;
+}
+.accordion .contentBox .content table th {
+  background-color: #2d2dfb;
+  color: whitesmoke;
+  font-weight: 700;
+}
+.accordion .contentBox .content ul {
+  margin: 0% 3%;
+  list-style-type: circle;
+}
+.accordion .contentBox .content ul li {
+  font-size: 1.1rem;
+  margin: 5px 0px;
+}
+.accordion .contentBox .content ul ol {
+  margin-left: 5%;
+}
+.accordion .contentBox .content ul ol li {
+  list-style: decimal;
+}
+.accordion .contentBox .content ul ol li sub {
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+.accordion .contentBox.active .label::before {
+  content: "-";
+}
+.accordion .contentBox.active .content {
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  transition: 0s;
+  padding: 10px 20px;
+  padding: 2% 5%;
+  font-size: 1.2rem;
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}/*# sourceMappingURL=circuit_design.css.map */

@@ -1,0 +1,107 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Alice&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@200&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.quiz-container {
+  padding-top: 19.5vh;
+  height: 100vh;
+  background-image: linear-gradient(to left bottom, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.quiz-container .container {
+  min-height: 30vh;
+  max-height: 65vh;
+  width: 35%;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 1.5rem;
+  padding: 2.5rem 2rem 1rem 2rem;
+}
+.quiz-container .container #question-container #question-text {
+  color: blue;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+.quiz-container .container #question-container #answer-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.quiz-container .container #question-container #answer-buttons .btn {
+  padding: 0.5rem;
+  margin: 0.5rem;
+  width: 90%;
+  border-radius: 0.5rem;
+  border: 0px;
+  color: black;
+  background-color: white;
+  font-weight: 600;
+}
+.quiz-container .container #question-container #answer-buttons .btn:hover {
+  background-color: lightblue;
+  transition: 0.5s ease-in-out;
+}
+.quiz-container .container .imgDiv {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.quiz-container .container .imgDiv h2 {
+  font-size: 2rem;
+  color: blue;
+  margin: 20px;
+}
+.quiz-container .container .controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 2rem 0rem 1rem 0rem;
+}
+.quiz-container .container .controls .btn {
+  padding: 0.5rem;
+  width: 23%;
+  border-radius: 1.5rem;
+  border: none;
+  background-color: blue;
+  color: white;
+  font-weight: 600;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px 1px rgba(26, 17, 255, 0.88);
+  transition: all ease-in-out 0.4s;
+}
+.quiz-container .container .controls .btn:hover {
+  background-image: linear-gradient(to left, #100258, #15037e, #1704a7, #1506d2, #080aff);
+  transition: all ease-in-out 0.4s;
+}
+
+.hide {
+  display: none;
+}
+
+.blue {
+  background-color: darkblue !important;
+  color: white !important;
+}
+
+.left-align {
+  text-align: left;
+}/*# sourceMappingURL=pre_quiz_styling.css.map */

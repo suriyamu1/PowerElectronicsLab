@@ -30,7 +30,8 @@ mca.ondragstart = (ev)=> {
 mcv.ondragstart = (ev)=> {
   dragId =ev.target.id;
 }
-mia.ondragstart = (ev)=> {
+mia.ondragstart = (ev)=>
+{
   dragId =ev.target.id;
 }
 miv.ondragstart = (ev)=> {

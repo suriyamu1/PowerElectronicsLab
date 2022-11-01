@@ -14,6 +14,7 @@ alpha.oninput=()=>{
     angle=Number(alpha.value);
     data.firingangle=angle;
     angleDisplay.innerHTML=angle+"&#176;";
+    showGraph();
 }
 
 let chart=null;
@@ -50,7 +51,7 @@ function showGraph(){
         type: 'line',
         data: {
             datasets:[{
-                label:"OUTPUT",
+                label:"Single phase semi converter waveform",
                 lineTension:0.17,
                 backgroundColor:"rgba(255, 121, 121,1.0)",
                 borderColor:"#2E0249",
@@ -64,15 +65,36 @@ function showGraph(){
                     radius:0
                 }
             },
-            scales: {
+            scales:{
                 y: {
                     suggestedMin: -15,
                     suggestedMax: 15
+                },
+                yAxes:{
+                    title:{
+                        display:true,
+                        text:"Voltage(V)",
+                        font: {
+                            size: 15
+                        }
+                    }
+                },
+                xAxes:{
+                    title:{
+                        display:true,
+                        text:"Angle(degrees)",
+                        font: {
+                            size: 15
+                        }
+                    }
                 }
             }
         }
     });
+}
 
+function showOutput(){
+    showGraph();
     output.classList.remove("hide");
     simulation.classList.add("hide");
 }

@@ -52,7 +52,6 @@
             </div>
         </section>
         <section id="simulation" class="simulation">
-            <div class="left">
                 <div class="library">
                     <div class="pair">
                         <div>
@@ -67,7 +66,7 @@
                             <img src="../../Assets/Images/dragAndDropImages/Expt1/rload.PNG" alt="scr" draggable="true" id="rload">
                         </div>
                         <div>
-                            <img src="../../Assets/Images/dragAndDropImages/Expt1/rl_load.PNG" alt="scr" draggable="true" id="rl-load">
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/rl_load.PNG" alt="scr" draggable="true" id="rl_load">
                         </div>
                     </div>
                     <div class="pair">
@@ -80,18 +79,13 @@
                     </div>
                     <div class="pair">   
                         <div>
-                            <img src="../../Assets/Images/dragAndDropImages/Expt1/scr.PNG" alt="scr" draggable="true" id="mia">
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/mia.PNG" alt="scr" draggable="true" id="mia">
                         </div>
                         <div>
-                            <img src="../../Assets/Images/dragAndDropImages/Expt1/scr.PNG" alt="scr" draggable="true" id="miv">
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/miv.PNG" alt="scr" draggable="true" id="miv">
                         </div>
                     </div>
-                </div>
-                <div class="firingAngle">
-                    <h1>Firing Angle(&#945;) = <span id="angleDisplay">0&#176;</span></h1>
-                    <input id="alpha" type="range" min="0" max="180" value="0">
-                </div>
-            </div>
+               </div>
             <div class="main">
                 <div class="circuit" >
                     <div class="topLeft">
@@ -103,7 +97,7 @@
                     <div class="transformer">
                         <img src="../../Assets/Images/dragAndDropImages/Expt1/transformer.PNG" style="pointer-events: none;" alt="transformer"> 
                     </div>
-                    <div class="CRO" onclick="showGraph()" style="cursor:pointer;">
+                    <div class="CRO" onclick="showOutput()"  style="cursor:pointer;">
                         <img src="../../Assets/Images/dragAndDropImages/Expt1/cro_image.PNG" alt="CRO">
                     </div>
                     <div class="bottomLeft">
@@ -127,10 +121,14 @@
         </section>
 
         <section id="output" class="hide">
-            <span onclick="showCircuit()">X</span>
-            <div style="width:840px;height:600px;" class="graph">
-                <canvas id="waveform" height="600" width="1000">
+            <span class="cancel" onclick="showCircuit()">X</span>
+            <div style="width:755px;height:600px;margin:10px;" class="graph">
+                <canvas id="waveform" height="600px" width="1000px">
                 </canvas>
+            </div>
+            <div class="firingAngle">
+                <h1>Firing Angle(&#945;) = <span id="angleDisplay"> 0&#176; </span></h1>
+                <input id="alpha" type="range" min="0" max="180" value="0">
             </div>
         </section>
 

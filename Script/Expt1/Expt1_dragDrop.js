@@ -1,7 +1,7 @@
 const scr = document.getElementById("scr");
 const diode = document.getElementById("diode");
 const rload = document.getElementById("rload");
-const rl_load = document.getElementById("rl-load");
+const rl_load = document.getElementById("rl_load");
 const mca = document.getElementById("mca");
 const mcv = document.getElementById("mcv");
 const mia = document.getElementById("mia");
@@ -41,7 +41,7 @@ miv.ondragstart = (ev)=> {
 function drop(ev) {
   ev.preventDefault();
   var img = document.createElement('img');
-  img.src = `images/${dragId}.PNG`;
+  img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.PNG`;
   ev.target.style.border = "none";
   ev.target.appendChild(img);
 }

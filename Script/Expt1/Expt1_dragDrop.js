@@ -7,6 +7,7 @@ const mcv = document.getElementById("mcv");
 const mia = document.getElementById("mia");
 const miv = document.getElementById("miv");
 
+
 let dragId;
 
 function allowDrop(ev) {

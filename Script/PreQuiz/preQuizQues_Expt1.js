@@ -1,40 +1,55 @@
 
 const quiz =[
-{
-	q:'What is the basic component of power electronic circuits?',
-	options:['Diode','SCR','Resistor','Capacitor'],
-	answer:1
-},
-{
-	q:'What is required for turning on an SCR?',
-	options:['Gate Pulse','Reverse bias','Forward Bias','Option (A) and (C)'],
-	answer:3
-},
-{
-	q:'The potential barrier voltage of silicon is',
-	options:['0.5V','0.3V','0.7V','1V'],
-	answer:2
-},
-{
-	q:'Application of full converter',
-	options:['Speed Control of drives','Reducing harmonics','Improving power factor','all the above'],
-	answer:0
-},
-{
-	q:'What is the purpose of SCR in power Electronics?',
-	options:['Oscillator','Amplifier','Rectifier','Switching'],
-	answer:3
-},
-// {
-// 	q:"Forward biasing of p-n junction offers infinite resistance.",
-// 	options:['True','False','No option','No option'],
-// 	answer:1
-// },
-{
-	q:"When a junction diode is reverse biased, what causes current across the junction?",
-    options:['Diffusion of charges','Nature of material','Drift of charges','Both drift and diffusion of charges'],
-    answer:2 
-}
+	{	//1
+		q:'In power electronic circuits SCRs are used for?',
+		options:['Switching','Amplification','Filtering','Producing oscillations'],
+		answer:0
+	},
+	{	//2
+		q:'The disadvantage of using SCR as a switching device',
+		options:['Low power handling capability','Requires external commutation in AC','Requires external commutation in DC','Cannot withstand large currents'],
+		answer:2
+	},
+	{	//3
+		q:'What are the conditions required to turn on SCR?',
+		options:['Gate pulse','Forward Biasing','Reverse Biasing','Both gate pulse and forward biasing'],
+		answer:3
+	},
+	{	//4
+		q:'What is the advantage of MOSFET over SCR?',
+		options:['High power handling capability','High heat dissipation capability','High switching frequency','None of the above'],
+		answer:2
+	},
+	{	//5
+		q:'Choose the correct sequence of given devices in increasing order of their speeds of operation',
+		options:['Power BJT < Power MOSFET < IGBT < SCR','IGBT < Power BJT < SCR < Power MOSFET','SCR < Power BJT < IGBT < Power MOSFET','IGBT < SCR < Power BJT < Power MOSFET'],
+		answer:2
+	},
+	{	//6
+		q:"Which of the devices does not belong to the thyristor family?",
+		options:['TRIAC','GTO','DIAC','MOSFET'],
+		answer:3
+	},
+	{	//7
+		q:"A thyristor needs protection against",
+		options:["high dv/dt",'high di/dt','Both high dv/dt and high di/dt','Either high dv/dt or high'],
+		answer:2 
+	},
+	{	//8
+		q:"The rated current of a thyristor is 10 A. The holding current will be approximately about",
+		options:['10 mA','100 mA','1 A','2 A'],
+		answer:1
+	},
+	{	//9
+		q:"If t<sub>ON</sub> and t<sub>OFF</sub> are the turn ON and turn OFF times of a thyristor, then",
+		options:['t<sub>ON</sub> and t<sub>OFF</sub> are almost equal','t<sub>ON</sub> >> t<sub>OFF</sub>','t<sub>OFF</sub> is twice as t<sub>ON</sub>','t<sub>OFF</sub> >>  t<sub>ON</sub>'],
+		answer:3
+	},
+	{	//10
+		q:"In a thyristor, the forward voltage drop",
+		options:['is constant','may be dependent on load current','decreases as gate current is increased','increases as gate current is increased'],
+		answer:2
+	},
 ]
 
 

@@ -1,5 +1,5 @@
 // GLOBAL VARIABLES
-let noOfQuesNeeded = 3;
+let noOfQuesNeeded = 5;
 
 const startButton = document.getElementById('start-btn');
 const nextButton = document.getElementById('next-btn');
@@ -10,7 +10,7 @@ const questionText = document.getElementById('question-text');
 const img_container = document.getElementById('img_container');
 const container = document.getElementById('container');
 const hide_unhide_div = document.getElementById('hide_unhide_div');
-
+const quizImg = document.getElementById('quizImg');
 
 const ans1 = document.getElementById('ans1');
 const ans2 = document.getElementById('ans2');
@@ -33,8 +33,7 @@ function startQuiz() {
         ans[i].classList.remove('hide');
     }
     questionIndex = Math.floor(Math.random()*quiz.length);
-    nextQues();
-    
+    nextQues();  
 }
 
 function showNextButton() {
@@ -73,7 +72,7 @@ function nextQues() {
     for(i = 0; i < ans.length; i++) {
         ans[i].innerHTML = quiz[questionIndex].options[i];
     }
-    img_container.innerHTML = '<img src="../../Assets/Images/dummy_images/' + quiz[questionIndex].image_name + '.png" alt="" height="220px">';
+    quizImg.src = quiz[questionIndex].image_link;
 }
 
 function showSubmit() {

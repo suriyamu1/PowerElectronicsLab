@@ -11,6 +11,8 @@ const img_container = document.getElementById('img_container');
 const container = document.getElementById('container');
 const hide_unhide_div = document.getElementById('hide_unhide_div');
 const quizImg = document.getElementById('quizImg');
+const tickImg = document.getElementById('tickImg');
+const wrongImg = document.getElementById('wrongImg');
 
 const ans1 = document.getElementById('ans1');
 const ans2 = document.getElementById('ans2');
@@ -89,10 +91,14 @@ function showSubmit() {
 
 function submitQuiz() {
     submitButton.classList.add('hide');
-    questionText.innerHTML = 'Your score';
-    hide_unhide_div.innerHTML = `<h1>${score}/${noOfQuesNeeded}</h1>`;
+    questionText.innerHTML = `You scored ${score} out of ${noOfQuesNeeded}`;
+    if(score >= 4) {
+        tickImg.classList.remove('hide');
+    }
+    else {
+        wrongImg.classList.remove('hide');
+    }
     retryButton.classList.remove('hide');
-    answerBlock.classList.add('score Board');
 }
 
 function retry(){

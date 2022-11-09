@@ -11,11 +11,10 @@ html {
 
 body {
     background-image: linear-gradient(to left bottom, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
-    
 }
+
 .container {
     padding-top: 19.5vh;
-    padding-bottom: 3vh;
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -138,42 +137,41 @@ body {
                 }
             }
         }
-        .buttonDiv1, .buttonDiv2 {
+        .buttonDiv {
             display: flex;
+
             align-items: center;
-            justify-content: space-between;
+            justify-content: space-between;   
 
-            
-        }
-
-        .btn {
-            all: unset;
-            width: 49%;
-            margin: 5px 2px;
-            padding: 0.5rem 0rem;
-            border-radius: 30px;
-            outline: none;
-            border: 0px;
-            cursor: pointer;
-            font-weight: 700;
-            transition: all ease-in-out 0.3s;
-            box-shadow: 1px 2px 8px 2px rgba(45,1,247,0.7);
-            -webkit-box-shadow: 1px 2px 8px 2px rgba(45,1,247,0.7);
-            -moz-box-shadow: 1px 2px 8px 2px rgba(45,1,247,0.7);
-            background-color: white;
-            text-align: center;
-
-            &:hover {
-                background-color: darkblue;
-                color: whitesmoke;
+            .btn1, .btn2 {
+                all: unset;
+                width: 30%;
+                margin: 5px 2px;
+                padding: 0.5rem 0rem;
+                border-radius: 30px;
+                outline: none;
+                border: 0px;
+                cursor: pointer;
+                font-weight: 700;
                 transition: all ease-in-out 0.3s;
+                box-shadow: 1px 2px 8px 2px rgba(45,1,247,0.7);
+                -webkit-box-shadow: 1px 2px 8px 2px rgba(45,1,247,0.7);
+                -moz-box-shadow: 1px 2px 8px 2px rgba(45,1,247,0.7);
+                background-color: white;
+                text-align: center;
+    
+                &:hover {
+                    background-color: darkblue;
+                    color: whitesmoke;
+                    transition: all ease-in-out 0.3s;
+                }
             }
-        }
-        .buttonDiv1 {
-            width: 100%;
 
-            .btn {
-                width: 100%;
+            .btn1 {
+                width: 74%;
+            }
+            .btn2 {
+                width: 24%;
             }
         }
     }
@@ -258,11 +256,24 @@ body {
                 background-color: lightgreen;
             }
     
-        }        
+        } 
+        
+        #exp_div3 {
+            margin-top: 2rem;
+            width: 100%;
+
+            a {
+                font-size: 0.8rem;
+            }
+
+            h3 {
+                margin: 5px 0px;
+                font-size: 0.8rem;
+            }
+        }
     }
 }
 .container2 {
-    padding-top: 23vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -311,20 +322,21 @@ body {
 }
 
 .container3 {
-    padding-top: 23vh;
     padding-bottom: 4vh;
     min-height: 90vh;
     padding: 4% 0%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     h1 {
+        margin: 2rem 0rem 3rem 0rem;
         font-size: 1.3rem;
         text-align: center;
     }
 }
 .accordion {
-        width: 70%;
+        width: 60%;
 
         .contentBox {
             position: relative;
@@ -338,6 +350,7 @@ body {
                 cursor: pointer;
                 transition: 0.1s ease-in-out;
                 font-weight: 600;
+                padding-left: 50px;
             }
 
             .label::before {
@@ -388,6 +401,11 @@ body {
                     li {
                         font-size: 1.1rem;
                         margin: 5px 0px;
+                        text-align: justify;
+
+                        b {
+                            font-weight: 700;
+                        }
                     }
         
                     // this styling is for Expt.1 Mode of operation of SCR

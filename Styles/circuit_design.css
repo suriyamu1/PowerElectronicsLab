@@ -15,7 +15,6 @@ body {
 
 .container {
   padding-top: 19.5vh;
-  padding-bottom: 3vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -117,14 +116,14 @@ body {
 .container .verification_div .choose_components .ammeter_voltmeter .box select option {
   background-color: #fff;
 }
-.container .verification_div .buttonDiv1, .container .verification_div .buttonDiv2 {
+.container .verification_div .buttonDiv {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-.container .verification_div .btn {
+.container .verification_div .buttonDiv .btn1, .container .verification_div .buttonDiv .btn2 {
   all: unset;
-  width: 49%;
+  width: 30%;
   margin: 5px 2px;
   padding: 0.5rem 0rem;
   border-radius: 30px;
@@ -139,16 +138,16 @@ body {
   background-color: white;
   text-align: center;
 }
-.container .verification_div .btn:hover {
+.container .verification_div .buttonDiv .btn1:hover, .container .verification_div .buttonDiv .btn2:hover {
   background-color: darkblue;
   color: whitesmoke;
   transition: all ease-in-out 0.3s;
 }
-.container .verification_div .buttonDiv1 {
-  width: 100%;
+.container .verification_div .buttonDiv .btn1 {
+  width: 74%;
 }
-.container .verification_div .buttonDiv1 .btn {
-  width: 100%;
+.container .verification_div .buttonDiv .btn2 {
+  width: 24%;
 }
 .container .explanation_div {
   width: 35%;
@@ -217,9 +216,19 @@ body {
 .container .explanation_div #exp_div2 .ok_green {
   background-color: lightgreen;
 }
+.container .explanation_div #exp_div3 {
+  margin-top: 2rem;
+  width: 100%;
+}
+.container .explanation_div #exp_div3 a {
+  font-size: 0.8rem;
+}
+.container .explanation_div #exp_div3 h3 {
+  margin: 5px 0px;
+  font-size: 0.8rem;
+}
 
 .container2 {
-  padding-top: 23vh;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -261,20 +270,21 @@ body {
 }
 
 .container3 {
-  padding-top: 23vh;
   padding-bottom: 4vh;
   min-height: 90vh;
   padding: 4% 0%;
   display: flex;
   flex-direction: column;
+  align-items: center;
 }
 .container3 h1 {
+  margin: 2rem 0rem 3rem 0rem;
   font-size: 1.3rem;
   text-align: center;
 }
 
 .accordion {
-  width: 70%;
+  width: 60%;
 }
 .accordion .contentBox {
   position: relative;
@@ -288,6 +298,7 @@ body {
   cursor: pointer;
   transition: 0.1s ease-in-out;
   font-weight: 600;
+  padding-left: 50px;
 }
 .accordion .contentBox .label::before {
   content: "+";
@@ -333,6 +344,10 @@ body {
 .accordion .contentBox .content ul li {
   font-size: 1.1rem;
   margin: 5px 0px;
+  text-align: justify;
+}
+.accordion .contentBox .content ul li b {
+  font-weight: 700;
 }
 .accordion .contentBox .content ul ol {
   margin-left: 5%;

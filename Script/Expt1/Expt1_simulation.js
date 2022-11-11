@@ -95,12 +95,13 @@ function showGraph(){
 
 function showOutput(){
     console.log(verification);
-    if(verification===true){
+    if(count===7 && verification===true){
         showGraph();
         output.classList.remove("hide");
         simulation.classList.add("hide");
     }else{
         alert("Your Circuit is wrong");
+        location.reload();
     }
     
 }

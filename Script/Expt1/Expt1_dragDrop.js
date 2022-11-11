@@ -9,6 +9,7 @@ const miv = document.getElementById("miv");
 let verification=null;
 let prevScr="0";
 let prevdiode="0";
+let count =0;
 
 
 let dragId;
@@ -70,5 +71,6 @@ function drop(ev) {
   else{
     verification=false;
   }
+  count++;
   console.log(verification);
 }

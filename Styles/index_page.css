@@ -50,4 +50,45 @@
 .main_div .container .list .box:hover {
   background-color: rgb(93, 153, 251);
   transition: 0.3s ease;
+}
+
+.mobile_screen_intro {
+  height: 100vh;
+  background-image: linear-gradient(to left bottom, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
+  padding: 0% 10%;
+  display: none;
+}
+.mobile_screen_intro h3 {
+  background-color: darkblue;
+  color: whitesmoke;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  border-radius: 5px;
+}
+.mobile_screen_intro h2 {
+  background: rgba(255, 255, 255, 0.6);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(9px);
+  -webkit-backdrop-filter: blur(9px);
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 5rem 3rem;
+  margin-top: 5%;
+  text-align: center;
+}
+
+@media screen and (max-width: 800px) {
+  body header {
+    display: none;
+  }
+  .main_div {
+    display: none;
+  }
+  .mobile_screen_intro {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+  }
 }/*# sourceMappingURL=index_page.css.map */

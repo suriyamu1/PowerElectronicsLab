@@ -94,9 +94,15 @@ function showGraph(){
 }
 
 function showOutput(){
-    showGraph();
-    output.classList.remove("hide");
-    simulation.classList.add("hide");
+    console.log(verification);
+    if(verification===true){
+        showGraph();
+        output.classList.remove("hide");
+        simulation.classList.add("hide");
+    }else{
+        alert("Your Circuit is wrong");
+    }
+    
 }
 
 function showCircuit(){

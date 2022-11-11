@@ -6,6 +6,9 @@ const mca = document.getElementById("mca");
 const mcv = document.getElementById("mcv");
 const mia = document.getElementById("mia");
 const miv = document.getElementById("miv");
+let verification=null;
+let prevScr="0";
+let prevdiode="0";
 
 
 let dragId;
@@ -41,8 +44,31 @@ miv.ondragstart = (ev)=> {
   
 function drop(ev) {
   ev.preventDefault();
-  var img = document.createElement('img');
+  let img = document.createElement('img');
+  let dropId=ev.target.id;
+  if(dropId==="5" && (dragId==="miv" || dragId==="mcv" || dragId==="rl_load" || dragId==="rload")){
+    dragId = dragId+"-h";
+  }else if((dropId==="6" || dropId==="7") && (dragId==="mca" || dragId=="mia")){
+    dragId=dragId+"-v";
+  }
   img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.PNG`;
   ev.target.style.border = "none";
   ev.target.appendChild(img);
+  if(verification!==false && dragId==="scr" && (prevScr==="0" || (dropId==="1" && (prevScr==="2" || prevScr==="3")) || (dropId==="2" && (prevScr==="1" || prevScr==="4"))|| (dropId==="3" && (prevScr==="1" || prevScr==="4"))|| (dropId==="4" && (prevScr==="2" || prevScr==="3")))){
+    verification=true;
+    prevScr=dropId;
+  }else if(verification!==false && dragId==="diode" && (prevdiode==="0" || (dropId==="1" && prevdiode==="2") || (dropId==="2" && (prevScr==="1" || prevScr==="4"))|| (dropId==="3" && prevScr==="4")|| (dropId==="4" && (prevScr==="2" || prevScr==="3")))){
+    verification=true;
+    prevScr=dropId;
+  }
+  else if(verification!==false && (dragId==="mca") && dropId==="5"){
+    verification=true;
+  }
+  else if(verification!==false && (dragId==="rload" || dragId==="rl_load" || dragId==="mcv") && (dropId==="6" || dropId==="7")){
+    verification=true;
+  }
+  else{
+    verification=false;
+  }
+  console.log(verification);
 }

@@ -11,9 +11,25 @@ let prevScr="0";
 let prevdiode="0";
 let count =0;
 
+let ans = "bitch";
+const component1 = document.getElementsByName("component1");  //gives an array
+
+for(i=0; i<component1.length;i++) {
+  if(component1[i].checked) {
+    ans = component1[i].value;
+  }
+}
+console.log(ans);
 
 let dragId;
-
+function display_firing_angle() {
+  for(i=0; i<component1.length;i++) {
+    if(component1[i].checked) {
+      ans = component1[i].value;
+    }
+  }
+  console.log("here: "+ans);
+}
 function allowDrop(ev) {
   ev.preventDefault();
 } 

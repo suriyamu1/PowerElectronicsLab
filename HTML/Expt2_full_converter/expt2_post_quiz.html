@@ -5,9 +5,9 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../Styles/nav_bar.css">
-        <link rel="stylesheet" href="../../Styles/pre_quiz_styling.css">
+        <link rel="stylesheet" href="../../Styles/post_quiz_styling.css">
         <link rel="icon" type="image/x-icon" href="../../Assets/Images/TCE_logo.png">
-        <title>1. Semi Converter - Pre Quiz</title>
+        <title>2. Full Converter - Post Quiz</title>
     </head>
     <body>
         <header>
@@ -32,35 +32,40 @@
         <section class="sub_navigation">
             <div class="title">
                 <h1>
-                    Single Phase Semi-controlled Converter
+                    Single Phase Full-controlled Converter
                 </h1>
             </div>
             <div class="navigation">
                 <li>
-                    <ul><a href="expt1_aim.html">Aim</a></ul>
-                    <ul><a href="expt1_theory.html">Theory</a></ul>
-                    <ul><a href="#" id="current_link">Pre-Quiz</a></ul>
-                    <ul><a href="expt1_circuit_design.html">Circuit Design</a></ul>
-                    <ul><a href="expt1_simulation.html">Simulation</a></ul>
-                    <ul><a href="expt1_post_quiz.html">Post-Quiz</a></ul>
+                    <ul><a href="expt2_aim.html">Aim</a></ul>
+                    <ul><a href="expt2_theory.html">Theory</a></ul>
+                    <ul><a href="expt2_pre_quiz.html">Pre-Quiz</a></ul>
+                    <ul><a href="expt2_circuit_design.html">Circuit Design</a></ul>
+                    <ul><a href="expt2_simulation.html">Simulation</a></ul>
+                    <ul><a href="#" id="current_link">Post-Quiz</a></ul>
                     <ul><a href="#">Feedback</a></ul>
                 </li>
             </div>
         </section>
-        <section class="quiz-container">
-            <div class="container">
+        <section class="main-container">
+            <div class="container glassmorphism" id="container">
                 <div id="question-container">
                     <h2 id="question-text">Answer all the following questions</h2>
-                    <div id="answer-buttons">
-                        <button id="ans1" class="btn hide" onclick="choice(0)">Answer 1</button>
-                        <button id="ans2" class="btn hide" onclick="choice(1)">Answer 2</button>
-                        <button id="ans3" class="btn hide" onclick="choice(2)">Answer 3</button>
-                        <button id="ans4" class="btn hide" onclick="choice(3)">Answer 4</button>
+                    <div class="imgDiv">
+                        <img src="../../Assets/Images/tick.png" alt="tickmark" height="75px" class="hide" id="tickImg">
+                        <img src="../../Assets/Images/wrong.png" alt="cross-mark" height="75px" class="hide" id="wrongImg">
                     </div>
-                </div>
-                <div class="imgDiv">
-                    <img src="../../Assets/Images/tick.png" alt="tickmark" height="75px" class="hide" id="tickImg">
-                    <img src="../../Assets/Images/wrong.png" alt="cross-mark" height="75px" class="hide" id="wrongImg">
+                    <div class="hide_unhide_div" id="hide_unhide_div">
+                        <div id="answer-buttons">
+                            <button id="ans1" class="btn hide" onclick="choice(0)">Answer 1</button>
+                            <button id="ans2" class="btn hide" onclick="choice(1)">Answer 2</button>
+                            <button id="ans3" class="btn hide" onclick="choice(2)">Answer 3</button>
+                            <button id="ans4" class="btn hide" onclick="choice(3)">Answer 4</button>
+                        </div>
+                        <div class="img_container hide" id="img_container">
+                            <img src="" alt="" height="250px" id="quizImg">
+                        </div>
+                    </div>  
                 </div>
                 <div class="controls">
                     <button id="start-btn" class="btn" onclick="startQuiz()">Start</button>
@@ -69,11 +74,8 @@
                     <button id="retry-btn" class="btn hide" onclick="retry()">Retry</button>
                 </div>
             </div>
-            <div class="img_container">
-                <img src="" alt="">
-            </div>
         </section>
-        <script src="../../Script/PreQuiz/preQuizQues_Expt1.js"></script>
-        <script src="../../Script/PreQuiz/preQuiz.js"></script>
+        <script src="../../Script/PostQuiz/postQuizQues_Expt1.js"></script>
+        <script src="../../Script/PostQuiz/post_Quiz.js"></script>
     </body>
 </html>

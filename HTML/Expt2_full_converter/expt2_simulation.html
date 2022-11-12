@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../Styles/nav_bar.css">
+        <link rel="stylesheet" href="../../Styles/simulation_page_expt1.css">
+        <link rel="icon" type="image/x-icon" href="../../Assets/Images/TCE_logo.png">
+        <title>2. Full Converter - Simulation</title>
+    </head>
+    <body>
+        <header>
+            <div class="college_logo_name">
+                <img src="../../Assets/Images/TCE_logo.png" alt="Logo" height="50px">
+                <h2>Thiagarajar College of Engineering<br>Department of EEE</h2>
+            </div>
+            
+            <div class="heading_virtual_labs">
+                <h1>Power Electronics Virtual Laboratory</h1>
+            </div>
+
+            <div class="nav_links">
+                <li>
+                    <ul><a href="../../index.html">Home</a></ul>
+                    <ul><a href="https://www.tce.edu/" target="_blank">About TCE</a></ul>
+                    <ul><a href="#">Contact</a></ul>
+                </li>
+            </div>
+            
+        </header>
+
+        <!-- Experiment Title -->
+        <section class="sub_navigation">
+            <div class="title">
+                <h1>
+                    Single Phase Full-controlled Converter
+                </h1>
+            </div>
+            <div class="main_div">
+                <div class="navigation">
+                    <li>
+                        <ul><a href="expt2_aim.html">Aim</a></ul>
+                        <ul><a href="expt2_theory.html">Theory</a></ul>
+                        <ul><a href="expt2_pre_quiz.html">Pre-Quiz</a></ul>
+                        <ul><a href="expt2_circuit_design.html">Circuit Design</a></ul>
+                        <ul><a href="#"  id="current_link">Simulation</a></ul>
+                        <ul><a href="expt2_post_quiz.html">Post-Quiz</a></ul>
+                        <ul><a href="#">Feedback</a></ul>
+                    </li>
+                </div>
+            </div>
+        </section>
+        <section id="simulation" class="simulation">
+                <div class="library">
+                    <div class="pair">
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/scr.PNG" alt="scr" draggable="true" id="scr">
+                        </div>
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/diode.PNG" alt="scr" draggable="true" id="diode">
+                        </div>
+                    </div>
+                    <div class="pair">
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/rload-h.PNG" alt="scr" draggable="true" id="rload">
+                        </div>
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/rl_load-h.PNG" alt="scr" draggable="true" id="rl_load">
+                        </div>
+                    </div>
+                    <div class="pair">
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/mca.PNG" alt="scr" draggable="true" id="mca">
+                        </div>
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/mcv-h.PNG" alt="scr" draggable="true" id="mcv">
+                        </div>
+                    </div>
+                    <div class="pair">   
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/mia.PNG" alt="scr" draggable="true" id="mia">
+                        </div>
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/miv-h.PNG" alt="scr" draggable="true" id="miv">
+                        </div>
+                    </div>
+               </div>
+            <div class="main">
+                <div class="circuit" >
+                    <div class="topLeft">
+                        <img src="../../Assets/Images/dragAndDropImages/Expt1/top_left.PNG"  style="pointer-events: none;" alt="top-left"> 
+                    </div>
+                    <div class="topRight">
+                        <img src="../../Assets/Images/dragAndDropImages/Expt1/top_right.PNG" style="pointer-events: none;" alt="top-right">
+                    </div>
+                    <div class="transformer">
+                        <img src="../../Assets/Images/dragAndDropImages/Expt1/transformer.PNG" style="pointer-events: none;" alt="transformer"> 
+                    </div>
+                    <div class="CRO" onclick="showOutput()"  style="cursor:pointer;">
+                        <img src="../../Assets/Images/dragAndDropImages/Expt1/cro_image.PNG" alt="CRO">
+                    </div>
+                    <div class="bottomLeft">
+                        <img src="../../Assets/Images/dragAndDropImages/Expt1/bottom_left.PNG" style="pointer-events: none;" alt="bottom-left"> 
+                    </div>
+                    <div class="bottomLine">
+                        <img src="../../Assets/Images/dragAndDropImages/Expt1/bottom-line.PNG" style="pointer-events: none;" alt="bottom-left"> 
+                    </div>
+                    <div class="bottomRight">
+                        <img src="../../Assets/Images/dragAndDropImages/Expt1/bottom_right.PNG" style="pointer-events: none;" alt="bottom-right"> 
+                    </div>
+                    <div class="scr1" id="1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="scr2" id="2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="diode1" id="3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="diode2"  id="4"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="ammeter" id="5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="voltmeter" id="6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="load" id="7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="output" class="hide">
+            <span class="cancel" onclick="showCircuit()">X</span>
+            <div style="width:755px;height:600px;margin:10px;" class="graph">
+                <canvas id="waveform" height="600px" width="1000px">
+                </canvas>
+            </div>
+            <div class="firingAngle">
+                <h1>Firing Angle(&#945;) = <span id="angleDisplay"> 0&#176; </span></h1>
+                <input id="alpha" type="range" min="0" max="180" value="0">
+            </div>
+        </section>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"
+        integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <!-- <script src="../../Script/Expt1/Expt1_dragDrop.js"></script>
+        <script src="../../Script/Expt1/Expt1_simulation.js"></script> -->
+    </body>
+</html>

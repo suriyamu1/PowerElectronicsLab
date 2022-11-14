@@ -70,8 +70,8 @@ function drop(ev) {
   }
   img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.PNG`;
   ev.target.style.border = "none";
-  ev.target.appendChild(img);
   ev.target.innerHTML =null;
+  ev.target.appendChild(img);
   if(verification!==false && dragId==="scr" && (prevScr==="0" || (dropId==="1" && (prevScr==="2" || prevScr==="3")) || (dropId==="2" && (prevScr==="1" || prevScr==="4"))|| (dropId==="3" && (prevScr==="1" || prevScr==="4"))|| (dropId==="4" && (prevScr==="2" || prevScr==="3")))){
     verification=true;
     prevScr=dropId;

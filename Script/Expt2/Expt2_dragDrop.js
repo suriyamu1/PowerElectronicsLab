@@ -7,8 +7,6 @@ const mcv = document.getElementById("mcv");
 const mia = document.getElementById("mia");
 const miv = document.getElementById("miv");
 let verification=null;
-let prevScr="0";
-let prevdiode="0";
 let count =0;
 
 let ans = "bitch";
@@ -70,16 +68,11 @@ function drop(ev) {
   }
   img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.PNG`;
   ev.target.style.border = "none";
+  ev.target.innerHTML=null;
   ev.target.appendChild(img);
-  ev.target.innerHTML =null;
-  if(verification!==false && dragId==="scr" && (prevScr==="0" || (dropId==="1" && (prevScr==="2" || prevScr==="3")) || (dropId==="2" && (prevScr==="1" || prevScr==="4"))|| (dropId==="3" && (prevScr==="1" || prevScr==="4"))|| (dropId==="4" && (prevScr==="2" || prevScr==="3")))){
+  if(verification!==false && dragId==="scr" && (dropId==="1" || dropId==="2" || dropId==="3" || dropId==="4")){
     verification=true;
-    prevScr=dropId;
-  }else if(verification!==false && dragId==="diode" && (prevdiode==="0" || (dropId==="1" && prevdiode==="2") || (dropId==="2" && (prevScr==="1" || prevScr==="4"))|| (dropId==="3" && prevScr==="4")|| (dropId==="4" && (prevScr==="2" || prevScr==="3")))){
-    verification=true;
-    prevScr=dropId;
-  }
-  else if(verification!==false && (dragId==="mca") && dropId==="5"){
+  }else if(verification!==false && (dragId==="mca") && dropId==="5"){
     verification=true;
   }
   else if(verification!==false && (dragId==="rload" || dragId==="rl_load" || dragId==="mcv") && (dropId==="6" || dropId==="7")){

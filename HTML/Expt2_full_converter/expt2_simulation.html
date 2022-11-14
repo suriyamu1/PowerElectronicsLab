@@ -40,19 +40,22 @@
             <div class="main_div">
                 <div class="navigation">
                     <li>
-                        <ul><a href="expt2_aim.html">Aim</a></ul>
-                        <ul><a href="expt2_theory.html">Theory</a></ul>
-                        <ul><a href="expt2_pre_quiz.html">Pre-Quiz</a></ul>
-                        <ul><a href="expt2_circuit_design.html">Circuit Design</a></ul>
+                        <ul><a href="../Expt2_full_converter/expt2_aim.html">Aim</a></ul>
+                        <ul><a href="../Expt2_full_converter/expt2_theory.html">Theory</a></ul>
+                        <ul><a href="../Expt2_full_converter/expt2_pre_quiz.html">Pre-Quiz</a></ul>
+                        <ul><a href="../Expt2_full_converter/expt2_circuit_design.html">Circuit Design</a></ul>
                         <ul><a href="#"  id="current_link">Simulation</a></ul>
-                        <ul><a href="expt2_post_quiz.html">Post-Quiz</a></ul>
+                        <ul><a href="../Expt2_full_converter/expt2_post_quiz.html">Post-Quiz</a></ul>
                         <ul><a href="#">Feedback</a></ul>
                     </li>
                 </div>
             </div>
         </section>
+
         <section id="simulation" class="simulation">
+            <div class="left">
                 <div class="library">
+                    <h3>Components</h3>
                     <div class="pair">
                         <div>
                             <img src="../../Assets/Images/dragAndDropImages/Expt1/scr.PNG" alt="scr" draggable="true" id="scr">
@@ -85,7 +88,46 @@
                             <img src="../../Assets/Images/dragAndDropImages/Expt1/miv-h.PNG" alt="scr" draggable="true" id="miv">
                         </div>
                     </div>
-               </div>
+                </div>
+                <!-- <button id="firing_button" onclick="display_firing_angle()"></button> -->
+                <div class="firing_pulse">
+                    <h1>Firing Pulses</h1>
+                    <div class="box">
+                        <h3>Component 1</h3>
+                        <select id="component1">
+                            <option selected>Nil</option>
+                            <option>&#593;</option><option>180 + &#593;</option>
+                        </select>
+                    </div>
+
+                    <div class="box">
+                        <h3>Component 2</h3>
+                        <select id="component2">
+                            <option selected>Nil</option>
+                            <option>&#593;</option><option>180 + &#593;</option>
+                        </select>
+                    </div>
+
+                    <div class="box">
+                        <h3>Component 3</h3>
+                        <select id="component3">
+                            <option selected>Nil</option>
+                            <option>&#593;</option><option>180 + &#593;</option>
+                        </select>
+                    </div>
+
+                    <div class="box">
+                        <h3>Component 4</h3>
+                        <select id="component4">
+                            <option selected>Nil</option>
+                            <option>&#593;</option><option>180 + &#593;</option>
+                        </select>
+                    </div>
+                    
+                </div>
+            </div>
+            
+                
             <div class="main">
                 <div class="circuit" >
                     <div class="topLeft">
@@ -109,10 +151,10 @@
                     <div class="bottomRight">
                         <img src="../../Assets/Images/dragAndDropImages/Expt1/bottom_right.PNG" style="pointer-events: none;" alt="bottom-right"> 
                     </div>
-                    <div class="scr1" id="1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <div class="scr2" id="2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <div class="diode1" id="3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <div class="diode2"  id="4"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="scr1" id="1" ondrop="drop(event)" ondragover="allowDrop(event)">1</div>
+                    <div class="scr2" id="2" ondrop="drop(event)" ondragover="allowDrop(event)">2</div>
+                    <div class="diode1" id="3" ondrop="drop(event)" ondragover="allowDrop(event)">3</div>
+                    <div class="diode2"  id="4"ondrop="drop(event)" ondragover="allowDrop(event)">4</div>
                     <div class="ammeter" id="5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                     <div class="voltmeter" id="6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                     <div class="load" id="7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -129,6 +171,8 @@
             <div class="firingAngle">
                 <h1>Firing Angle(&#945;) = <span id="angleDisplay"> 0&#176; </span></h1>
                 <input id="alpha" type="range" min="0" max="180" value="0">
+                <h1 style="margin-top:30px">Average voltage = <span id="avgDisplay"> 0 V </span></h1>
+                <h1 style="margin-top:30px">RMS voltage = <span id="rmsDisplay"> 0 V</span></h1>
             </div>
         </section>
 
@@ -136,7 +180,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"
         integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <!-- <script src="../../Script/Expt1/Expt1_dragDrop.js"></script>
-        <script src="../../Script/Expt1/Expt1_simulation.js"></script> -->
+        <script src="../../Script/Expt2/Expt2_dragDrop.js"></script>
+        <script src="../../Script/Expt2/Expt2_simulation.js"></script>
     </body>
 </html>

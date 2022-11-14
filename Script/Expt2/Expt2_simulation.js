@@ -4,6 +4,10 @@ const alpha = document.getElementById("alpha");
 const angleDisplay = document.getElementById("angleDisplay");
 const avgDisplay = document.getElementById("avgDisplay");
 const rmsDisplay = document.getElementById("rmsDisplay");
+// const component1 = document.getElementById("component1");
+// const component2 = document.getElementById("component2");
+// const component3 = document.getElementById("component3");
+// const component4 = document.getElementById("component4");
 
 let angle=0;
 
@@ -26,7 +30,7 @@ alpha.oninput=()=>{
     angle=Number(alpha.value);
     data.firingangle=angle;
     angleDisplay.innerHTML=angle+"&#176;";
-    let avg = (data.voltage/Math.PI)*(1+calculateCos(angle));
+    let avg = ((2*data.voltage)/Math.PI)*(calculateCos(angle));
     avgDisplay.innerHTML=avg.toPrecision(5)+" V";
     console.log(avg);
     let rms = (data.voltage/Math.sqrt(2*Math.PI))*Math.sqrt(Math.PI-( (Math.PI / 180) * angle)+(calculateSine(angle)/2));
@@ -108,6 +112,7 @@ function showGraph(){
 
 function showOutput(){
     console.log(verification);
+    // console.log(component1.value);
     if(count===7 && verification===true){
         showGraph();
         output.classList.remove("hide");

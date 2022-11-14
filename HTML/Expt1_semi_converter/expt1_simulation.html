@@ -151,10 +151,10 @@
                     <div class="bottomRight">
                         <img src="../../Assets/Images/dragAndDropImages/Expt1/bottom_right.PNG" style="pointer-events: none;" alt="bottom-right"> 
                     </div>
-                    <div class="scr1" id="1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <div class="scr2" id="2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <div class="diode1" id="3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <div class="diode2"  id="4"ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="scr1" id="1" ondrop="drop(event)" ondragover="allowDrop(event)">1</div>
+                    <div class="scr2" id="2" ondrop="drop(event)" ondragover="allowDrop(event)">2</div>
+                    <div class="diode1" id="3" ondrop="drop(event)" ondragover="allowDrop(event)">3</div>
+                    <div class="diode2"  id="4"ondrop="drop(event)" ondragover="allowDrop(event)">4</div>
                     <div class="ammeter" id="5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                     <div class="voltmeter" id="6" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                     <div class="load" id="7" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
@@ -171,6 +171,8 @@
             <div class="firingAngle">
                 <h1>Firing Angle(&#945;) = <span id="angleDisplay"> 0&#176; </span></h1>
                 <input id="alpha" type="range" min="0" max="180" value="0">
+                <h1 style="margin-top:30px">Average voltage = <span id="avgDisplay"> 0 V </span></h1>
+                <h1 style="margin-top:30px">RMS voltage = <span id="rmsDisplay"> 0 V</span></h1>
             </div>
         </section>
 

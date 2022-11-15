@@ -8,29 +8,12 @@ const mia = document.getElementById("mia");
 const miv = document.getElementById("miv");
 let verification=null;
 let count =0;
-
-let ans = "bitch";
-const component1 = document.getElementsByName("component1");  //gives an array
-
-for(i=0; i<component1.length;i++) {
-  if(component1[i].checked) {
-    ans = component1[i].value;
-  }
-}
-console.log(ans);
-
+let loadType = null;
 let dragId;
-function display_firing_angle() {
-  for(i=0; i<component1.length;i++) {
-    if(component1[i].checked) {
-      ans = component1[i].value;
-    }
-  }
-  console.log("here: "+ans);
-}
+
 function allowDrop(ev) {
   ev.preventDefault();
-} 
+}
 scr.ondragstart = (ev)=> {
   dragId =ev.target.id;
 }
@@ -62,13 +45,13 @@ function drop(ev) {
   let img = document.createElement('img');
   let dropId=ev.target.id;
   if(dropId==="5" && (dragId==="miv" || dragId==="mcv" || dragId==="rl_load" || dragId==="rload")){
-    dragId = dragId+"-h";
+    dragId = dragId+"-h"; // id-5 => ammeter  //if mcv,mia,miv are dropped, insert the horizontal img of that component
   }else if((dropId==="6" || dropId==="7") && (dragId==="mca" || dragId=="mia")){
-    dragId=dragId+"-v";
+    dragId=dragId+"-v"; //id-6 and id-7 => load or mcv // so if mi,mca are dropped there, insert their vertical images
   }
   img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.PNG`;
   ev.target.style.border = "none";
-  ev.target.innerHTML=null;
+  ev.target.innerHTML=null;  // to remove 1,2,3,4 after images are dropped there
   ev.target.appendChild(img);
   if(verification!==false && dragId==="scr" && (dropId==="1" || dropId==="2" || dropId==="3" || dropId==="4")){
     verification=true;
@@ -76,6 +59,9 @@ function drop(ev) {
     verification=true;
   }
   else if(verification!==false && (dragId==="rload" || dragId==="rl_load" || dragId==="mcv") && (dropId==="6" || dropId==="7")){
+    if(dragId==="rl_load"){
+      loadType=dragId;
+    }
     verification=true;
   }
   else{

@@ -11,6 +11,8 @@ const rmsDisplay = document.getElementById("rmsDisplay");
 
 let angle=0;
 
+
+
 const data ={
     firingangle :angle,
     voltage:230
@@ -50,7 +52,7 @@ function showGraph(){
     for(let i=0; i<=720; i++){
         labelValue.push(i+"");
     }
-
+if(loadType!=="rl_load"){
     for(let i=0;i<=720;i++){
         theta=theta%360;
         if((theta>=data.firingangle && theta<=180) || (theta>=180+data.firingangle &&theta<=360)){
@@ -61,6 +63,23 @@ function showGraph(){
         }
         theta+=1;
     }
+}
+else{
+    for(let i=0;i<=720;i++){
+        theta=theta%360;
+        let x= data.voltage*Math.sqrt(2)*calculateSine(theta);
+        if((theta>=data.firingangle && theta<=180) || (theta>=180+data.firingangle &&theta<=360)){
+            sineValues.push(Math.abs(x));
+        }else if(theta >= 0 && theta<data.firingangle){
+            sineValues.push(x*-1);
+        }
+        else if(theta > 180 && theta < 180+data.firingangle){
+            sineValues.push(x);
+        }
+        theta+=1;
+    }
+}
+   
 
     const ctx = document.getElementById("waveform");
     if(chart!==null) chart.destroy();

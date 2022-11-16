@@ -28,17 +28,16 @@ alpha.oninput=()=>{
     angleDisplay.innerHTML=angle+"&#176;";
     let avg = (data.voltage/Math.PI)*(1+calculateCos(angle));
     avgDisplay.innerHTML=avg.toPrecision(5)+" V";
-    console.log(avg);
+    // console.log(avg);
     let rms = (data.voltage/Math.sqrt(2*Math.PI))*Math.sqrt(Math.PI-( (Math.PI / 180) * angle)+(calculateSine(angle)/2));
     rmsDisplay.innerHTML=rms.toPrecision(5)+" V";
-    console.log(rms);
+    // console.log(rms);
     showGraph();
 }
 
 let chart=null;
 
 function showGraph(){
-    console.log('Hi');
     let sineValues=[];
     let labelValue=[];
     let theta=0;
@@ -57,7 +56,6 @@ function showGraph(){
         }
         theta+=1;
     }
-
     const ctx = document.getElementById("waveform");
     if(chart!==null) chart.destroy();
     chart = new Chart(ctx, {
@@ -105,19 +103,6 @@ function showGraph(){
         }
     });
 }
-
-// function showOutput(){
-//     console.log(verification);
-//     if(count===7 && verification===true){
-//         showGraph();
-//         output.classList.remove("hide");
-//         simulation.classList.add("hide");
-//     }else{
-//         alert("Your Circuit is wrong");
-//         location.reload();
-//     }
-    
-// }
 
 function showCircuit(){
     chart.destroy();

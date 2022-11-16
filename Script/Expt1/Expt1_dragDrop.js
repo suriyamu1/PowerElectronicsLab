@@ -7,63 +7,28 @@ const mcv = document.getElementById("mcv");
 const mia = document.getElementById("mia");
 const miv = document.getElementById("miv");
 
-let components = [];
+let components = []; //to store HTML DOM of the scrs and diodes
+let items = []; // to store dropId of components in positions 1,2,3,4,5,6,7
+
 for(i=1; i<=4; i++) {
   components[i] = document.getElementById("component"+i);
 }
-console.log(components);
-let verification=null;
-let prevScr="0";
-let prevdiode="0";
-let count =0;
-
-
-// for(i=0; i<component1.length;i++) {
-//   if(component1[i].checked) {
-//     ans = component1[i].value;
-//   }
-// }
-// console.log(ans);
 
 let dragId;
-// function display_firing_angle() {
-//   for(i=0; i<component1.length;i++) {
-//     if(component1[i].checked) {
-//       ans = component1[i].value;
-//     }
-//   }
-//   console.log("here: "+ans);
-// }
+
 function allowDrop(ev) {
   ev.preventDefault();
-} 
-scr.ondragstart = (ev)=> {
-  dragId =ev.target.id;
 }
-diode.ondragstart = (ev)=> {
-  dragId =ev.target.id;
-}
-rload.ondragstart = (ev)=> {
-  dragId =ev.target.id;
-}
-rl_load.ondragstart = (ev)=> {
-  dragId =ev.target.id;
-}
-mca.ondragstart = (ev)=> {
-  dragId =ev.target.id;
-}
-mcv.ondragstart = (ev)=> {
-  dragId =ev.target.id;
-}
-mia.ondragstart = (ev)=>
-{
-  dragId =ev.target.id;
-}
-miv.ondragstart = (ev)=> {
-  dragId =ev.target.id;
-}
-items = []
-error_msg = "";
+
+scr.ondragstart     = (ev)=> { dragId =ev.target.id; }
+diode.ondragstart   = (ev)=> { dragId =ev.target.id; }
+rload.ondragstart   = (ev)=> { dragId =ev.target.id; }
+rl_load.ondragstart = (ev)=> { dragId =ev.target.id; }
+mca.ondragstart     = (ev)=> { dragId =ev.target.id; }
+mcv.ondragstart     = (ev)=> { dragId =ev.target.id; }
+mia.ondragstart     = (ev)=> { dragId =ev.target.id; }
+miv.ondragstart     = (ev)=> { dragId =ev.target.id; }
+
 
 function drop(ev) {
   ev.preventDefault();
@@ -81,29 +46,6 @@ function drop(ev) {
   ev.target.style.border = "none";
   ev.target.innerHTML =null;
   ev.target.appendChild(img);
-  // if(verify_circuit() == false) {
-  //   alert(error_msg);
-  //   return;
-  // }
-  return;
-  if(verification!==false && dragId==="scr" && (prevScr==="0" || (dropId==="1" && (prevScr==="2" || prevScr==="3")) || (dropId==="2" && (prevScr==="1" || prevScr==="4"))|| (dropId==="3" && (prevScr==="1" || prevScr==="4"))|| (dropId==="4" && (prevScr==="2" || prevScr==="3")))){
-    verification=true;
-    prevScr=dropId;
-  }else if(verification!==false && dragId==="diode" && (prevdiode==="0" || (dropId==="1" && prevdiode==="2") || (dropId==="2" && (prevScr==="1" || prevScr==="4"))|| (dropId==="3" && prevScr==="4")|| (dropId==="4" && (prevScr==="2" || prevScr==="3")))){
-    verification=true;
-    prevScr=dropId;
-  }
-  else if(verification!==false && (dragId==="mca") && dropId==="5"){
-    verification=true;
-  }
-  else if(verification!==false && (dragId==="rload" || dragId==="rl_load" || dragId==="mcv") && (dropId==="6" || dropId==="7")){
-    verification=true;
-  }
-  else{
-    verification=false;
-  }
-  count++;
-  console.log(verification);
 }
 
 
@@ -217,8 +159,6 @@ function verify_circuit() {
   // if all the edge cases above are not executed, the circuit is complete.
 
   // NOW WE HAVE TO VERIFY THE FIRING ANGLES and COMBO of SCR & DIODES
-  console.log('End of function reached');
-
   for(i=1; i<=4; i++) {
     theta = components[i].value;
 
@@ -236,5 +176,11 @@ function verify_circuit() {
       }
     }
   }
+
+  // Verify firing angle and scr combo together
+
+
   showGraph();
+  output.classList.remove("hide");
+  simulation.classList.add("hide");
 }

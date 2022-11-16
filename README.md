@@ -6,7 +6,7 @@ This virtual laboratory is developed to help students learning power electronics
   2. Single Phase Full Converter
   
 Other experiments that are planned to be developed
-    1. Buck Converter
-    2. AC Voltage Controller
-    3. Voltage and Current Commutation of SCR
+  1. Buck Converter
+  2. AC Voltage Controller
+  3. Voltage and Current Commutation of SCR
   

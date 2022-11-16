@@ -38,7 +38,7 @@ alpha.oninput=()=>{
 let chart=null;
 
 function showGraph(){
-
+    console.log('Hi');
     let sineValues=[];
     let labelValue=[];
     let theta=0;
@@ -106,18 +106,18 @@ function showGraph(){
     });
 }
 
-function showOutput(){
-    console.log(verification);
-    if(count===7 && verification===true){
-        showGraph();
-        output.classList.remove("hide");
-        simulation.classList.add("hide");
-    }else{
-        alert("Your Circuit is wrong");
-        location.reload();
-    }
+// function showOutput(){
+//     console.log(verification);
+//     if(count===7 && verification===true){
+//         showGraph();
+//         output.classList.remove("hide");
+//         simulation.classList.add("hide");
+//     }else{
+//         alert("Your Circuit is wrong");
+//         location.reload();
+//     }
     
-}
+// }
 
 function showCircuit(){
     chart.destroy();

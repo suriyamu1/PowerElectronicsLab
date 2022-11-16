@@ -46,6 +46,7 @@ function drop(ev) {
   ev.target.style.border = "none";
   ev.target.innerHTML =null;
   ev.target.appendChild(img);
+  console.log(items);
 }
 
 
@@ -177,10 +178,83 @@ function verify_circuit() {
     }
   }
 
+  // upto here
+
   // Verify firing angle and scr combo together
+  let scr_count = 0, diode_count = 0;
+  for(i=1; i<=4; i++) {
+    if(items[i]=='scr')
+      scr_count++;
+    else if(items[i]=='diode')
+      diode_count++;
+  }
+  console.log("scr count = "+scr_count);
+  console.log("diode count = "+diode_count);
 
+  if(scr_count !== 2 || diode_count !== 2) {
+    alert('1-Phase Semi converter should have 2 SCRs and 2 diodes.');
+    location.reload(); return;
+  }
 
-  showGraph();
-  output.classList.remove("hide");
-  simulation.classList.add("hide");
+  if(items[1]=='scr' && items[4]=='scr') {
+    alert('In this circuit, both the SCRs will be forward biased in positive half cycle and both SCRs will be reverse biased in negative half cycle. So we can only control the positive half cycle. Hence this is not a semi-converter circuit');
+    location.reload(); return;
+  }
+
+  if(items[2]=='scr' && items[3]=='scr') {
+    alert('In this circuit, both the SCRs will be reverse biased in positive half cycle and both SCRs will be forward biased in negative half cycle. So we can only control the negative half cycle. Hence this is not a semi-converter circuit');
+    location.reload(); return;
+  }
+
+  if(items[1]=='scr' && items[2]=='scr' && items[3]=='diode' && items[4]=='diode') {
+    if(components[1].value=='a' && components[2].value == '180 + a') {
+      showGraph();
+      output.classList.remove("hide");
+      simulation.classList.add("hide");
+    }
+    else {
+      alert('The components are connected correctly but firing angles are not given correctly. Please retry');
+      return;
+    }
+  }
+
+  if(items[3]=='scr' && items[4]=='scr' && items[1]=='diode' && items[1]=='diode') {
+    if(components[4].value=='a' && components[3].value == '180 + a') {
+      showGraph();
+      output.classList.remove("hide");
+      simulation.classList.add("hide");
+    }
+    else {
+      alert('The components are connected correctly but firing angles are not given correctly. Please retry');
+      return;
+    }
+  }
+
+  if(items[1]=='scr' && items[3]=='scr' && items[2]=='diode' && items[4]=='diode') {
+    if(components[1].value=='a' && components[3].value == '180 + a') {
+      showGraph();
+      output.classList.remove("hide");
+      simulation.classList.add("hide");
+    }
+    else {
+      alert('The components are connected correctly but firing angles are not given correctly. Please retry');
+      return;
+    }
+  }
+
+  if(items[2]=='scr' && items[4]=='scr' && items[1]=='diode' && items[3]=='diode') {
+    if(components[4].value=='a' && components[2].value == '180 + a') {
+      showGraph();
+      output.classList.remove("hide");
+      simulation.classList.add("hide");
+    }
+    else {
+      alert('The components are connected correctly but firing angles are not given correctly. Please retry');
+      return;
+    }
+  }
+
+  // showGraph();
+  // output.classList.remove("hide");
+  // simulation.classList.add("hide");
 }

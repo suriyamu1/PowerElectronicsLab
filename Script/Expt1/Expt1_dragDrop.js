@@ -35,13 +35,12 @@ function drop(ev) {
   let img = document.createElement('img');
   let dropId=ev.target.id;
   if(dropId==="5" && (dragId==="miv" || dragId==="mcv" || dragId==="rl_load" || dragId==="rload")){
-    dragId = dragId+"-h";
-    
+    dragId = dragId+"-h"; 
   }else if((dropId==="6" || dropId==="7") && (dragId==="mca" || dragId=="mia")){
     dragId=dragId+"-v";
   }
   items[dropId] = dragId;
-  console.log(items);
+  // console.log(items);
   img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.PNG`;
   ev.target.style.border = "none";
   ev.target.innerHTML =null;
@@ -253,7 +252,6 @@ function verify_circuit() {
       return;
     }
   }
-
   // showGraph();
   // output.classList.remove("hide");
   // simulation.classList.add("hide");

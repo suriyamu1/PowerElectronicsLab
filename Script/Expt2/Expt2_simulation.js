@@ -4,14 +4,7 @@ const alpha = document.getElementById("alpha");
 const angleDisplay = document.getElementById("angleDisplay");
 const avgDisplay = document.getElementById("avgDisplay");
 const rmsDisplay = document.getElementById("rmsDisplay");
-// const component1 = document.getElementById("component1");
-// const component2 = document.getElementById("component2");
-// const component3 = document.getElementById("component3");
-// const component4 = document.getElementById("component4");
-
 let angle=0;
-
-
 
 const data ={
     firingangle :angle,
@@ -34,17 +27,16 @@ alpha.oninput=()=>{
     angleDisplay.innerHTML=angle+"&#176;";
     let avg = ((2*data.voltage)/Math.PI)*(calculateCos(angle));
     avgDisplay.innerHTML=avg.toPrecision(5)+" V";
-    console.log(avg);
+    // console.log(avg);
     let rms = (data.voltage/Math.sqrt(2*Math.PI))*Math.sqrt(Math.PI-( (Math.PI / 180) * angle)+(calculateSine(angle)/2));
     rmsDisplay.innerHTML=rms.toPrecision(5)+" V";
-    console.log(rms);
+    // console.log(rms);
     showGraph();
 }
 
 let chart=null;
 
 function showGraph(){
-
     let sineValues=[];
     let labelValue=[];
     let theta=0;
@@ -129,23 +121,8 @@ else{
     });
 }
 
-function showOutput(){
-    console.log(verification);
-    // console.log(component1.value);
-    if(count===7 && verification===true){
-        showGraph();
-        output.classList.remove("hide");
-        simulation.classList.add("hide");
-    }else{
-        alert("Your Circuit is wrong");
-        location.reload();
-    }
-    
-}
-
 function showCircuit(){
     chart.destroy();
     output.classList.add("hide");
     simulation.classList.remove("hide");
 }
-

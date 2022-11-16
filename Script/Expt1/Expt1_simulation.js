@@ -4,7 +4,6 @@ const alpha = document.getElementById("alpha");
 const angleDisplay = document.getElementById("angleDisplay");
 const avgDisplay = document.getElementById("avgDisplay");
 const rmsDisplay = document.getElementById("rmsDisplay");
-
 let angle=0;
 
 const data ={
@@ -109,4 +108,3 @@ function showCircuit(){
     output.classList.add("hide");
     simulation.classList.remove("hide");
 }
-

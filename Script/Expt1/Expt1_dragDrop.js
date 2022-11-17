@@ -45,7 +45,6 @@ function drop(ev) {
   ev.target.style.border = "none";
   ev.target.innerHTML =null;
   ev.target.appendChild(img);
-  console.log(items);
 }
 
 

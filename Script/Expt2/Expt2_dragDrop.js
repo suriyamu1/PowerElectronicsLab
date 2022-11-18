@@ -35,9 +35,9 @@ function drop(ev) {
   let img = document.createElement('img');
   let dropId=ev.target.id;
   if(dropId==="5" && (dragId==="miv" || dragId==="mcv" || dragId==="rl_load" || dragId==="rload")){
-    dragId = dragId+"-h"; // id-5 => ammeter  //if mcv,mia,miv are dropped, insert the horizontal img of that component
+    dragId = dragId+"_h"; // id-5 => ammeter  //if mcv,mia,miv are dropped, insert the horizontal img of that component
   }else if((dropId==="6" || dropId==="7") && (dragId==="mca" || dragId=="mia")){
-    dragId=dragId+"-v"; //id-6 and id-7 => load or mcv // so if mi,mca are dropped there, insert their vertical images
+    dragId=dragId+"_v"; //id-6 and id-7 => load or mcv // so if mi,mca are dropped there, insert their vertical images
   }
   items[dropId] = dragId;
   // console.log(items);

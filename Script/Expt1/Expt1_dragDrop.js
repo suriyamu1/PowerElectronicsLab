@@ -35,9 +35,9 @@ function drop(ev) {
   let img = document.createElement('img');
   let dropId=ev.target.id;
   if(dropId==="5" && (dragId==="miv" || dragId==="mcv" || dragId==="rl_load" || dragId==="rload")){
-    dragId = dragId+"-h"; 
+    dragId = dragId+"_h"; 
   }else if((dropId==="6" || dropId==="7") && (dragId==="mca" || dragId=="mia")){
-    dragId=dragId+"-v";
+    dragId=dragId+"_v";
   }
   items[dropId] = dragId;
   // console.log(items);

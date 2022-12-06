@@ -6,7 +6,7 @@ const mca = document.getElementById("mca");
 const mcv = document.getElementById("mcv");
 const mia = document.getElementById("mia");
 const miv = document.getElementById("miv");
-
+let loadType = null;
 let components = []; //to store HTML DOM of the scrs and diodes
 let items = []; // to store dropId of components in positions 1,2,3,4,5,6,7
 
@@ -23,7 +23,10 @@ ev.preventDefault();
 scr.ondragstart      = (ev)=> { dragId = ev.target.id; }
 diode.ondragstart    = (ev)=> { dragId = ev.target.id; }
 rload.ondragstart    = (ev)=> { dragId = ev.target.id; }
-rl_load.ondragstart  = (ev)=> { dragId = ev.target.id; }
+rl_load.ondragstart  = (ev)=> {
+  dragId = ev.target.id;
+  loadType = "rl_load" 
+}
 mca.ondragstart      = (ev)=> { dragId = ev.target.id; }
 mcv.ondragstart      = (ev)=> { dragId = ev.target.id; }
 mia.ondragstart      = (ev)=> { dragId = ev.target.id; }
@@ -91,7 +94,7 @@ function verify_circuit() {
   else if(items[5]==='mca') {
       //ckt is correct upto now
   }
-  else if(items[5]==='mcv-h' || items[5]==='miv-h') {
+  else if(items[5]==='mcv_h' || items[5]==='miv_h') {
     alert('Voltmeter must not be connected in series with the load and supply.');
     location.reload();
     return;
@@ -101,7 +104,7 @@ function verify_circuit() {
     location.reload();
     return;
   }
-  else if(items[5] === 'rload-h' || items[5] === 'rl_load-h') {
+  else if(items[5] === 'rload_h' || items[5] === 'rl_load_h') {
     alert('The load is connected in the wrong position. To view the output voltage waveform, load must be connected parallel to the CRO.');
     location.reload();
     return;
@@ -127,7 +130,7 @@ function verify_circuit() {
       alert('Diode connected across the load acts as freewheeling diode. Semi converter does not need freewheeling diode.');
       location.reload(); return;
     }
-    else if(items[i]=='mca-v' || items[7]=='mia-v') {
+    else if(items[i]=='mca_v' || items[7]=='mia_v') {
       alert('Ammeter should not be connected in parallel with the load. It should only be connected in series!');
       location.reload(); return;
     }

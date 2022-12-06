@@ -45,7 +45,7 @@ function drop(ev) {
     dragId=dragId+"_v"; //id-6 and id-7 => load or mcv // so if mi,mca are dropped there, insert their vertical images
   }
   items[dropId] = dragId;
-  // console.log(items);
+  console.log(items);
   if(png_images.includes(dragId))
     img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.png`;
   else

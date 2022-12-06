@@ -41,7 +41,7 @@ function drop(ev) {
   }
   items[dropId] = dragId;
   // console.log(items);
-  img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.PNG`;
+  img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.png`;
   ev.target.style.border = "none";
   ev.target.innerHTML =null;
   ev.target.appendChild(img);

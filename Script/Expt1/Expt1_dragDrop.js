@@ -10,6 +10,9 @@ const miv = document.getElementById("miv");
 let components = []; //to store HTML DOM of the scrs and diodes
 let items = []; // to store dropId of components in positions 1,2,3,4,5,6,7
 
+//lookup table
+const png_images = ["diode","mca_v","mcv_h","mia_v","miv_h","rl_load_h","rload_h"]; //draganddropImages folder
+
 for(i=1; i<=4; i++) {
   components[i] = document.getElementById("component"+i);
 }
@@ -41,7 +44,10 @@ function drop(ev) {
   }
   items[dropId] = dragId;
   // console.log(items);
-  img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.png`;
+  if(png_images.includes(dragId))
+    img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.png`;
+  else
+    img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.PNG`;
   ev.target.style.border = "none";
   ev.target.innerHTML =null;
   ev.target.appendChild(img);

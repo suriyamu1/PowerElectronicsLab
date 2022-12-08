@@ -63,17 +63,12 @@ function verify_circuit() {
       alert('Ammeter is connected in wrong position. Ammeter must be in series with the load.');
       location.reload(); return;
     }
-  }
 
-  for(i=1; i<=4; i++) {
     if(items[i]=='mcv' || items[i]=='miv') {
       alert('Voltmeter is connected in wrong position. Voltmeter must be in parallel to the load and CRO.');
-      location.reload();
-      return;
+      location.reload(); return;
     }
-  }
 
-  for(i=1; i<=4; i++) {
     if(items[i]=='rload' || items[i]=='rl_load') {
       alert('Load is connected in the wrong position.');
       location.reload();

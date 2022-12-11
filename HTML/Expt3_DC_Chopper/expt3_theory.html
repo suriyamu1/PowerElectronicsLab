@@ -43,7 +43,7 @@
                     <ul><a href="#" id="current_link">Theory</a></ul>
                     <ul><a href="#">Pre-Quiz</a></ul>
                     <ul><a href="#">Circuit Design</a></ul>
-                    <ul><a href="#">Simulation</a></ul>
+                    <ul><a href="expt3_simulation.html">Simulation</a></ul>
                     <ul><a href="#">Post-Quiz</a></ul>
                     <ul><a href="#">Feedback</a></ul>
                 </li>
@@ -63,10 +63,9 @@
 
             <div class="infoBox glassmorphism">
                 <h3>Simple Step Down Chopper (with resistive load)</h3>
-                <img src="../../Assets/Images/DC_chopper/dummy_image.png" alt="" width="80%">
+                <img src="../../Assets/Images/DC_chopper/dummy_image.png" alt="Simple DC Chopper diagram and waveform image" width="80%">
                 <ul>
-                    <li>A chopper is a <b>high speed on/off semiconductor switches</b>.</li>
-                    <li>It connects source to load and disconnects the load from source at a fast speed.</li>
+                    <li>A chopper is a <b>high speed on/off semiconductor switch</b>. It connects source to load and disconnects the load from source at a fast speed.</li>
                     <li>These semiconductor switching devices can be generally represented by a switch (<b>sw</b>) with an arrow as shown.</li>
                     <li>When the switch is on, current flows in the direction of arrow. When the switch is off, no current can flow.</li>
                     <li>In this manner, a <b>chopped load voltage (V<sub>o</sub>)</b> as shown, is obtained from a constant DC supply of magnitude (V<sub>s</sub>)</li>
@@ -74,90 +73,152 @@
             </div>
 
             <div class="infoBox glassmorphism">
-                <h3>Operating Principle of Chopper</h3>
+                <h3>Operating Principle of Step-down Chopper</h3>
                 
                 <ul>
                     <li>The switch is being operated with a <b>duty cycle D</b></li>
                     <li>For a constant frequency, the duty cycle is defined as the ratio of the switch on time to the sum of switch on and switch off times.</li>
-                    <img src="../../Assets/Images/DC_chopper/dummy_image.png" alt="" width="30%" height="75px">
+                    <img src="../../Assets/Images/DC_chopper/dummy_image.png" alt="Duty cycle formula" width="30%" height="75px">
+                    <li>Where T is the time period. T = 1/f (f is the switching frequency)</li>
+                    <li>The average value of the output voltage Vo = D * Vs</li>
+                    <li>The duty cycle 0 &lt;= D &lt;= 1</li>
+                    <li>Hence the output (avg) voltage is always less than the input voltage. That is why this chopper is called as step-down chopper. </li>
+                    <img src="" alt="chopper with motor load and freewheeling diode">
+                    <img src="" alt="voltage and current waveforms"><!-- Current is non-zero when switch is off -->
+                    <li>In resistive loaad, When sw is off, Load current becomes zero</li>
+                    <li>In RL or RLE load, when sw is off, the inductor does not allows the load current to become zero. The inductor supplies current and it flows via the freewheeling diode.. causing the voltage across load (Vo = Vdiode) to be zero</li>
                 </ul>
-            </div>
-
-            <div class="accordion">
-                <div class="contentBox">
-                    <div class="label">Modes of Operation of SCR</div>
-                    <div class="content">
-                        <ul>
-                            <li>The following are the conditions for an SCR to conduct,</li>
-                            <ol>
-                                <li>The SCR must be forward biased (V<sub>AK</sub> > 0.6V)</li>
-                                <li>The gate pulse should be fired</li>
-                            </ol>
-                            <br>
-                            <li>Based on the above conditions, we have <b>three modes</b> of operation</li>
-                            <ol>
-                                <li><b>Forward Blocking Mode:</b> SCR is forward biased but gate pulse is not applied.</li>
-                                <li><b>Forward Conduction Mode:</b> SCR is forward biased and gate pulse was applied.</li>
-                                <li><b>Reverse Blocking Mode:</b> SCR is reverse biased.</li>
-                            </ol>
-                            <br>
-                            <li>SCR only conducts in Forward Conduction Mode.</li>
-                            <li>SCR never conducts in Reverse blocking mode regardless of whether the gate pulse is applied or not.</li>
-                        </ul>
-                    </div> 
-                </div>
-
-                <div class="contentBox">
-                    <div class="label">Commutation of SCR</div>
-                    <div class="content">
-                        <ul>
-                            <li>The process of turning off the SCR is called commutation.</li>
-                            <li>SCR cannot be turned OFF using the gate terminal.</li>
-                            <li>To turn off the SCR, the anode current must be reduced below the <b>holding current</b> of the SCR or <b>commutation voltage</b> must be applied across the SCR.</li>
-                            <!-- <li>The reverse voltage which turns OFF the SCR is called <b>commutation voltage</b>.</li> -->
-                            <br>
-                            <li>There are two types of commutation</li>
-                            <ol>
-                                <li>Natural Commutation</li>
-                                <li>Forced Commutation</li>
-                            </ol>
-                        </ul>
-                    </div> 
-                </div>
             </div>
 
             <div class="infoBox glassmorphism">
-                <h3>Natural Commutation</h3>
+                <h3>Need for a freewheeling diode in chopper circuit</h3>
+
                 <ul>
-                    <li>The source of commutation voltage is the AC voltage source itself.</li>
-                    <li>This method is also called as <b>Source Commutation</b> or <b>AC Line Commutation</b>.</li>
-                    <li>As the current in the AC circuit goes through the <b>natural zero</b>, a reverse voltage is applied immediately across the SCR</li>
-                    <li>For successful natural commutation, the turn OFF time must be less than the duration of half cycle of the supply.</li>
+                    <li>It is an anti-parallel diode connected across the load to provide a path for a continuous inductor current flow when the switch is in off state</li>
+                    <li>A freewheeling diode ensures continuous conduction mode if the load current never reaches zero and the load time constant (tau) = L/R is much greater than the period T. </li>
+                    <li>JAVASCRIPT code for changing images with button click event</li>
                 </ul>
             </div>
 
+            <div class="infoBox glassmorphism">
+                <h3>Quadrant of Operation of the Chopper</h3>
+
+                <ul>
+                    <li>The step-down chopper provides positive voltage and positive current at all times. So this is a first quadrant chopper</li>
+                    <img src="" alt="quadrants image">
+                    <img src="" alt="votlage and curretn waveforms">
+                </ul>
+            </div>
+
+            <div class="infoBox glassmorphism">
+                <h3>Differences between step down and step up chopper</h3>
+
+                Table
+                <ul>
+                    <li>Circuit diagrams</li>
+                    <li>Output voltage equations</li>
+                    <li>When switch is on</li>
+                    <li>When switch is off</li>
+                    <li>Applications</li>
+                    <li>Buck and boost converter => chopper with LC filter</li>
+
+                    <br>
+                    <br>
+                    <li>Buck Converter: It is a step-down DC-DC converter. It is a step-down chopper with a LC filter.</li>
+                </ul>
+            </div>
+
+            <h1>Additional Theory</h1>
+
+            
             <div class="accordion">
+
                 <div class="contentBox">
-                    <div class="label">Forced Commutation</div>
+                    <div class="label">Advantages of DC Chopper</div>
                     <div class="content">
                         <ul>
-                            <li>In case of DC circuits, there is <b>no natural current zero</b> to turn OFF the SCR.</li>
-                            <li>In this method, forward current must be reduced below holding current or reverse voltage voltage must be applied across the SCR with an external commutation circuit.</li>
+                            <li>HIGH OPERATING FREQUENCIES</li>
+                            <li>Choppers can operate at high switching frequencies (KHz to MHz). The higher the operating frequency, the smaller and lighter the transformers, filter inductor and capacitors.</li>
+                            <li>High operating frequencies allow for achieving a faster dynamic response to rapid changes in the load current and/or in input voltage.</li>
+                            <br>
+                            <li>Low component count</li>
+                            <li>Choppers can achieve high conversion efficiency</li>
+                            <li>REASON: Because there is very small power loss</li>
+                            <li>In off state, zero current through switch -> P = V*I = V*0 = 0</li>
+                            <li>In on state, very low voltage across the switch (in the range 0.6V) so P = V*I P is low</li>
+                            <li>Relatively simple control (stepless variation of output voltage by controlling duty cycle of semiconductor switch)</li>
+
                         </ul>    
                     </div> 
                 </div>
-            </div>
 
-            <div class="infoBox glassmorphism">
-                <h3>Single Phase Semi Converter</h3>
-                <ul>
-                    <li>This circuit utilises two SCR and two diodes.</li>
-                    <li>SCRs are controlled rectifers and diodes are uncontrolled rectifiers. That is why semi converter provides limited control over output voltage and is known as semi-converter.</li>
-                    <li>Semi converters are single quadrant converters</li>
-                    <li>When inductor in the load discharges, negative output voltage will occur. The diodes in the circuit provide flywheeling path for the voltage stored in the inductor. Hence negative output voltage is not possible.</li>
-                    <li>Diodes and SCRs will not allow reverse current, so negative current is not possible in semi-converter circuit</li>
-                    <li>Since semi converter can only provide <b>positive voltage and positive current</b>, it always operates in <b>First Quadrant</b></li>
-                </ul>
+                <div class="contentBox">
+                    <div class="label">Disadvantages of DC Chopper</div>
+                    <div class="content">
+                        <ul>
+                            <li>PWM rectangular voltage and current waveforms can cause turn-on and turn-off losses in semiconductor devices, which limit their practical operating frequencies to the range of 100 KHz.</li>
+                            <li>Rectangular waveforms generate Electromagnetic Interference (EMI)</li>
+                        </ul>    
+                    </div> 
+                </div>
+
+                <div class="contentBox">
+                    <div class="label">Modes of Conduction</div>
+                    <div class="content">
+                        <ul>
+                            <li>The DC-DC converters can operate in two distinct modes with respect to the inductor current</li>
+                            <br><br>
+                            <li>1. Continuous Conduction Mode (CCM)</li>
+                            <img src="" alt="ccm current waveform">
+                            <li>The state of the converter in which the inductor current is never zero for any period of time is called the continuous conduction mode (CCM).</li>
+                            <li>When the switch sw is off, the freewheeling diode conducts to support an uninterrupted current in the inductor.</li>
+                            <li>When the switch sw is on, the freewheeling diode is reverse biased.</li>
+                            <li>CCM is prefered for high efficiency and good utilization of semiconductor switches and passive components.</li>
+                            <br><br>
+                            <li>2. Discontinuous Conduction Mode (DCM)</li>
+                            <li>When the average value of the output current is low (high R) and/or the switching frequency f is low, the converter may enter the discontinuous conduction mode (DCM)</li>
+                            <li>In DCM, the inductor current is zero during the portion of the switching period.</li>
+                            <li></li>
+                            <br>
+                            <li>For a buck converter, the value of the filter inductance that determines the boundary between CCM and DCM is given by Lb = (1-D)R/2f</li>
+                        </ul>    
+                    </div> 
+                </div> 
+
+                <div class="contentBox">
+                    <div class="label">Control Strategies</div>
+                    <div class="content">
+                        <ul>
+                            <li>1. Constant Frequency Scheme (PWM Scheme)</li>
+                            <li>2. Variable Frequency Scheme (Frequency Modulation Scheme)</li>
+                        </ul>    
+                    </div> 
+                </div> 
+
+                <div class="contentBox">
+                    <div class="label">Applications of DC-DC converters</div>
+                    <div class="content">
+                        <ul>
+                            <li>Step-down choppers are most used in high-performance dc drives, for example, electric traction, electric vehicles, etc</li>
+                            <li>Step-up choppers are primarily used in radar and ignition systems.</li>
+                            <li>The dc-dc converters are building blocks of distributed power supply systems in which a common dc bus voltage is converted to various other votlages according to requirements of particular loads. Such distributed systems are common in computer and telecommunication equipment.</li>
+                            <li>Buck boost converters are used in dedicated battery chargers.</li>
+                            <li>Boost converters are used in power factor correction applications.</li>
+                        </ul>    
+                    </div> 
+                </div>
+
+                <div class="contentBox">
+                    <div class="label">Buck Boost Converter</div>
+                    <div class="content">
+                        <ul>
+                            <li>Circuit diagram</li>
+                            <li>Operation: D less than 0.5 buck, else boost</li>
+                            <li>Expression for output voltage</li>
+                            <li>Applications: In solar and battery storage (explain reason)</li>
+                        </ul>    
+                    </div> 
+                </div>
             </div>
         </section>
         <script>

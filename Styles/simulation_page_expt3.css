@@ -58,13 +58,12 @@
       position: fixed;
       top:25vh;
       left:26vw;
-      border: 1px solid black;
 }
 
 .circuit{
     height:469.44px;
     width:864px;
-    border: 1px solid black;
+    border: 1px solid white;
     position: relative;
 }
 
@@ -100,7 +99,40 @@
     top:94px;
     border: 1px dashed red;
     height: 188px;
-    width: 107.5px;
+    width: 106px;
+}
+
+.voltmeter{
+    position: absolute;
+    top:94px;
+    right:142px;
+    height: 152.75px;
+    border: 1px dashed red;
+}
+
+.diode{
+    position: absolute;
+    top:94px;
+    right:270px;
+    height: 152.75px;
+    border: 1px dashed red;
+}
+
+.load{
+    position: absolute;
+    top:94px;
+    right:370px;
+    height: 152.75px;
+    border: 1px dashed red;
+}
+
+.transistor{
+    position: absolute;
+    top:289px;
+    left:399px;
+    height:120px;
+    width: 102px;
+    border: 1px dashed red;
 }
 
 .cro{

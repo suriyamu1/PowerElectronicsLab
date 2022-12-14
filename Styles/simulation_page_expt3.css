@@ -1,0 +1,171 @@
+.simulation{
+    width: 100vw;;
+    display: flex;
+    flex-direction: row;
+}
+.left {
+    height: 100vh;
+    width: 22vw;
+    padding-top: 19.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.library{
+    margin:1vh 1vw;
+    padding: 5% 0%;
+}
+
+.library h3 {
+    text-align: center;
+    color: darkblue;
+    font-variant: small-caps;
+}
+
+.library{  /*glassmorphism code*/
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 20px;
+    backdrop-filter: blur(12px) saturate(82%);
+    -webkit-backdrop-filter: blur(12px) saturate(82%);
+    background-color: rgba(138, 192, 243, 0.238);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.pair div{
+    height: 60px;
+    width: 60px;
+    border: 1px solid blueviolet;
+    margin: 10px;
+}
+
+.pair{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pair img{
+    height: 100%;
+    width: 100%;
+    /* object-fit: cover; */
+}
+
+.main{
+      width: 75vw;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      position: fixed;
+      top:25vh;
+      left:26vw;
+      border: 1px solid black;
+}
+
+.circuit{
+    height:469.44px;
+    width:864px;
+    border: 1px solid black;
+    position: relative;
+}
+
+.circuit img{
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.topLeft{
+    position: absolute;
+    width: 161px;
+    height: 94px;
+}
+
+.ammeter{
+    position: absolute;
+    width: 161px;
+    height: 94px;
+    left:161px;
+    border: 1px dashed red;
+}
+
+.topRight{
+    position: absolute;
+    left:322px;
+    height: 94px;
+    width: 542px;
+}
+
+.DcSource{
+    position: absolute;
+    top:94px;
+    border: 1px dashed red;
+    height: 188px;
+    width: 107.5px;
+}
+
+.cro{
+    position: absolute;
+    right: 0;
+    height: 152.75px;
+    width: 103px;
+    top:94px;
+}
+
+.bottom{
+    position: absolute;
+    top:282px;
+    height:188px;
+    width:399px;
+}
+
+.bottomRight{
+    position: absolute;
+    bottom: 0;
+    width: 103.5px;
+    height: 60px;
+    left:399px;
+}
+
+.middle{
+    position: absolute;
+    top:246.75px;
+    left: 402px;
+    height: 42.3px;
+    width: 462px;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+#output{
+    height:81vh;
+    width: 100vw;
+    position: relative;
+    top:19vh;
+    overflow: hidden;
+}
+
+.cancel{
+    font-size: larger;
+    color: red;
+    position: absolute;
+    right:5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.firingAngle{
+    position: absolute;
+    top:10vh;
+    right:50px;
+}
+
+#alpha{
+    margin-top:10px;
+    width: 300px;
+}

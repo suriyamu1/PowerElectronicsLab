@@ -43,7 +43,7 @@ function drop(ev) {
     dragId=dragId+"_v";
   }
   items[dropId] = dragId;
-  // console.log(items);
+  console.log(items);
   if(png_images.includes(dragId))
     img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.png`;
   else

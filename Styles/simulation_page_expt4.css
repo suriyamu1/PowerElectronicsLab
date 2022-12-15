@@ -1,0 +1,200 @@
+.simulation{
+    width: 100vw;;
+    display: flex;
+    flex-direction: row;
+}
+.left {
+    height: 100vh;
+    width: 22vw;
+    padding-top: 19.5vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.library{
+    margin:1vh 1vw;
+    padding: 5% 0%;
+}
+
+.library h3 {
+    text-align: center;
+    color: darkblue;
+    font-variant: small-caps;
+}
+
+.library{  /*glassmorphism code*/
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 20px;
+    backdrop-filter: blur(12px) saturate(82%);
+    -webkit-backdrop-filter: blur(12px) saturate(82%);
+    background-color: rgba(138, 192, 243, 0.238);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.pair div{
+    height: 60px;
+    width: 60px;
+    border: 1px solid blueviolet;
+    margin: 10px;
+}
+
+.pair{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.pair img{
+    height: 100%;
+    width: 100%;
+    /* object-fit: cover; */
+}
+
+.main{
+      width: 75vw;
+      display: flex;
+      justify-content:center;
+      align-items: center;
+      position: fixed;
+      top:25vh;
+      left:26vw;
+}
+
+.circuit{
+    height:469.44px;
+    width:864px;
+    border: 1px solid white;
+    position: relative;
+    border: 1px solid white;
+}
+
+.circuit img{
+    background-repeat: no-repeat;
+    height: 100%;
+    width: 100%;
+}
+
+.transformer{
+    position: absolute;
+    height: 100%;
+    width: 318.6px;
+}
+
+.bottom{
+    position: absolute;
+    bottom: 0;
+    left:318.6px;
+    width: 75.6px;
+    height: 258px;
+}
+
+.middle{
+    position: absolute;
+    left: 394.2px;
+    height: 99.9%;
+    width: 37.8px;
+}
+
+.bottomRight{
+    position: absolute;
+    bottom: 0;
+    left:432px;
+    width: 432px;
+    height: 105px;
+}
+
+.topRight{
+    position: absolute;
+    left:540px;
+    height: 200px;
+    width: 324px;
+}
+
+.cro{
+    position: absolute;
+    top:200px;
+    left:757px;
+    width: 108px;
+    height: 168.85px;
+}
+
+.voltmeter{
+    position: absolute;
+    top:200px;
+    left:648px;
+    width: 97.2px;
+    height: 168.84px;
+    border: 1px dashed red;
+}
+
+.load{
+    position:absolute;
+    top:200px;
+    left:541px;
+    width: 86.4px;
+    height: 168.91px;
+    border: 1px dashed red;
+}
+
+.ammeter{
+    position: absolute;
+    top:65px;
+    left:432px;
+    width: 108px;
+    height: 112.16px;
+    border: 1px dashed red;
+}
+
+.scr1{
+    position: absolute;
+    left:318.6px;
+    top:25px;
+    width:75.6px;
+    height: 74.45px;
+    border: 1px dashed red;
+}
+
+.scr2{
+   position: absolute;
+   left:318.6px;
+   top:134.5px;
+   width:75.6px;
+   height: 79.1px;
+   border: 1px dashed red;
+}
+
+.hide{
+    display: none;
+}
+
+.show{
+    display: block;
+}
+
+#output{
+    height:81vh;
+    width: 100vw;
+    position: relative;
+    top:19vh;
+    overflow: hidden;
+}
+
+.cancel{
+    font-size: larger;
+    color: red;
+    position: absolute;
+    right:5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.firingAngle{
+    position: absolute;
+    top:10vh;
+    right:50px;
+}
+
+#alpha{
+    margin-top:10px;
+    width: 300px;
+}

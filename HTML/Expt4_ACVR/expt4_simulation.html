@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../Styles/nav_bar.css">
+        <link rel="stylesheet" href="../../Styles/simulation_page_expt4.css">
+        <link rel="icon" type="image/x-icon" href="../../Assets/Images/TCE_logo.png">
+        <title>3. DC Chopper - Simulation</title>
+    </head>
+    <body>
+        <header>
+            <div class="college_logo_name">
+                <img src="../../Assets/Images/TCE_logo.png" alt="Logo" height="50px">
+                <h2>Thiagarajar College of Engineering<br>Department of EEE</h2>
+            </div>
+            
+            <div class="heading_virtual_labs">
+                <h1>Power Electronics Virtual Laboratory</h1>
+            </div>
+
+            <div class="nav_links">
+                <li>
+                    <ul><a href="../../index.html">Home</a></ul>
+                    <ul><a href="https://www.tce.edu/" target="_blank">About TCE</a></ul>
+                    <ul><a href="#">Contact</a></ul>
+                </li>
+            </div>
+            
+        </header>
+
+        <!-- Experiment Title -->
+        <section class="sub_navigation">
+            <div class="title">
+                <h1>
+                    DC Chopper Circuit
+                </h1>
+            </div>
+            <div class="main_div">
+                <div class="navigation">
+                    <li>
+                        <ul><a href="../Expt3_DC_Chopper/expt3_aim.html">Aim</a></ul>
+                        <ul><a href="../Expt3_DC_Chopper/expt3_theory.html">Theory</a></ul>
+                        <ul><a href="#">Pre-Quiz</a></ul>
+                        <ul><a href="#">Circuit Design</a></ul>
+                        <ul><a href="#"  id="current_link">Simulation</a></ul>
+                        <ul><a href="#">Post-Quiz</a></ul>
+                        <ul><a href="#">Feedback</a></ul>
+                    </li>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulation" class="simulation">
+            <div class="left">
+                <div class="library">
+                    <h3>Apparatus</h3>
+                    <div class="pair">
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/scr.PNG" alt="scr" draggable="true" id="scr">
+                        </div>
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/diode.png" alt="diode" draggable="true" id="diode">
+                        </div>
+                    </div>
+                    <div class="pair">
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/rload_h.png" alt="R_load" draggable="true" id="rload">
+                        </div>
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/rl_load_h.png" alt="RL_load" draggable="true" id="rl_load">
+                        </div>
+                    </div>
+                    <div class="pair">
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/mca.PNG" alt="MC_ammeter" draggable="true" id="mca">
+                        </div>
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/mcv_h.png" alt="MC_voltmeter" draggable="true" id="mcv">
+                        </div>
+                    </div>
+                    <div class="pair">   
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/mia.PNG" alt="MI_ammeter" draggable="true" id="mia">
+                        </div>
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/miv_h.png" alt="MI_voltmeter" draggable="true" id="miv">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- circuit diagram div     -->
+            <div class="main">
+                <div class="circuit" >
+                    <div class="transformer">
+                        <img src="../../Assets/Images/ACVR/transformer.png" alt="transformer">
+                    </div>
+                    <div class="bottom">
+                        <img src="../../Assets/Images/ACVR/bottom.png" alt="bottom">
+                    </div>
+                    <div class="middle">
+                        <img src="../../Assets/Images/ACVR/middle.png" alt="middle">
+                    </div>
+                    <div class="topRight">
+                        <img src="../../Assets/Images/ACVR/top_right.png" alt="top_right">
+                    </div>
+                    <div class="bottomRight">
+                        <img src="../../Assets/Images/ACVR/bottom_right.png" alt="bottom_right">
+                    </div>
+                    <div class="cro">
+                        <img src="../../Assets/Images/ACVR/cro.png" alt="cro">
+                    </div>
+                    <div class="scr1"></div>
+                    <div class="scr2"></div>
+                    <div class="ammeter"></div>
+                    <div class="voltmeter"></div>
+                    <div class="load"></div>
+                </div>
+            </div>
+        </section>
+
+        <section id="output" class="hide">
+            <span class="cancel" onclick="showCircuit()">X</span>
+            <div style="width:755px;height:600px;margin:10px;" class="graph">
+                <canvas id="waveform" height="600px" width="1000px">
+                </canvas>
+            </div>
+            <div class="firingAngle">
+                <h1>Firing Angle(&#945;) = <span id="angleDisplay"> 0&#176; </span></h1>
+                <input id="alpha" type="range" min="0" max="180" value="0">
+                <h1 style="margin-top:30px">Average voltage = <span id="avgDisplay"> 0 V </span></h1>
+                <h1 style="margin-top:30px">RMS voltage = <span id="rmsDisplay"> 0 V</span></h1>
+            </div>
+        </section>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"
+        integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="../../Script/Expt3/Expt3_dragDrop.js"></script>
+        <script src="../../Script/Expt3/Expt3_simulation.js"></script>
+    </body>
+</html>

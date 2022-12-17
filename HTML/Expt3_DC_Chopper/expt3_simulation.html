@@ -110,7 +110,7 @@
                         <img src="../../Assets/Images/DC_chopper/bottom_right.png" alt="bottom_right">
                     </div>
                     <div class="cro">
-                        <img src="../../Assets/Images/DC_chopper/cro.png" alt="cro">
+                        <img src="../../Assets/Images/DC_chopper/cro.png"  onclick="showGraph()" style="cursor:pointer;" alt="cro">
                     </div>
                     <div class="DcSource"></div>
                     <div class="ammeter"></div>
@@ -125,14 +125,22 @@
         <section id="output" class="hide">
             <span class="cancel" onclick="showCircuit()">X</span>
             <div style="width:755px;height:600px;margin:10px;" class="graph">
-                <canvas id="waveform" height="600px" width="1000px">
+                <canvas id="waveform1" height="600px" width="1000px">
                 </canvas>
             </div>
-            <div class="firingAngle">
-                <h1>Firing Angle(&#945;) = <span id="angleDisplay"> 0&#176; </span></h1>
-                <input id="alpha" type="range" min="0" max="180" value="0">
-                <h1 style="margin-top:30px">Average voltage = <span id="avgDisplay"> 0 V </span></h1>
-                <h1 style="margin-top:30px">RMS voltage = <span id="rmsDisplay"> 0 V</span></h1>
+            <div style="width:755px;height:600px;margin:10px;" class="graph">
+                <canvas id="waveform2" height="600px" width="1000px">
+                </canvas>
+            </div>
+            <div style="width:755px;height:600px;margin:10px;" class="graph">
+                <canvas id="waveform3" height="600px" width="1000px">
+                </canvas>
+            </div>
+            <div class="referenceVoltage">
+                <h1>Reference voltage = <span id="voltageDisplay"> 0 V; </span></h1>
+                <input id="reference" type="range" min="-12" max="12" value="0">
+                <!-- <h1 style="margin-top:30px">Average voltage = <span id="avgDisplay"> 0 V </span></h1>
+                <h1 style="margin-top:30px">RMS voltage = <span id="rmsDisplay"> 0 V</span></h1> -->
             </div>
         </section>
 

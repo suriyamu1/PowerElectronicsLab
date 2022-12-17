@@ -110,7 +110,7 @@
                         <img src="../../Assets/Images/ACVR/bottom_right.png" alt="bottom_right">
                     </div>
                     <div class="cro">
-                        <img src="../../Assets/Images/ACVR/cro.png" alt="cro">
+                        <img src="../../Assets/Images/ACVR/cro.png" onclick="showGraph()" style="cursor:pointer;" alt="cro">
                     </div>
                     <div class="scr1"></div>
                     <div class="scr2"></div>
@@ -128,8 +128,10 @@
                 </canvas>
             </div>
             <div class="firingAngle">
-                <h1>Firing Angle(&#945;) = <span id="angleDisplay"> 0&#176; </span></h1>
-                <input id="alpha" type="range" min="0" max="180" value="0">
+                <h1>Firing Angle 1(&#945;) = <span id="angleDisplay1"> 0&#176; </span></h1>
+                <input id="alpha1" type="range" min="0" max="180" value="0">
+                <h1>Firing Angle 2(&#945;) = <span id="angleDisplay2"> 0&#176; </span></h1>
+                <input id="alpha2" type="range" min="0" max="180" value="0">
                 <h1 style="margin-top:30px">Average voltage = <span id="avgDisplay"> 0 V </span></h1>
                 <h1 style="margin-top:30px">RMS voltage = <span id="rmsDisplay"> 0 V</span></h1>
             </div>
@@ -139,7 +141,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"
         integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="../../Script/Expt3/Expt3_dragDrop.js"></script>
-        <script src="../../Script/Expt3/Expt3_simulation.js"></script>
+        <script src="../../Script/Expt4/Expt4_dragDrop.js"></script>
+        <script src="../../Script/Expt4/Expt4_simulation.js"></script>
     </body>
 </html>

@@ -182,7 +182,7 @@
     width: 100vw;
     position: relative;
     top:19vh;
-    overflow: hidden;
+    overflow-x: hidden;
 }
 
 .cancel{
@@ -194,13 +194,13 @@
     margin-top: 10px;
 }
 
-.firingAngle{
+.referenceVoltage{
     position: absolute;
     top:10vh;
     right:50px;
 }
 
-#alpha{
+#reference{
     margin-top:10px;
     width: 300px;
 }

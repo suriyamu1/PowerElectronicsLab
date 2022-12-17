@@ -68,6 +68,16 @@
   font-size: 0.75rem;
   font-weight: 600;
 }
+.container .infoBox ol {
+  margin-left: 5%;
+}
+.container .infoBox ol li {
+  margin: 10px 0px;
+}
+.container .infoBox ol span {
+  color: blue;
+  font-weight: 600;
+}
 .container .accordion {
   width: 70%;
 }
@@ -142,4 +152,48 @@
   backdrop-filter: blur(3.5px);
   -webkit-backdrop-filter: blur(3.5px);
   border-radius: 20px;
+}
+
+#needForFreewheeling_div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+#needForFreewheeling_div #img_div {
+  width: 90%;
+  margin: 15px 0px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2% 0%;
+}
+#needForFreewheeling_div #img_div img {
+  width: 47%;
+  height: auto;
+}
+#needForFreewheeling_div #switching {
+  align-self: center;
+  border: none;
+  padding: 10px;
+  border-radius: 25px;
+  width: 40%;
+  background-color: #080aff;
+  box-shadow: 2px 2px 10px 1px rgba(26, 17, 255, 0.88);
+  transition: all ease-in-out 0.4s;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  color: whitesmoke;
+  font-weight: 800;
+}
+#needForFreewheeling_div #switching:hover {
+  background-image: linear-gradient(to left, #100258, #15037e, #1704a7, #1506d2, #080aff);
+  transition: all ease-in-out 0.4s;
+}
+#needForFreewheeling_div #explanationText {
+  height: 200px;
+  width: 90%;
+  padding: 15px 20px;
+  background-color: rgba(0, 0, 0, 0.1);
 }/*# sourceMappingURL=theory_page.css.map */

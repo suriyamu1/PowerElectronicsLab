@@ -57,18 +57,38 @@
                     <li>A chopper is a <b>static device</b> which converts fixed input voltage to variable output voltage.</li>
                     <li>A chopper can be thought as a <b>DC equivalent of an AC transformer</b> as it steps-down or steps-up DC voltage.</li>
                     <li>The switching device used for a chopper circuit can be power BJT, power MOSFET, GTO or force-commutated thyristors (commutation circuit is needed if thyristors are used).</li>
-                    <li>There are <b>2 types</b> of choppers, Step-down chopper and step-up chopper. (Step-down chopper is more common)</li>
+                    <li>A chopper is a <b>high speed on/off semiconductor switch</b>. It connects source to load and disconnects the load from source at a fast speed.</li>
+                    <li>There are <b>2 types</b> of choppers 
+                        <ol>
+                            <li>Step-down Chopper (more common)</li>
+                            <li>Step-up Chopper</li>
+                        </ol>
+                    </li>
                 </ul>
             </div>
 
             <div class="infoBox glassmorphism">
-                <h3>Simple Step Down Chopper (with resistive load)</h3>
-                <img src="../../Assets/Images/DC_chopper/dummy_image.png" alt="Simple DC Chopper diagram and waveform image" width="80%">
+                <h3>Step Down Chopper</h3>
+                
+                <p>By turning the switch ON and OFF periodically, the voltage source can be connected and disconnected periodically from the load. By this action,<b>chopped load voltage (V<sub>o</sub>)</b> as shown, is obtained from a constant DC supply of magnitude (V<sub>s</sub>)</p>
+                <br>
+                <p><b>Note: </b> The output voltage remains same for any type of load but the load current waveform will be different for different types of loads as explained below</p>
+                <br>
+                <h3>1) For a purely resistive load</h3>
+                <img src="../../Assets/Images/TheoryPage_Images/DC_Chopper/r_load_chopper.png" alt="" width="80%">
                 <ul>
-                    <li>A chopper is a <b>high speed on/off semiconductor switch</b>. It connects source to load and disconnects the load from source at a fast speed.</li>
-                    <li>These semiconductor switching devices can be generally represented by a switch (<b>sw</b>) with an arrow as shown.</li>
-                    <li>When the switch is on, current flows in the direction of arrow. When the switch is off, no current can flow.</li>
-                    <li>In this manner, a <b>chopped load voltage (V<sub>o</sub>)</b> as shown, is obtained from a constant DC supply of magnitude (V<sub>s</sub>)</li>
+                    <li>In a purely resistive load, load current only flows when the switch (sw) is ON. Load current is zero when the switch (sw) is closed. So load current waveform is similar to the voltage waveform.</li>
+                </ul>
+                <br>
+                
+                <h3>2) For RL or RLE loads</h3>
+                <img src="../../Assets/Images/TheoryPage_Images/DC_Chopper/motor_load_chopper.png" alt="" width="80%">
+                <ul>
+                    <li>In RL or RLE load, when sw is off, the inductor (L) does not allows the load current to become zero. </li>
+                    <li>The inductor supplies current when switch is OFF and the inductor current flows via the freewheeling diode.<br>This causes the voltage across load (V<sub>o</sub> = V<sub>diode</sub>) to be zero when the switch is OFF.</li>
+                    <li>Hence the load current is non-zero when the switch (sw) is OFF.</li>
+                    <li>In RL or RLE loads, a freewheeling diode is purposefully added to maintain the load current value as non-zero.</li>
+                    <li><b>Note:</b> A DC motor can be represented as an RLE load<br>(R - Armature resistance, L - Field inductance, E - Back emf)</li>
                 </ul>
             </div>
 
@@ -76,56 +96,60 @@
                 <h3>Operating Principle of Step-down Chopper</h3>
                 
                 <ul>
-                    <li>The switch is being operated with a <b>duty cycle D</b></li>
-                    <li>For a constant frequency, the duty cycle is defined as the ratio of the switch on time to the sum of switch on and switch off times.</li>
-                    <img src="../../Assets/Images/DC_chopper/dummy_image.png" alt="Duty cycle formula" width="30%" height="75px">
-                    <li>Where T is the time period. T = 1/f (f is the switching frequency)</li>
-                    <li>The average value of the output voltage Vo = D * Vs</li>
-                    <li>The duty cycle 0 &lt;= D &lt;= 1</li>
-                    <li>Hence the output (avg) voltage is always less than the input voltage. That is why this chopper is called as step-down chopper. </li>
-                    <img src="" alt="chopper with motor load and freewheeling diode">
-                    <img src="" alt="voltage and current waveforms"><!-- Current is non-zero when switch is off -->
-                    <li>In resistive loaad, When sw is off, Load current becomes zero</li>
-                    <li>In RL or RLE load, when sw is off, the inductor does not allows the load current to become zero. The inductor supplies current and it flows via the freewheeling diode.. causing the voltage across load (Vo = Vdiode) to be zero</li>
+                    <li>The switch (sw) is being operated with a <b>duty cycle D</b></li>
+                    <li>For a constant frequency, the duty cycle D is defined as the ratio of the switch on time to the sum of switch on and switch off times.</li>
+                    <img src="../../Assets/Images/TheoryPage_Images/DC_Chopper/duty_cycle_formula.jpg" alt="Duty cycle formula" height="75px">
+                    <li>T is the time period. <b>T = 1/f</b> (f is the switching frequency)</li>
+                    <li>The average value of the output voltage is, <b>V<sub>o(avg)</sub> = D * V<sub>s</sub></b></li>
+                    <li>Since <b>0 &#8804; D &#8804; 1</b>, the output voltage (V<sub>avg</sub>) is always less than the input voltage (V<sub>s</sub>).</li>
                 </ul>
             </div>
 
-            <div class="infoBox glassmorphism">
+            <div class="infoBox glassmorphism" id="needForFreewheeling_div">
                 <h3>Need for a freewheeling diode in chopper circuit</h3>
-
                 <ul>
                     <li>It is an anti-parallel diode connected across the load to provide a path for a continuous inductor current flow when the switch is in off state</li>
-                    <li>A freewheeling diode ensures continuous conduction mode if the load current never reaches zero and the load time constant (tau) = L/R is much greater than the period T. </li>
-                    <li>JAVASCRIPT code for changing images with button click event</li>
+                    <li>A freewheeling diode ensures continuous conduction mode if the load current never reaches zero and the load time constant, <b>&#964; = L/R</b> is much greater than the period T. </li>    
+                    <li>You can click on the button below to turn ON/turn OFF the switch and understand the significance of freewheeling diode.</li>
                 </ul>
+                <div id="img_div">
+                    <img src="../../Assets/Images/TheoryPage_Images/DC_Chopper/circuit_switching1.PNG" alt="" id="circuitImage">
+                    <img src="../../Assets/Images/TheoryPage_Images/DC_Chopper/waveform_switching1.PNG" alt="" height="250px" id="waveformImage">
+                </div>
+                
+                <div id="explanationText">
+                    <ul>
+                        <li><b>Switch:</b> Turned ON</li>
+                        <li><b>Diode:</b> Reverse biased (does not conducts)</li>
+                        <li>Load is directly connected to the source, so <b>Output voltage (V<sub>o</sub>) = Input voltage (V<sub>s</sub>)</b></li>
+                        <li>The <b>load current (I<sub>o</sub>) gradually increases</b> and charges the inductor (L) element in the load.</li>
+                    </ul>
+                </div>
+                <button id="switching" onclick="toggleSwitch()">Turn OFF the switch</button>
             </div>
 
             <div class="infoBox glassmorphism">
-                <h3>Quadrant of Operation of the Chopper</h3>
-
-                <ul>
-                    <li>The step-down chopper provides positive voltage and positive current at all times. So this is a first quadrant chopper</li>
-                    <img src="" alt="quadrants image">
-                    <img src="" alt="votlage and curretn waveforms">
-                </ul>
+                <h3>Advantages of DC Chopper</h3>
+                
+                <ol> 
+                    <li><span>Fast dynamic response: </span>High operating frequencies allow for achieving a faster dynamic response to rapid changes in the load current and/or in input voltage.</li>
+                    <li><span>High conversion efficiency:</span> Choppers have very low power loss.
+                        <br>When the switch is ON, voltage drop across the switch is almost zero (V<sub>diode</sub> = 0), so power loss (P<sub>loss</sub>) = V<sub>diode</sub>  * I<sub>load</sub> = 0
+                        <br>When the switch is OFF, no power is consumed by the load as well as by the chopper.
+                    </li>
+                    <li><span>Compact size: </span> Since choppers can operate at high switching frequencies, the smaller and lighter the transformers, filter inductor and capacitors.</li>
+                    <li><span>Simple and Smooth control: </span>Since <b>V<sub>o(avg)</sub> = D * V<sub>s</sub></b> and duty cycle of the switch can be adjusted steplessly by PWM pulse generator, the output voltage can be varied smoothly. </li>
+                    <li><span>Less maintainance required</span></li>
+                    <li><span>It is Cheaper</span></li>
+                </ol> 
             </div>
 
             <div class="infoBox glassmorphism">
-                <h3>Differences between step down and step up chopper</h3>
-
-                Table
-                <ul>
-                    <li>Circuit diagrams</li>
-                    <li>Output voltage equations</li>
-                    <li>When switch is on</li>
-                    <li>When switch is off</li>
-                    <li>Applications</li>
-                    <li>Buck and boost converter => chopper with LC filter</li>
-
-                    <br>
-                    <br>
-                    <li>Buck Converter: It is a step-down DC-DC converter. It is a step-down chopper with a LC filter.</li>
-                </ul>
+                <h3>Disadvantages of DC Chopper</h3>
+                <ol>
+                    <li>PWM rectangular voltage and current waveforms can cause <span>turn-on and turn-off losses</span> in semiconductor devices, which limit their practical operating frequencies to the range of 100 KHz.</li>
+                    <li>Rectangular waveforms generate <span>Electromagnetic Interference (EMI)</span></li>
+                </ol>
             </div>
 
             <h1>Additional Theory</h1>
@@ -134,35 +158,18 @@
             <div class="accordion">
 
                 <div class="contentBox">
-                    <div class="label">Advantages of DC Chopper</div>
-                    <div class="content">
-                        <ul>
-                            <li>HIGH OPERATING FREQUENCIES</li>
-                            <li>Choppers can operate at high switching frequencies (KHz to MHz). The higher the operating frequency, the smaller and lighter the transformers, filter inductor and capacitors.</li>
-                            <li>High operating frequencies allow for achieving a faster dynamic response to rapid changes in the load current and/or in input voltage.</li>
-                            <br>
-                            <li>Low component count</li>
-                            <li>Choppers can achieve high conversion efficiency</li>
-                            <li>REASON: Because there is very small power loss</li>
-                            <li>In off state, zero current through switch -> P = V*I = V*0 = 0</li>
-                            <li>In on state, very low voltage across the switch (in the range 0.6V) so P = V*I P is low</li>
-                            <li>Relatively simple control (stepless variation of output voltage by controlling duty cycle of semiconductor switch)</li>
 
-                        </ul>    
-                    </div> 
-                </div>
+                    <div class="contentBox">
+                        <div class="label">Quadrant of Operation</div>
+                        <div class="content">
+                            <ul>
+                                <li>The step-down chopper provides positive voltage and positive current at all times. So this is a first quadrant chopper</li>
+                                <img src="" alt="quadrants image">
+                                <img src="" alt="votlage and curretn waveforms">
+                            </ul>   
+                        </div> 
+                    </div>
 
-                <div class="contentBox">
-                    <div class="label">Disadvantages of DC Chopper</div>
-                    <div class="content">
-                        <ul>
-                            <li>PWM rectangular voltage and current waveforms can cause turn-on and turn-off losses in semiconductor devices, which limit their practical operating frequencies to the range of 100 KHz.</li>
-                            <li>Rectangular waveforms generate Electromagnetic Interference (EMI)</li>
-                        </ul>    
-                    </div> 
-                </div>
-
-                <div class="contentBox">
                     <div class="label">Modes of Conduction</div>
                     <div class="content">
                         <ul>
@@ -188,10 +195,10 @@
                 <div class="contentBox">
                     <div class="label">Control Strategies</div>
                     <div class="content">
-                        <ul>
-                            <li>1. Constant Frequency Scheme (PWM Scheme)</li>
-                            <li>2. Variable Frequency Scheme (Frequency Modulation Scheme)</li>
-                        </ul>    
+                        <ol>
+                            <li>Constant Frequency Scheme <span>(PWM Scheme)</span></li>
+                            <li>Variable Frequency Scheme <span>(Frequency Modulation Scheme)</span></li>
+                        </ol>    
                     </div> 
                 </div> 
 
@@ -205,6 +212,25 @@
                             <li>Buck boost converters are used in dedicated battery chargers.</li>
                             <li>Boost converters are used in power factor correction applications.</li>
                         </ul>    
+                    </div> 
+                </div>
+
+                <div class="contentBox">
+                    <div class="label">Buck Converter vs Boost Converter</div>
+                    <div class="content">
+                        Table
+                        <ul>
+                            <li>Circuit diagrams</li>
+                            <li>Output voltage equations</li>
+                            <li>When switch is on</li>
+                            <li>When switch is off</li>
+                            <li>Applications</li>
+                            <li>Buck and boost converter => chopper with LC filter</li>
+
+                            <br>
+                            <br>
+                            <li>Buck Converter: It is a step-down DC-DC converter. It is a step-down chopper with a LC filter.</li>
+                        </ul>  
                     </div> 
                 </div>
 
@@ -230,5 +256,6 @@
                 })
             }
         </script>
+        <script src="../../Script/Expt3/NeedForFreewheelingDiode.js"></script>
     </body>
 </html>

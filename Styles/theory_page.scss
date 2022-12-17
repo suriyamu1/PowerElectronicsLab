@@ -78,6 +78,19 @@
                 }
             }
         }
+
+        // for DC chopper theory page advantages box
+        ol {
+            margin-left: 5%;
+            li {
+                margin: 10px 0px;
+            }
+
+            span {
+                color: blue;
+                font-weight: 600;
+            }
+        }
     }
     .accordion {
         width: 70%;
@@ -170,4 +183,55 @@
     backdrop-filter: blur( 3.5px );
     -webkit-backdrop-filter: blur( 3.5px );
     border-radius: 20px;
+}
+
+// for DC chopper theory page
+#needForFreewheeling_div {
+    display: flex;
+    flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+
+    #img_div {
+        width: 90%;
+        margin: 15px 0px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 2% 0%;
+    
+        img {
+            width: 47%;
+            height: auto;
+        }
+    }
+
+    #switching {
+        align-self: center;
+        border: none;
+        padding: 10px;
+        border-radius: 25px;
+        width: 40%;
+        background-color: #080aff;
+        -webkit-box-shadow: 2px 2px 10px 1px rgba(26,17,255,0.88); 
+        box-shadow: 2px 2px 10px 1px rgba(26,17,255,0.88);
+        transition: all ease-in-out 0.4s;
+        margin-top: 15px;
+        margin-bottom: 20px;
+        cursor: pointer;
+        color: whitesmoke;
+        font-weight: 800;
+    }
+
+    #switching:hover {
+        background-image: linear-gradient(to left, #100258, #15037e, #1704a7, #1506d2, #080aff);
+        transition: all ease-in-out 0.4s;
+    }
+
+    #explanationText {
+        height: 200px;
+        width: 90%;
+        padding: 15px 20px;
+        background-color: rgba(0,0,0,0.1);
+    }
 }

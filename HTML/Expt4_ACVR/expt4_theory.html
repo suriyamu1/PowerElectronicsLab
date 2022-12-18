@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../Styles/nav_bar.css">
+        <link rel="stylesheet" href="../../Styles/theory_page.css">
+        <link rel="icon" type="image/x-icon" href="../../Assets/Images/TCE_logo.png">
+        <title>4. AC Voltage Controller - Theory</title>
+    </head>
+    <body>
+        <header>
+            <div class="college_logo_name">
+                <img src="../../Assets/Images/TCE_logo.png" alt="Logo" height="50px">
+                <h2>Thiagarajar College of Engineering<br>Department of EEE</h2>
+            </div>
+            
+            <div class="heading_virtual_labs">
+                <h1>Power Electronics Virtual Laboratory</h1>
+            </div>
+
+            <div class="nav_links">
+                <li>
+                    <ul><a href="../../index.html">Home</a></ul>
+                    <ul><a href="https://www.tce.edu/" target="_blank">About TCE</a></ul>
+                    <ul><a href="#">Contact</a></ul>
+                </li>
+            </div>
+            
+        </header>
+
+        <!-- Experiment Title -->
+        <section class="sub_navigation">
+            <div class="title">
+                <h1>AC Voltage Controller</h1>
+            </div>
+            <div class="navigation">
+                <li>
+                    <ul><a href="expt4_aim.html">Aim</a></ul>
+                    <ul><a href="#" id="current_link">Theory</a></ul>
+                    <ul><a href="#">Pre-Quiz</a></ul>
+                    <ul><a href="#">Circuit Design</a></ul>
+                    <ul><a href="expt4_simulation.html">Simulation</a></ul>
+                    <ul><a href="#">Post-Quiz</a></ul>
+                    <ul><a href="#">Feedback</a></ul>
+                </li>
+            </div>
+        </section>
+        <section class="container">
+
+            <div class="infoBox glassmorphism">
+                <h3>What is a Chopper?</h3>
+                <ul>
+                    <li>A chopper is a <b>static device</b> which converts fixed input voltage to variable output voltage.</li>
+                    <li>A chopper can be thought as a <b>DC equivalent of an AC transformer</b> as it steps-down or steps-up DC voltage.</li>
+                    <li>The switching device used for a chopper circuit can be power BJT, power MOSFET, GTO or force-commutated thyristors (commutation circuit is needed if thyristors are used).</li>
+                    <li>A chopper is a <b>high speed on/off semiconductor switch</b>. It connects source to load and disconnects the load from source at a fast speed.</li>
+                </ul>
+            </div>
+
+            <h1>Additional Theory</h1>
+
+            
+            <div class="accordion">
+
+                <div class="contentBox">
+                    <div class="label">Accordion</div>
+                    <div class="content">
+                        <ul>
+                            <li>The step-down chopper provides positive voltage and positive current at all times. So this is a first quadrant chopper</li>
+                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto veritatis incidunt nemo perspiciatis iusto eveniet debitis, quaerat ea fugiat laborum aperiam dolor, similique fugit sed?</li>
+                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quasi nesciunt perspiciatis dolore animi asperiores provident quo odio sunt fugit. Animi porro unde quod repudiandae hic eum dicta debitis delectus!</li>
+                        </ul>   
+                    </div> 
+                </div>
+
+            </div>
+        </section>
+        <script>
+            const accordion = document.getElementsByClassName('contentBox');
+
+            for(i = 0; i<accordion.length; i++) {
+                accordion[i].addEventListener('click', function() {
+                    this.classList.toggle('active')
+                })
+            }
+        </script>
+    </body>
+</html>

@@ -154,6 +154,12 @@
   border-radius: 20px;
 }
 
+.chopperDifferentLoads, .formula {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 #needForFreewheeling_div {
   display: flex;
   flex-direction: column;

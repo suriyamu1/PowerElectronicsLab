@@ -75,14 +75,18 @@
                 <p><b>Note: </b> The output voltage remains same for any type of load but the load current waveform will be different for different types of loads as explained below</p>
                 <br>
                 <h3>1) For a purely resistive load</h3>
-                <img src="../../Assets/Images/TheoryPage_Images/DC_Chopper/r_load_chopper.png" alt="" width="80%">
+                <div class="chopperDifferentLoads">
+                    <img src="../../Assets/Images/TheoryPage_Images/DC_Chopper/r_load_chopper.png" alt="" width="80%">
+                </div>
                 <ul>
                     <li>In a purely resistive load, load current only flows when the switch (sw) is ON. Load current is zero when the switch (sw) is closed. So load current waveform is similar to the voltage waveform.</li>
                 </ul>
                 <br>
                 
                 <h3>2) For RL or RLE loads</h3>
-                <img src="../../Assets/Images/TheoryPage_Images/DC_Chopper/motor_load_chopper.png" alt="" width="80%">
+                <div class="chopperDifferentLoads">
+                    <img src="../../Assets/Images/TheoryPage_Images/DC_Chopper/motor_load_chopper.png" alt="" width="80%">
+                </div>
                 <ul>
                     <li>In RL or RLE load, when sw is off, the inductor (L) does not allows the load current to become zero. </li>
                     <li>The inductor supplies current when switch is OFF and the inductor current flows via the freewheeling diode.<br>This causes the voltage across load (V<sub>o</sub> = V<sub>diode</sub>) to be zero when the switch is OFF.</li>
@@ -98,7 +102,9 @@
                 <ul>
                     <li>The switch (sw) is being operated with a <b>duty cycle D</b></li>
                     <li>For a constant frequency, the duty cycle D is defined as the ratio of the switch on time to the sum of switch on and switch off times.</li>
-                    <img src="../../Assets/Images/TheoryPage_Images/DC_Chopper/duty_cycle_formula.jpg" alt="Duty cycle formula" height="75px">
+                    <div class="formula">
+                        <img src="../../Assets/Images/TheoryPage_Images/DC_Chopper/duty_cycle_formula.jpg" alt="Duty cycle formula" height="75px">
+                    </div>
                     <li>T is the time period. <b>T = 1/f</b> (f is the switching frequency)</li>
                     <li>The average value of the output voltage is, <b>V<sub>o(avg)</sub> = D * V<sub>s</sub></b></li>
                     <li>Since <b>0 &#8804; D &#8804; 1</b>, the output voltage (V<sub>avg</sub>) is always less than the input voltage (V<sub>s</sub>).</li>
@@ -110,6 +116,7 @@
                 <ul>
                     <li>It is an anti-parallel diode connected across the load to provide a path for a continuous inductor current flow when the switch is in off state</li>
                     <li>A freewheeling diode ensures continuous conduction mode if the load current never reaches zero and the load time constant, <b>&#964; = L/R</b> is much greater than the period T. </li>    
+                    <li>A freewheeling diode is only required when RL or RLE loads are connected. When the load is purely resistive, the current will become zero (when switch is OFF) with or without freewheeling diode.</li>
                     <li>You can click on the button below to turn ON/turn OFF the switch and understand the significance of freewheeling diode.</li>
                 </ul>
                 <div id="img_div">
@@ -158,18 +165,17 @@
             <div class="accordion">
 
                 <div class="contentBox">
+                    <div class="label">Quadrant of Operation</div>
+                    <div class="content">
+                        <ul>
+                            <li>The step-down chopper provides positive voltage and positive current at all times. So this is a first quadrant chopper</li>
+                            <img src="" alt="quadrants image">
+                            <img src="" alt="votlage and curretn waveforms">
+                        </ul>   
+                    </div> 
+                </div>
 
-                    <div class="contentBox">
-                        <div class="label">Quadrant of Operation</div>
-                        <div class="content">
-                            <ul>
-                                <li>The step-down chopper provides positive voltage and positive current at all times. So this is a first quadrant chopper</li>
-                                <img src="" alt="quadrants image">
-                                <img src="" alt="votlage and curretn waveforms">
-                            </ul>   
-                        </div> 
-                    </div>
-
+                <div class="contentBox">
                     <div class="label">Modes of Conduction</div>
                     <div class="content">
                         <ul>
@@ -186,6 +192,7 @@
                             <li>When the average value of the output current is low (high R) and/or the switching frequency f is low, the converter may enter the discontinuous conduction mode (DCM)</li>
                             <li>In DCM, the inductor current is zero during the portion of the switching period.</li>
                             <li></li>
+                            <img src="" alt="current waveform for dcm">
                             <br>
                             <li>For a buck converter, the value of the filter inductance that determines the boundary between CCM and DCM is given by Lb = (1-D)R/2f</li>
                         </ul>    

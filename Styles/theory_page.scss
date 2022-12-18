@@ -185,7 +185,13 @@
     border-radius: 20px;
 }
 
-// for DC chopper theory page
+// ADDITIONAL Styling for DC chopper theory page
+.chopperDifferentLoads, .formula {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 #needForFreewheeling_div {
     display: flex;
     flex-direction: column;

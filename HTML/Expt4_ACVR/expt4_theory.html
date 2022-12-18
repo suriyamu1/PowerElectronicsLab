@@ -24,7 +24,8 @@
                 <li>
                     <ul><a href="../../index.html">Home</a></ul>
                     <ul><a href="https://www.tce.edu/" target="_blank">About TCE</a></ul>
-                    <ul><a href="#">Contact</a></ul>
+                    <ul><a href="../feedback.html">Feedback</a></ul>
+                    <ul><a href="#">More</a></ul>
                 </li>
             </div>
             
@@ -43,19 +44,32 @@
                     <ul><a href="#">Circuit Design</a></ul>
                     <ul><a href="expt4_simulation.html">Simulation</a></ul>
                     <ul><a href="#">Post-Quiz</a></ul>
-                    <ul><a href="#">Feedback</a></ul>
                 </li>
             </div>
         </section>
         <section class="container">
 
             <div class="infoBox glassmorphism">
-                <h3>What is a Chopper?</h3>
+                <h3>AC Voltage Controller - Introduction</h3>
                 <ul>
-                    <li>A chopper is a <b>static device</b> which converts fixed input voltage to variable output voltage.</li>
-                    <li>A chopper can be thought as a <b>DC equivalent of an AC transformer</b> as it steps-down or steps-up DC voltage.</li>
-                    <li>The switching device used for a chopper circuit can be power BJT, power MOSFET, GTO or force-commutated thyristors (commutation circuit is needed if thyristors are used).</li>
-                    <li>A chopper is a <b>high speed on/off semiconductor switch</b>. It connects source to load and disconnects the load from source at a fast speed.</li>
+                    <li>AC voltage controllers are <b>thyristor based</b> devices which convert fixed AC directly to variable AC without a change in frequency.</li>
+                    <li>Thyristor based voltage controllers have high efficiency, flexibility in control and compact size.</li>
+                    <li>The thyristors will be naturally commutated by the AC supply so external commutation is not required.</li>
+                    <li>There are majorly two types of control methods used in AC voltage controllers
+                        <ol>
+                            <li>Phase Control (more common)</li>
+                            <li>Integral Cycle Control</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="infoBox glassmorphism">
+                <h3>Types of Phase Controlled AC Voltage Controllers</h3>
+                <ul> Table Half-wave, full-wave
+                    <li>Circuit diagram</li>
+                    <li>Voltage waveform</li>
+                    <li>DC component is introduced in half-wave<br>DC component is introduced in full-wave only if a1 != a2</li>
                 </ul>
             </div>
 
@@ -65,13 +79,44 @@
             <div class="accordion">
 
                 <div class="contentBox">
-                    <div class="label">Accordion</div>
+                    <div class="label">Integral Cycle Control</div>
                     <div class="content">
+                        <img src="" alt="Cycle control waveform diagram">
                         <ul>
-                            <li>The step-down chopper provides positive voltage and positive current at all times. So this is a first quadrant chopper</li>
-                            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Architecto veritatis incidunt nemo perspiciatis iusto eveniet debitis, quaerat ea fugiat laborum aperiam dolor, similique fugit sed?</li>
-                            <li>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatum quasi nesciunt perspiciatis dolore animi asperiores provident quo odio sunt fugit. Animi porro unde quod repudiandae hic eum dicta debitis delectus!</li>
+                            <li>Integral cycle control consists of switching on the supply to load for an integral number of cycles and then switching off the supply for a further number of cycles</li>
+                            <li>This control technique is used in applications where mechanical time constant or thermal time constant is of the order of several seconds.</li>
+                            <li><b>For example,</b> mechnaical time constant for many of the speed-control drives or thermal time constant for many of the heating load is usually quite high. For such applications, almost no variation in speed or temperature will be noticed if control is achieved by connecting the load to source for some on-cycles and then disconnecting the load for some off-cycles</li>
+                            <li><img src="" alt="Formula for cycle control ACVR rms voltage"></li>
                         </ul>   
+                    </div> 
+                </div>
+
+                <div class="contentBox">
+                    <div class="label">Derivation of Vrms in Integral Cycle Control</div>
+                    <div class="content">
+                        <img src="" alt="derivation_image">   
+                    </div> 
+                </div>
+
+                <div class="contentBox">
+                    <div class="label">Other possible configurations of AC voltage controllers</div>
+                    <div class="content">
+                        <h2>ACVR with Triac</h2>
+                        <img src="" alt="ACVR with triac">
+                        <ul>
+                            <li>This configuration is suitable for low-power applications where the load is resistive and has only a small inductance.</li>
+                            <li>Small explanation of what a triac is</li>
+                            <li>JS code for showing pos half cycle and negative half cycle img</li>
+                        </ul>  
+                        <br>
+                        <h2>ACVR with only one SCR</h2>
+                        <img src="" alt="">
+                        <ul>
+                            <li>This scheme uses 4 power diodes and 1 SCR.</li>
+                            <li>This configuration is cheaper as only one SCR is used (only one firing pulse circuitry is required)</li>
+                            <li>The disadvantage of this configuration is that, at any time, 3 devices (2 diodes and 1 SCR) will be conducting. This causes more voltage drop.</li>
+                            <li>JS code for showing pos half cycle and negative half cycle img</li>
+                        </ul>
                     </div> 
                 </div>
 

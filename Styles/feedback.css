@@ -1,0 +1,78 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.main-container {
+  padding-top: 8vh;
+  min-height: 100vh;
+  background-image: linear-gradient(to left bottom, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.main-container .container1 {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 40vw;
+  padding: 2% 4%;
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}
+.main-container .container1 h1 {
+  font-size: 1.4rem;
+  margin-bottom: 5vh;
+  color: #00008b;
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+.main-container .container1 img {
+  height: 15vh;
+  width: 30vh;
+  margin-bottom: 5vh;
+}
+.main-container .container1 p {
+  font-size: 1.1rem;
+  color: blue;
+  font-weight: 600;
+  font-family: Alice;
+}
+.main-container .container1 a {
+  margin: 1rem 0rem;
+  text-transform: none;
+  text-decoration: none;
+  padding: 1rem 1.5rem;
+  border-radius: 1.5rem;
+  border: none;
+  background-color: blue;
+  color: white;
+  font-weight: 600;
+  font-family: Alice, Arial, Helvetica, sans-serif;
+  letter-spacing: 2px;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px 1px rgba(26, 17, 255, 0.88);
+  transition: all ease-in-out 0.4s;
+}
+.main-container .container1 a:hover {
+  background-image: linear-gradient(to left, #100258, #15037e, #1704a7, #1506d2, #080aff);
+  transition: all ease-in-out 0.4s;
+  transform: scale(110%);
+}
+
+.glassmorphism {
+  background: rgba(255, 255, 255, 0.4);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+  backdrop-filter: blur(3.5px);
+  -webkit-backdrop-filter: blur(3.5px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+}/*# sourceMappingURL=feedback.css.map */

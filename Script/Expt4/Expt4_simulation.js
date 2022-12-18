@@ -9,7 +9,7 @@ const rmsDisplay = document.getElementById("rmsDisplay");
 
 const data ={
     firingangle1:0,
-    firingangle2:0,
+    firingangle2:180,
     voltage:230
 }
 

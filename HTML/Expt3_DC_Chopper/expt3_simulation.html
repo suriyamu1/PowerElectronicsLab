@@ -88,6 +88,14 @@
                             <img src="../../Assets/Images/dragAndDropImages/Expt1/miv_h.png" alt="MI_voltmeter" draggable="true" id="miv">
                         </div>
                     </div>
+                    <div class="pair">   
+                        <div>
+                            <img src="../../Assets/Images/DC_chopper/DragandDrop/transistor.png" alt="transistor" draggable="true" id="transistor">
+                        </div>
+                        <div>
+                            <img src="../../Assets/Images/DC_chopper/DragandDrop/DcSource.png" alt="Voltage Source" draggable="true" id="source">
+                        </div>
+                    </div>
                 </div>
             </div>
             
@@ -112,12 +120,12 @@
                     <div class="cro">
                         <img src="../../Assets/Images/DC_chopper/cro.png"  onclick="showGraph()" style="cursor:pointer;" alt="cro">
                     </div>
-                    <div class="DcSource"></div>
-                    <div class="ammeter"></div>
-                    <div class="voltmeter"></div>
-                    <div class="load"></div>
-                    <div class="diode"></div>
-                    <div class="transistor"></div>
+                    <div class="DcSource"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="ammeter" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="voltmeter" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="load" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="diode" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="transistor" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
                 </div>
             </div>
         </section>

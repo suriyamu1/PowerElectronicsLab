@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../Styles/nav_bar.css">
+        <link rel="stylesheet" href="../../Styles/pre_quiz_styling.css">
+        <link rel="icon" type="image/x-icon" href="../../Assets/Images/TCE_logo.png">
+        <title>4. AC Voltage Controller - Pre Quiz</title>
+    </head>
+    <body>
+        <header>
+            <div class="college_logo_name">
+                <img src="../../Assets/Images/TCE_logo.png" alt="Logo" height="50px">
+                <h2>Thiagarajar College of Engineering<br>Department of EEE</h2>
+            </div>
+            
+            <div class="heading_virtual_labs">
+                <h1>Power Electronics Virtual Laboratory</h1>
+            </div>
+
+            <div class="nav_links">
+                <li>
+                    <ul><a href="../../index.html">Home</a></ul>
+                    <ul><a href="https://www.tce.edu/" target="_blank">About TCE</a></ul>
+                    <ul><a href="../feedback.html">Feedback</a></ul>
+                    <ul><a href="#">More</a></ul>
+                </li>
+            </div>
+            
+        </header>
+        <section class="sub_navigation">
+            <div class="title">
+                <h1>
+                    AC Voltage Controller
+                </h1>
+            </div>
+            <div class="navigation">
+                <li>
+                    <ul><a href="expt4_aim.html">Aim</a></ul>
+                    <ul><a href="expt4_theory.html">Theory</a></ul>
+                    <ul><a href="#" id="current_link">Pre-Quiz</a></ul>
+                    <ul><a href="#">Circuit Design</a></ul>
+                    <ul><a href="expt4_simulation.html">Simulation</a></ul>
+                    <ul><a href="#">Post-Quiz</a></ul>
+                </li>
+            </div>
+        </section>
+        <section class="quiz-container">
+            <div class="container">
+                <div id="question-container">
+                    <h2 id="question-text">Answer all the following questions</h2>
+                    <div id="answer-buttons">
+                        <button id="ans1" class="btn hide" onclick="choice(0)">Answer 1</button>
+                        <button id="ans2" class="btn hide" onclick="choice(1)">Answer 2</button>
+                        <button id="ans3" class="btn hide" onclick="choice(2)">Answer 3</button>
+                        <button id="ans4" class="btn hide" onclick="choice(3)">Answer 4</button>
+                    </div>
+                </div>
+                <div class="imgDiv">
+                    <img src="../../Assets/Images/tick.png" alt="tickmark" height="75px" class="hide" id="tickImg">
+                    <img src="../../Assets/Images/wrong.png" alt="cross-mark" height="75px" class="hide" id="wrongImg">
+                </div>
+                <div class="controls">
+                    <button id="start-btn" class="btn" onclick="startQuiz()">Start</button>
+                    <button id="next-btn" class="btn hide" onclick="nextQues()">Next</button>
+                    <button id="submit-btn" class="btn hide" onclick="submitQuiz()">Submit</button>
+                    <button id="retry-btn" class="btn hide" onclick="retry()">Retry</button>
+                </div>
+            </div>
+            <div class="img_container">
+                <img src="" alt="">
+            </div>
+        </section>
+        <script src="../../Script/PreQuiz/preQuizQues_Expt4.js"></script>
+        <script src="../../Script/PreQuiz/preQuiz.js"></script>
+    </body>
+</html>

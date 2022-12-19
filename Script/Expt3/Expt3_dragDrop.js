@@ -1,4 +1,3 @@
-const scr = document.getElementById("scr");
 const diode = document.getElementById("diode");
 const rload = document.getElementById("rload")
 const rl_load = document.getElementById("rl_load");
@@ -17,7 +16,6 @@ function allowDrop(ev) {
 ev.preventDefault();
 }
 
-scr.ondragstart      = (ev)=> { dragId = ev.target.id; }
 diode.ondragstart    = (ev)=> { dragId = ev.target.id; }
 rload.ondragstart    = (ev)=> { dragId = ev.target.id; }
 rl_load.ondragstart  = (ev)=> {

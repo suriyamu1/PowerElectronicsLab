@@ -69,7 +69,7 @@ function showGraph(){
             },{
                 label:"Reference Signal",
                 backgroundColor:"rgba(255, 121, 121,1.0)",
-                borderColor:"#2F0225",
+                borderColor:"#DC0000",
                 data:referenceValues
             }],
             labels:labelValue,

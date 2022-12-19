@@ -1,13 +1,13 @@
 const scr = document.getElementById("scr");
 const diode = document.getElementById("diode");
-const rload = document.getElementById("rload");
+const rload = document.getElementById("rload")
 const rl_load = document.getElementById("rl_load");
 const mca = document.getElementById("mca");
-const mcv = document.getElementById("mcv");
+const mcv= document.getElementById("mcv");
 const mia = document.getElementById("mia");
 const miv = document.getElementById("miv");
 const transistor = document.getElementById("transistor");
-const source = document.getElementById("source");
+const DcSource = document.getElementById("DcSource");
 
 let dragId;
 let loadType = null;
@@ -28,14 +28,16 @@ mcv.ondragstart      = (ev)=> { dragId = ev.target.id; }
 mia.ondragstart      = (ev)=> { dragId = ev.target.id; }
 miv.ondragstart      = (ev)=> { dragId = ev.target.id; }
 transistor.ondragstart = (ev)=> { dragId = ev.target.id;}
-source.ondragstart = (ev)=> { dragId = ev.target.id; }
+DcSource.ondragstart = (ev)=> { dragId = ev.target.id; }
 
 function drop(ev) {
     ev.preventDefault();
     let img = document.createElement('img');
     let dropId=ev.target.id;
+    console.log(dropId);
+    console.log(dragId);
     ev.target.style.border = "none";
-    img.src = `../../Assets/Images/DC_chopper/DragandDrop/${dragId}.PNG`;
+    img.src = `../../Assets/Images/DC_chopper/DragandDrop/${dragId}.png`;
     ev.target.innerHTML=null;  // to remove 1,2,3,4 after images are dropped there
     ev.target.appendChild(img);
   }

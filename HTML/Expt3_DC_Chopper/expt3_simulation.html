@@ -93,7 +93,7 @@
                             <img src="../../Assets/Images/DC_chopper/DragandDrop/transistor.png" alt="transistor" draggable="true" id="transistor">
                         </div>
                         <div>
-                            <img src="../../Assets/Images/DC_chopper/DragandDrop/DcSource.png" alt="Voltage Source" draggable="true" id="source">
+                            <img src="../../Assets/Images/DC_chopper/DragandDrop/DcSource.png" alt="Voltage Source" draggable="true" id="DcSource">
                         </div>
                     </div>
                 </div>
@@ -120,12 +120,12 @@
                     <div class="cro">
                         <img src="../../Assets/Images/DC_chopper/cro.png"  onclick="showGraph()" style="cursor:pointer;" alt="cro">
                     </div>
-                    <div class="DcSource"  ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <div class="ammeter" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <div class="voltmeter" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <div class="load" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <div class="diode" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
-                    <div class="transistor" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+                    <div class="DcSource"  ondrop="drop(event)" ondragover="allowDrop(event)" id="1"></div>
+                    <div class="ammeter" ondrop="drop(event)" ondragover="allowDrop(event)" id="2"></div>
+                    <div class="transistor" ondrop="drop(event)" ondragover="allowDrop(event)" id="3"></div>
+                    <div class="load" ondrop="drop(event)" ondragover="allowDrop(event)" id="4"></div>
+                    <div class="diode" ondrop="drop(event)" ondragover="allowDrop(event)" id="5"></div>
+                    <div class="voltmeter" ondrop="drop(event)" ondragover="allowDrop(event)" id="6"></div>
                 </div>
             </div>
         </section>

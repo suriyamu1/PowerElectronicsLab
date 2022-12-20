@@ -202,4 +202,36 @@
   width: 90%;
   padding: 15px 20px;
   background-color: rgba(0, 0, 0, 0.1);
+}
+
+table {
+  margin: 0% 0%;
+  width: 100%;
+  border-spacing: 0px;
+}
+table th, table td {
+  border: 1px solid black;
+  padding: 3px;
+  text-align: center;
+  vertical-align: middle;
+}
+table th {
+  padding: 0.75rem 0rem;
+  background-color: #2d2dfb;
+  color: whitesmoke;
+  font-weight: 700;
+}
+table td {
+  padding: 2%;
+}
+table td img {
+  width: 90%;
+  margin: auto;
+}
+
+.imgDiv {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 10px 0px;
 }/*# sourceMappingURL=theory_page.css.map */

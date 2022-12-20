@@ -241,3 +241,40 @@
         background-color: rgba(0,0,0,0.1);
     }
 }
+
+//ADDITIONAL STYLING for ACVR theory page
+table {
+    margin: 0% 0%;
+    width: 100%;
+    border-spacing: 0px;  //to remove gap between cells
+
+    th, td {
+        border: 1px solid black;
+        padding: 3px;
+        text-align: center;
+        vertical-align: middle;
+    }
+
+    th {
+        padding: 0.75rem 0rem;
+        background-color: #2d2dfb;
+        color: whitesmoke;
+        font-weight: 700;
+    }
+
+    td {
+        padding: 2%;
+
+        img {
+            width: 90%;
+            margin: auto;
+        }
+    }
+}
+
+.imgDiv {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 10px 0px;
+}

@@ -37,7 +37,8 @@
 }
 .container .infoBox {
   width: 70%;
-  margin-bottom: 3%;
+  margin-top: 2%;
+  margin-bottom: 1%;
   padding: 2% 4%;
 }
 .container .infoBox h3 {
@@ -78,6 +79,12 @@
   color: blue;
   font-weight: 600;
 }
+.container #additionalTheory {
+  font-size: 1.4rem;
+  font-family: Alice, Helvetica, sans-serif;
+  margin: 4% 0% 2% 0%;
+  color: darkblue;
+}
 .container .accordion {
   width: 70%;
 }
@@ -114,6 +121,11 @@
   overflow: hidden;
   transition: 0.1s ease-in-out;
   overflow-y: auto;
+}
+.container .accordion .contentBox .content h2 {
+  color: blue;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 .container .accordion .contentBox .content ul {
   margin: 0% 3%;
@@ -234,4 +246,8 @@ table td img {
   align-items: center;
   justify-content: center;
   margin: 10px 0px;
+}
+.imgDiv ul {
+  width: 45%;
+  list-style: square;
 }/*# sourceMappingURL=theory_page.css.map */

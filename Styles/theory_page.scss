@@ -40,7 +40,8 @@
 
     .infoBox {
         width: 70%;
-        margin-bottom: 3%;
+        margin-top: 2%;
+        margin-bottom: 1%;
         padding: 2% 4%;
 
         h3 {
@@ -92,6 +93,13 @@
             }
         }
     }
+
+    #additionalTheory {
+        font-size: 1.4rem;
+        font-family: Alice, Helvetica, sans-serif;
+        margin: 4% 0% 2% 0%;
+        color: darkblue;
+    }
     .accordion {
         width: 70%;
 
@@ -131,6 +139,11 @@
                 transition: 0.1s ease-in-out;
                 overflow-y: auto;
 
+                h2 {
+                    color: blue;
+                    font-weight: 600;
+                    font-size: 1.1rem;
+                }
                 ul {
                     margin:0% 3%;
                     list-style-type: circle;
@@ -277,4 +290,10 @@ table {
     align-items: center;
     justify-content: center;
     margin: 10px 0px;
+
+    ul {
+        width: 45%;
+        // border: 1px solid black;
+        list-style: square;
+    }
 }

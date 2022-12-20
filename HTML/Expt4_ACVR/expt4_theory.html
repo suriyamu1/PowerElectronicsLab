@@ -91,7 +91,7 @@
                 </table>
             </div>
 
-            <h1>Additional Theory</h1>
+            <h1 id="additionalTheory">Additional Theory</h1>
 
             
             <div class="accordion">
@@ -118,22 +118,28 @@
                 <div class="contentBox">
                     <div class="label">Other possible configurations of AC voltage controllers</div>
                     <div class="content">
+                        <p><b>Note:</b> The below are the other configurations of phase controlled full wave AC voltage controller.</p>
+                        <br><br>
                         <h2>ACVR with Triac</h2>
-                        <img src="" alt="ACVR with triac">
-                        <ul>
-                            <li>This configuration is suitable for low-power applications where the load is resistive and has only a small inductance.</li>
-                            <li>Small explanation of what a triac is</li>
-                            <li>JS code for showing pos half cycle and negative half cycle img</li>
-                        </ul>  
+                        <div class="imgDiv">
+                            <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/AcvrWithTriac.PNG" alt="ACVR with triac" width="50%">
+                            <ul>
+                                <li>This configuration is suitable for <b>low-power applications</b> where the load is resistive and has only a small inductance.</li>
+                            </ul> 
+                        </div>
+                         
                         <br>
                         <h2>ACVR with only one SCR</h2>
-                        <img src="" alt="">
-                        <ul>
-                            <li>This scheme uses 4 power diodes and 1 SCR.</li>
-                            <li>This configuration is cheaper as only one SCR is used (only one firing pulse circuitry is required)</li>
-                            <li>The disadvantage of this configuration is that, at any time, 3 devices (2 diodes and 1 SCR) will be conducting. This causes more voltage drop.</li>
-                            <li>JS code for showing pos half cycle and negative half cycle img</li>
-                        </ul>
+                        <div class="imgDiv">
+                            <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/acvrWithOneSCR.PNG" alt="ACVR with only one SCR" width="50%">
+                            <ul>
+                                <li>This configuration uses 4 power diodes and 1 SCR.</li>
+                                <li>In the positive half cycle, diodes D1, D3 and SCR T1 will conduct. During negative half cycle, diodes D2, D4 and SCR T1 will conduct.</li>
+                                <li>This configuration is <b>cheaper</b> as only one SCR is used (only one firing pulse circuitry is required)</li>
+                                <li>The disadvantage of this configuration is that, at any time, 3 devices (2 diodes and 1 SCR) will be conducting. This causes <b>more voltage drop</b>.</li>
+                            </ul>
+                        </div>
+                        <br>
                     </div> 
                 </div>
 

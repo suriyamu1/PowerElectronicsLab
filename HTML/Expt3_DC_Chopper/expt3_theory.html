@@ -151,14 +151,6 @@
                 </ol> 
             </div>
 
-            <div class="infoBox glassmorphism">
-                <h3>Disadvantages of DC Chopper</h3>
-                <ol>
-                    <li>PWM rectangular voltage and current waveforms can cause <span>turn-on and turn-off losses</span> in semiconductor devices, which limit their practical operating frequencies to the range of 100 KHz.</li>
-                    <li>Rectangular waveforms generate <span>Electromagnetic Interference (EMI)</span></li>
-                </ol>
-            </div>
-
             <h1 id="additionalTheory">Additional Theory</h1>
 
             
@@ -167,46 +159,66 @@
                 <div class="contentBox">
                     <div class="label">Quadrant of Operation</div>
                     <div class="content">
-                        <ul>
-                            <li>The step-down chopper provides positive voltage and positive current at all times. So this is a first quadrant chopper</li>
-                            <li>Also known as Type-a chopper</li>
-                            <img src="" alt="quadrants image">
-                            <img src="" alt="votlage and curretn waveforms">
-                        </ul>   
+                        <div class="imgDiv">
+                            <img src="../../Assets/Images/TheoryPage_Images/DC_Chopper/quadrantOfOperation.jpg" alt="" width="35%">
+                            <ul id="quadrantExplanation">
+                                <li>The step-down chopper provides positive voltage and positive current at all times. So this is a first quadrant chopper</li>
+                                <li>This chopper is also known as <b>Type-A chopper</b></li>
+                                <li>The power flow in type-A chopper is always from source to load (power is positive)</li>
+                            </ul>
+                        </div>
+                           
                     </div> 
                 </div>
 
                 <div class="contentBox">
                     <div class="label">Modes of Conduction</div>
                     <div class="content">
+
+                        <p>The DC-DC converters can operate in two distinct modes with respect to the inductor current</p>
+                        <br>
+                        <h2>1. Continuous Conduction Mode (CCM)</h2>
                         <ul>
-                            <li>The DC-DC converters can operate in two distinct modes with respect to the inductor current</li>
-                            <br><br>
-                            <li>1. Continuous Conduction Mode (CCM)</li>
-                            <img src="" alt="ccm current waveform">
                             <li>The state of the converter in which the inductor current is never zero for any period of time is called the continuous conduction mode (CCM).</li>
-                            <li>When the switch sw is off, the freewheeling diode conducts to support an uninterrupted current in the inductor.</li>
-                            <li>When the switch sw is on, the freewheeling diode is reverse biased.</li>
                             <li>CCM is prefered for high efficiency and good utilization of semiconductor switches and passive components.</li>
-                            <br><br>
-                            <li>2. Discontinuous Conduction Mode (DCM)</li>
+                        </ul>
+                        <br>
+                        <h2>2. Discontinuous Conduction Mode (DCM)</h2>
+                        <ul>
                             <li>When the average value of the output current is low (high R) and/or the switching frequency f is low, the converter may enter the discontinuous conduction mode (DCM)</li>
                             <li>In DCM, the inductor current is zero during the portion of the switching period.</li>
-                            <li></li>
-                            <img src="" alt="current waveform for dcm">
-                            <br>
-                            <li>For a buck converter, the value of the filter inductance that determines the boundary between CCM and DCM is given by Lb = (1-D)R/2f</li>
-                        </ul>    
+                        </ul>
+                        <br>
+                        <p>For a step-down chopper, the value of the inductance that determines the boundary between CCM and DCM is given by <br><b>L<sub>b</sub> = (1 - D) R / 2f</b></p>
                     </div> 
                 </div> 
 
                 <div class="contentBox">
                     <div class="label">Control Strategies</div>
                     <div class="content">
-                        <ol>
-                            <li>Constant Frequency Scheme <span>(PWM Scheme)</span></li>
-                            <li>Variable Frequency Scheme <span>(Frequency Modulation Scheme)</span></li>
-                        </ol>    
+                        <h2>1. Constant Frequency Scheme (PWM Scheme)</h2>
+                        <ul>
+                            <li>In this scheme, the <b>ON-time is varied</b> but chopping frequency f (or chopping period T) is kept constant.</li>
+                            <li>Variation of ON-time (T<sub>on</sub>) means adjustment of pulse width, as such this scheme is called <b>pulse width modulation</b> (PWM) scheme.</li>
+                            <li>This scheme is also known as <b>time-ratio control</b></li>
+                            <li><b>Drawbacks of PWM Scheme:</b></li>
+                            <ol>
+                                <li>PWM rectangular voltage and current waveforms can cause <b>turn-on and turn-off losses</b> in semiconductor devices, which limit their practical operating frequencies to the range of 100 KHz.</li>
+                                <li>Rectangular waveforms generate <b>Electromagnetic Interference (EMI)</b></li>
+                            </ol>
+                        </ul>
+                        <br><br>
+                        <h2>2. Variable Frequency Scheme</h2>
+                        <ul>
+                            <li>In this scheme, the chopping frequency f (or chopping period T) is varied and <b>either ON-time (T<sub>on</sub>) is kept constant or OFF-time (T<sub>off</sub>) is kept constant</b>.</li>
+                            <li>This method is also known as <b>frequency modulation scheme</b>.</li>
+                            <li>Disadvantages of frequency modulation scheme compared to PWM scheme</li>
+                            <ol>
+                                <li>The chopping frequency has to be varied over a wide range for the control of output voltage in frequency modulation scheme. <b>Filter design</b> for such wide frequency variation is <b>quite difficult</b>.</li>
+                                <li>Since frequency variation would be wide, there is a possibility of <b>interference with telephone lines</b>.</li>
+                                <li>The large OFF-time in this scheme may make the load current discontinuous which is undesirable.</li>
+                            </ol>
+                        </ul>
                     </div> 
                 </div> 
 
@@ -214,11 +226,10 @@
                     <div class="label">Applications of DC-DC converters</div>
                     <div class="content">
                         <ul>
-                            <li>Step-down choppers are most used in high-performance dc drives, for example, electric traction, electric vehicles, etc</li>
-                            <li>Step-up choppers are primarily used in radar and ignition systems.</li>
                             <li>The dc-dc converters are building blocks of distributed power supply systems in which a common dc bus voltage is converted to various other votlages according to requirements of particular loads. Such distributed systems are common in computer and telecommunication equipment.</li>
+                            <li>Step-down choppers are most used in high-performance dc drives, for example, electric traction, electric vehicles, etc</li>
+                            <li>Step-up choppers are primarily used in RADAR, ignition systems and power factor applications.</li>
                             <li>Buck boost converters are used in dedicated battery chargers.</li>
-                            <li>Boost converters are used in power factor correction applications.</li>
                         </ul>    
                     </div> 
                 </div>
@@ -226,31 +237,32 @@
                 <div class="contentBox">
                     <div class="label">Buck Converter vs Boost Converter</div>
                     <div class="content">
-                        Table
-                        <ul>
-                            <li>Circuit diagrams</li>
-                            <li>Output voltage equations</li>
-                            <li>When switch is on</li>
-                            <li>When switch is off</li>
-                            <li>Applications</li>
-                            <li>Buck and boost converter => chopper with LC filter</li>
-
-                            <br>
-                            <br>
-                            <li>Buck Converter: It is a step-down DC-DC converter. It is a step-down chopper with a LC filter.</li>
-                        </ul>  
-                    </div> 
-                </div>
-
-                <div class="contentBox">
-                    <div class="label">Buck Boost Converter</div>
-                    <div class="content">
-                        <ul>
-                            <li>Circuit diagram</li>
-                            <li>Operation: D less than 0.5 buck, else boost</li>
-                            <li>Expression for output voltage</li>
-                            <li>Applications: In solar and battery storage (explain reason)</li>
-                        </ul>    
+                        <table>
+                            <tr>
+                                <th>Step-down Chopper</th>
+                                <th>Step-up Chopper</th>
+                            </tr>
+                            <tr>
+                                <td><b>V<sub>o</sub> = D * V<sub>s</sub></b></td>
+                                <td><b>V<sub>o</sub> = V<sub>s</sub> / (1 - D)</b></td>
+                            </tr>
+                            <tr>
+                                <td><img src="../../Assets/Images/TheoryPage_Images/DC_Chopper/stepDownChopper.png" alt=""></td>
+                                <td><img src="../../Assets/Images/TheoryPage_Images/DC_Chopper/stepUpChopper.png" alt=""></td>
+                            </tr>
+                            <tr>
+                                <td>When the switch is on, load is directly connected to source. <br><b>V<sub>o</sub> = V<sub>s</sub></b></td>
+                                <td>When the switch is on, a short circuit path is created. The output voltage is zero and the inductor charges via the short circuit path.<br><b>V<sub>o</sub> = 0 V</b></td>
+                            </tr>
+                            <tr>
+                                <td>When the switch is off, load is disconnected from the source.<br><b>V<sub>o</sub> = 0 V</b></td>
+                                <td>When the switch is on, the voltage source and charged inductor will supply power to the load together.<br><b>V<sub>o</sub> = V<sub>s</sub> + V<sub>ind</sub></b></td>
+                            </tr>
+                            <tr>
+                                <td>Output voltage (V<sub>o</sub>) is always lesser than the input DC voltage for all 0 &#8804; D &#8804; 1</td>
+                                <td>Output voltage (V<sub>o</sub>) is always greater than the input DC voltage for all 0 &#8804; D &#8804; 1</td>
+                            </tr>
+                        </table> 
                     </div> 
                 </div>
             </div>

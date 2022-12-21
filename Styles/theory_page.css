@@ -235,6 +235,7 @@ table th {
 }
 table td {
   padding: 2%;
+  width: 50%;
 }
 table td img {
   width: 90%;
@@ -244,10 +245,10 @@ table td img {
 .imgDiv {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   margin: 10px 0px;
 }
 .imgDiv ul {
-  width: 45%;
+  width: 55%;
   list-style: square;
 }/*# sourceMappingURL=theory_page.css.map */

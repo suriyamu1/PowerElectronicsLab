@@ -159,7 +159,7 @@ function get_i_max(component) {
 
 function verify_PIV(name, component, v_max) {
     if(get_PIV(component) < v_max) {
-        exp_div2.innerHTML += "<h3 class='alert_red'>The PIV of "+ name + " is only "+get_PIV(component)+"V. Hence "+name+" cannot withstand the peak input voltage when it is reverse biased ("+v_max.toFixed(2)+"V)</h3>";
+        exp_div2.innerHTML += "<h3 class='alert_red'>The PIV of "+ name + " ("+ component +") is only "+get_PIV(component)+"V. Hence "+name+" cannot withstand the peak input voltage when it is reverse biased ("+v_max.toFixed(2)+"V)</h3>";
         wrong_img_div.style.display = "block";
         return false;
     }
@@ -168,7 +168,7 @@ function verify_PIV(name, component, v_max) {
 
 function verify_i_max(name, component, i_max) {
     if(get_i_max(component) < i_max) {
-        exp_div2.innerHTML += "<h3 class='alert_red'>The maximum forward current of "+name+" is only "+get_i_max(component)+"A. Hence "+name+" cannot withstand the load current ("+i_max.toFixed(3)+"A)</h3>";
+        exp_div2.innerHTML += "<h3 class='alert_red'>The maximum forward current of "+name+" ("+ component +") is only "+get_i_max(component)+"A. Hence "+name+" cannot withstand the load current ("+i_max.toFixed(3)+"A)</h3>";
         wrong_img_div.style.display = "block";
         return false;
     }

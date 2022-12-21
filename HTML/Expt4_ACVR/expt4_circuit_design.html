@@ -7,7 +7,7 @@
         <link rel="stylesheet" href="../../Styles/nav_bar.css">
         <link rel="stylesheet" href="../../Styles/circuit_design.css">
         <link rel="icon" type="image/x-icon" href="../../Assets/Images/TCE_logo.png">
-        <title>2. Full Converter - Circuit Design</title>
+        <title>4. AC Voltage Controller - Circuit Design</title>
     </head>
     <body>
         <header>
@@ -27,7 +27,7 @@
                     <ul><a href="../feedback.html">Feedback</a></ul>
                     <ul><a href="#">More</a></ul>
                 </li>
-            </div>           
+            </div>
         </header>
 
         <!-- Experiment Title -->
@@ -63,40 +63,22 @@
                     <div class="choose_components">
                         <div class="scr_diode glassmorphism">
                             <div class="box">
-                                <h3>SCR 1</h3>
+                                <h3>SCR</h3>
                                 <select id="scr1">
                                     <option disabled selected>Choose...</option>
                                     <option>S4S1</option><option>H2P4M</option>
                                     <option>S6004V</option><option>SK006L</option>
                                 </select>
                             </div>
-                            
+    
                             <div class="box">
-                                <h3>SCR 2</h3>
-                                <select id="scr2">
+                                <h3>Diode</h3>
+                                <select id="diode1">
                                     <option disabled selected>Choose...</option>
-                                    <option>S4S1</option><option>H2P4M</option>
-                                    <option>S6004V</option><option>SK006L</option>
+                                    <option>1N4004</option><option>CMF01</option>
+                                    <option>PSC406</option><option>6A10</option>
                                 </select>
-                            </div>
-
-                            <div class="box">
-                                <h3>SCR 3</h3>
-                                <select id="scr3">
-                                    <option disabled selected>Choose...</option>
-                                    <option>S4S1</option><option>H2P4M</option>
-                                    <option>S6004V</option><option>SK006L</option>
-                                </select>
-                            </div>
-
-                            <div class="box">
-                                <h3>SCR 4</h3>
-                                <select id="scr4">
-                                    <option disabled selected>Choose...</option>
-                                    <option>S4S1</option><option>H2P4M</option>
-                                    <option>S6004V</option><option>SK006L</option>
-                                </select>
-                            </div>
+                            </div>    
                         </div>
 
                         <div class="ammeter_voltmeter glassmorphism">
@@ -264,17 +246,13 @@
                     <div class="contentBox">
                         <div class="label">Diode</div>
                         <div class="content">
-                            <ul>
+                            <ol>
                                 <li>The voltage applied across the diode when it is <b>reverse biased</b> must always be lesser than the <b>Peak Inverse Voltage (PIV)</b> specified in the datasheet of the diode.</li>
-                                <li>During <b>positive half cycle</b>, diode-2 is reverse biased and similarly during <b>negative half cycle</b>, diode-1 is reverse biased. When a diode is reverse biased, it should be able to withstand the peak value <b>(V<sub>p</sub> = V<sub>rms</sub> * 1.414)</b> of the AC voltage applied across it.</li>
-                                <br>
-                                <br>
                                 <li>The current through the diode (load current) must be lesser than the <b>maximum anode current (I<sub>a</sub>)</b> specified in the datasheet of the diode.</li>
                                 <li>The current flows through the diode only when it is forward biased. The maximum value of current through diode <b>I<sub>max</sub> = V<sub>peak</sub> / R<sub>load</sub></b>.</li>
-                                <li>For safe operation, <b>I<sub>max</sub> &lt; I<sub>a max</sub></b>.</li>
-                                <li>However the diode can withstand non-repetitive surge currents for a very short time.</li>
+                                <li>For safe operation, <b>I<sub>max</sub> &lt; I<sub>a max</sub></b>. However the diode can withstand non-repetitive surge currents for a very short time.</li>
                             </ul>
-                        </div> 
+                        </div>
                     </div>
     
                     <div class="contentBox">
@@ -282,7 +260,6 @@
                         <div class="content">
                             <ul>
                                 <li>All the design aspects of diode are applicable to SCR.</li>
-                                <br>
                                 <li>Additionally, SCRs have another terminal (Gate).</li>
                                 <li>The gate current applied to the SCR must not exceed the <b>maximum gate current (I<sub>GM</sub>)</b> specified in the datasheet</li>
                                 <li>The power (voltage * current) applied to the gate terminal must not exceed the <b>maximum gate power (P<sub>GM</sub>)</b> specified in the datasheet</li>
@@ -295,24 +272,11 @@
                         <div class="label">Load resistance</div>
                         <div class="content">
                             <ul>
-                                <li>In this virtual lab setup, we assume we have a rheostat</li>
+                                <li>In this virtual lab setup, we assume we have a rheostat (slider)</li>
                                 <li><b>Current Rating of rheostat:</b> (0 - 6) A</li>
                                 <li><b>Power rating of rheostat:</b> 10,000 W</li>
                                 <li><b>Resistance Values: </b>10&#8486; to 1000&#8486;</li>
-                                <br>
                                 <li>The load resistance must be chosen such that the load current will be less than the maximum anode current of the SCRs and diodes.</li>
-                            </ul>
-                        </div> 
-                    </div>
-
-                    <div class="contentBox">
-                        <div class="label">Load Inductance</div>
-                        <div class="content">
-                            <ul>
-                                <li>In this virtual lab setup, we assume we have a variable inductor</li>
-                                <li><b>Current Rating:</b> (0 - 6) A</li>
-                                <li><b>Power rating:</b> 10,000 W</li>
-                                <li><b>Inductance Values: </b>0 mH to 2000 mH</li>    
                             </ul>
                         </div> 
                     </div>
@@ -321,10 +285,10 @@
                         <div class="label">Voltmeter</div>
                         <div class="content">
                             <ul>
-                                <li>The output voltage of a semi-converter is pulsating DC voltage.</li>
-                                <li>To measure DC voltage, MC Voltmeters are used. MC voltmeters give the average value of the voltage.</li>
+                                <li>The output voltage of a AC voltage controller is AC.</li>
+                                <li>To measure AC voltage, Moving Iron Voltmeters are used. MI voltmeters give the rms value of the voltage.</li>
                                 <li>To have higher accuracy, do not choose voltmeters with very high range than actually needed.</li>
-                                <li><b>For example: </b>To measure 450V DC, choosing 750V MC voltmeter will give inaccurate measurements. But choosing a 500V MC voltmeter will give accurate measurements.</li>    
+                                <li><b>For example: </b>To measure 450V rms AC, choosing 750V MI voltmeter will give inaccurate measurements. But choosing a 500V MI voltmeter will give accurate measurements.</li>    
                             </ul>
                         </div> 
                     </div>
@@ -333,10 +297,9 @@
                         <div class="label">Ammeter</div>
                         <div class="content">
                             <ul>
-                                <li>The SCRs and diodes in a semi-converter will block reverse current.<br>Hence the load current will be pulsating DC current.</li>
-                                <li>To measure DC current, MC Ammeters are used.<br>MC ammeters give the average value of the current.</li>
+                                <li>To measure AC current, MI Ammeters are used.<br>MI ammeters give the rms value of the current.</li>
                                 <li>To have higher accuracy, do not choose ammeters with very high range than actually needed.</li>
-                                <li><b>For example: </b>To measure 4A DC, choosing 7.5A MC ammeter will give inaccurate measurements. But choosing a 5A MC ammeter will give accurate measurements.</li>    
+                                <li><b>For example: </b>To measure 4A AC, choosing 7.5A MI ammeter will give inaccurate measurements. But choosing a 5A MI ammeter will give accurate measurements.</li>    
                             </ul>
                         </div> 
                     </div>
@@ -354,7 +317,7 @@
                 })
             }
         </script>
-        <script src="../../Script/Expt2/Expt2_circuitDesign.js"></script>
+        <script src="../../Script/Expt4/Expt4_circuitDesign.js"></script>
         <!-- <script src="../../Script/Expt1/Expt1_simulation.js"></script> -->
     </body>
 </html>

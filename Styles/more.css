@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+.container {
+  padding-top: 8vh;
+  min-height: 100vh;
+  background-image: linear-gradient(to left bottom, #5fb2fb, #74bef8, #8bc9f5, #a3d4f2, #bcdef0, #b7daf0, #b2d6ef, #aed2ef, #97bcf0, #90a4ec, #9a87e0, #ac64c9);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.container .teamDetails, .container .references {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+  border: 1px solid black;
+  width: 50%;
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 1rem 0rem;
+}
+.container .teamDetails h1, .container .references h1 {
+  font-size: 1.3rem;
+  color: darkblue;
+  margin-bottom: 1rem;
+}
+.container .teamDetails .subcontainer, .container .references .subcontainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+}
+.container .teamDetails .subcontainer .personInfo, .container .references .subcontainer .personInfo {
+  background-color: darkblue;
+  width: 30%;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+  border-radius: 1rem;
+  transition: 2.5s all;
+}
+.container .teamDetails .subcontainer .personInfo img, .container .references .subcontainer .personInfo img {
+  width: 70%;
+  border-radius: 50%;
+}
+.container .teamDetails .subcontainer .personInfo h4, .container .references .subcontainer .personInfo h4 {
+  margin: 1rem 0rem;
+  color: white;
+  font-family: "Times New Roman", Times, serif;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.container .teamDetails .subcontainer .personInfo ul, .container .references .subcontainer .personInfo ul {
+  display: flex;
+  width: 80%;
+}
+.container .teamDetails .subcontainer .personInfo ul li, .container .references .subcontainer .personInfo ul li {
+  width: 33.3333333333%;
+  display: flex;
+  justify-content: center;
+}
+.container .teamDetails .subcontainer .personInfo ul li #icon, .container .references .subcontainer .personInfo ul li #icon {
+  width: 20px;
+  transition: 0.5s ease-in-out all;
+  border-radius: 0px;
+}
+.container .teamDetails .subcontainer .personInfo ul li img:hover, .container .references .subcontainer .personInfo ul li img:hover {
+  transition: 0.5s ease-in-out all;
+  transform: scale(140%);
+}
+.container .teamDetails .subcontainer .personInfo:hover, .container .references .subcontainer .personInfo:hover {
+  transition: 0.2s all;
+  box-shadow: 0px 0px 20px 11px rgba(0, 116, 255, 0.77);
+  -webkit-box-shadow: 0px 0px 20px 11px rgba(0, 116, 255, 0.77);
+  -moz-box-shadow: 0px 0px 20px 11px rgba(0, 116, 255, 0.77);
+}
+.container .teamDetails ol, .container .references ol {
+  width: 80%;
+}
+.container .teamDetails ol li, .container .references ol li {
+  margin: 5px 0px;
+}/*# sourceMappingURL=more.css.map */

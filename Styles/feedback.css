@@ -46,7 +46,7 @@
   font-weight: 600;
   font-family: Alice;
 }
-.main-container .container1 a {
+.main-container .container1 #feedback {
   margin: 1rem 0rem;
   text-transform: none;
   text-decoration: none;

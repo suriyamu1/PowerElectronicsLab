@@ -64,14 +64,6 @@
                     </div>
                     <div class="pair">
                         <div>
-                            <img src="../../Assets/Images/dragAndDropImages/Expt1/rload_h.png" alt="R_load" draggable="true" id="rload">
-                        </div>
-                        <div>
-                            <img src="../../Assets/Images/dragAndDropImages/Expt1/rl_load_h.png" alt="RL_load" draggable="true" id="rl_load">
-                        </div>
-                    </div>
-                    <div class="pair">
-                        <div>
                             <img src="../../Assets/Images/dragAndDropImages/Expt1/mca.PNG" alt="MC_ammeter" draggable="true" id="mca">
                         </div>
                         <div>
@@ -84,6 +76,11 @@
                         </div>
                         <div>
                             <img src="../../Assets/Images/dragAndDropImages/Expt1/miv_h.png" alt="MI_voltmeter" draggable="true" id="miv">
+                        </div>
+                    </div>
+                    <div class="pair">
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/rload_h.png" alt="R_load" draggable="true" id="rload">
                         </div>
                     </div>
                 </div>
@@ -110,11 +107,11 @@
                     <div class="cro">
                         <img src="../../Assets/Images/ACVR/cro.png" onclick="showGraph()" style="cursor:pointer;" alt="cro">
                     </div>
-                    <div class="scr1"></div>
-                    <div class="scr2"></div>
-                    <div class="ammeter"></div>
-                    <div class="voltmeter"></div>
-                    <div class="load"></div>
+                    <div class="scr1" ondrop="drop(event)" ondragover="allowDrop(event)" id="1"></div>
+                    <div class="scr2" ondrop="drop(event)" ondragover="allowDrop(event)" id="2"></div>
+                    <div class="ammeter" ondrop="drop(event)" ondragover="allowDrop(event)" id="3"></div>
+                    <div class="load" ondrop="drop(event)" ondragover="allowDrop(event)" id="4"></div>
+                    <div class="voltmeter" ondrop="drop(event)" ondragover="allowDrop(event)" id="5"></div>
                 </div>
             </div>
         </section>

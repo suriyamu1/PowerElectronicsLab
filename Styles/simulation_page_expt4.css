@@ -121,7 +121,7 @@
 .voltmeter{
     position: absolute;
     top:200px;
-    left:648px;
+    left:648.3px;
     width: 97.2px;
     height: 168.84px;
     border: 1px dashed red;
@@ -138,7 +138,7 @@
 
 .ammeter{
     position: absolute;
-    top:65px;
+    top:64.8px;
     left:432px;
     width: 108px;
     height: 112.16px;
@@ -148,7 +148,7 @@
 .scr1{
     position: absolute;
     left:318.6px;
-    top:25px;
+    top:23px;
     width:75.6px;
     height: 74.45px;
     border: 1px dashed red;
@@ -157,7 +157,7 @@
 .scr2{
    position: absolute;
    left:318.6px;
-   top:134.5px;
+   top:135px;
    width:75.6px;
    height: 79.1px;
    border: 1px dashed red;

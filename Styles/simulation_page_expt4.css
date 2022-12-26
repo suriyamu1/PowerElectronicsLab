@@ -22,7 +22,14 @@
     font-variant: small-caps;
 }
 
-.library{  /*glassmorphism code*/
+.firing_pulse {
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    border-radius: 20px;
+    padding: 5%;
+    margin:1vh 1vw;
+}
+
+.library, .firing_pulse {  /*glassmorphism code*/
     box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     border-radius: 20px;
     backdrop-filter: blur(12px) saturate(82%);
@@ -30,6 +37,41 @@
     background-color: rgba(138, 192, 243, 0.238);
     border-radius: 12px;
     border: 1px solid rgba(255, 255, 255, 0.125);
+}
+
+.firing_pulse h1 {
+    font-size: 0.95rem;
+    color: darkblue;
+    font-variant: small-caps;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.firing_pulse .box {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    margin-top: 5px;
+}
+
+.firing_pulse .box h3 {
+    font-size: 0.85rem;
+}
+
+.firing_pulse .box select {
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    color: darkblue;
+    padding: 0px 25px;
+}
+
+.firing_pulse .box select:focus {
+    border: 1px solid blue;
+    background-color: #eee;
+    outline: none;
 }
 
 .pair div{

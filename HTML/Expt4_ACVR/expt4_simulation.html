@@ -84,6 +84,24 @@
                         </div>
                     </div>
                 </div>
+                <div class="firing_pulse">
+                    <h1>Firing Pulse Generator</h1>
+                    <div class="box">
+                        <h3>Component 1</h3>
+                        <select id="component1">
+                            <option selected>Nil</option>
+                            <option>a</option><option>180 + a</option>
+                        </select>
+                    </div>
+
+                    <div class="box">
+                        <h3>Component 2</h3>
+                        <select id="component2">
+                            <option selected>Nil</option>
+                            <option>a</option><option>180 + a</option>
+                        </select>
+                    </div>
+                </div>    
             </div>
             
             <!-- circuit diagram div     -->
@@ -107,11 +125,11 @@
                     <div class="cro">
                         <img src="../../Assets/Images/ACVR/cro.png" onclick="verifyCircuit()" style="cursor:pointer;" alt="cro">
                     </div>
-                    <div class="scr1" ondrop="drop(event)" ondragover="allowDrop(event)" id="1"></div>
-                    <div class="scr2" ondrop="drop(event)" ondragover="allowDrop(event)" id="2"></div>
-                    <div class="ammeter" ondrop="drop(event)" ondragover="allowDrop(event)" id="3"></div>
-                    <div class="load" ondrop="drop(event)" ondragover="allowDrop(event)" id="4"></div>
-                    <div class="voltmeter" ondrop="drop(event)" ondragover="allowDrop(event)" id="5"></div>
+                    <div class="scr1" ondrop="drop(event)" ondragover="allowDrop(event)" id="1">1</div>
+                    <div class="scr2" ondrop="drop(event)" ondragover="allowDrop(event)" id="2">2</div>
+                    <div class="ammeter" ondrop="drop(event)" ondragover="allowDrop(event)" id="3">3</div>
+                    <div class="load" ondrop="drop(event)" ondragover="allowDrop(event)" id="4">4</div>
+                    <div class="voltmeter" ondrop="drop(event)" ondragover="allowDrop(event)" id="5">5</div>
                 </div>
             </div>
         </section>

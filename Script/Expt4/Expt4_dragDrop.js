@@ -5,6 +5,8 @@ const mca = document.getElementById("mca");
 const mcv= document.getElementById("mcv");
 const mia = document.getElementById("mia");
 const miv = document.getElementById("miv");
+const firingAngle1 = document.getElementById("component1");
+const firingAngle2 = document.getElementById("component2");
 
 let dragId;
 let dragComponentName;
@@ -104,6 +106,64 @@ function drop(ev) {
         return;
       }else if(components[i]==="mcv"){
         alert('The voltage source is AC. We use moving iron instruments for AC circuits. Hence use a moving iron voltmeter.');
+        location.reload(); 
+        return;
+      }
+    }
+
+    //verify firing angle
+
+    if(components[0]==="scr" && components[1]==="scr"){
+      if(firingAngle1.value!=="a" && firingAngle2.value!=="180+a"){
+        alert('Given firing angle for both the components are not correct.');
+        location.reload(); 
+        return;
+      }
+      if(firingAngle1.value==="a" && firingAngle2.value!=="180+a"){
+        alert('Given firing angle for the component 2 is not correct.');
+        location.reload(); 
+        return;
+      }
+      if(firingAngle1.value!=="a" && firingAngle2.value==="180+a"){
+        alert('Given firing angle for the component 1 is not correct.');
+        location.reload(); 
+        return;
+      }
+    }else if(components[0]==="scr" && components[1]==="diode"){
+      if(firingAngle1.value!=="a" && firingAngle2.value!=="Nil"){
+        alert('Given firing angle for both the components are not correct.');
+        location.reload(); 
+        return;
+      }
+      if(firingAngle1.value==="a" && firingAngle2.value!=="Nil"){
+        alert('You cannot provide firing angle for diode');
+        location.reload(); 
+        return;
+      }
+      if(firingAngle1.value!=="a" && firingAngle2.value==="Nil"){
+        alert('Given firing angle for the component 1 is not correct.');
+        location.reload(); 
+        return;
+      }
+    }else if(components[0]==="diode" && components[1]==="diode"){
+      if(firingAngle1.value!=="Nil" || firingAngle2.value!=="Nil"){
+        alert('You cannot provide firing angle for diode');
+        location.reload(); 
+        return;
+      }
+    }else if(components[0]==="diode" && components[1]==="scr"){
+      if(firingAngle1.value!=="Nil" && firingAngle2.value!=="180+a"){
+        alert('Given firing angle for both the components are not correct.');
+        location.reload(); 
+        return;
+      }
+      if(firingAngle1.value!=="Nil" && firingAngle2.value==="180+a"){
+        alert('You cannot provide firing angle for diode');
+        location.reload(); 
+        return;
+      }
+      if(firingAngle1.value==="Nil" && firingAngle2.value!=="180+a"){
+        alert('Given firing angle for the component 2 is not correct.');
         location.reload(); 
         return;
       }

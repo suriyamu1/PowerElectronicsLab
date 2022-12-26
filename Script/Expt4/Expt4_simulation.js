@@ -6,6 +6,13 @@ const angleDisplay1 = document.getElementById("angleDisplay1");
 const angleDisplay2 = document.getElementById("angleDisplay2");
 const avgDisplay = document.getElementById("avgDisplay");
 const rmsDisplay = document.getElementById("rmsDisplay");
+const control1 = document.getElementById("control1");
+const control2 = document.getElementById("control2");
+
+let scr1;
+let scr2;
+let diode1;
+let diode2;
 
 const data ={
     firingangle1:0,
@@ -47,6 +54,15 @@ function showGraph(){
     let sineValues=[];
     let labelValue=[];
     let theta=0;
+
+    if(components[0]==="scr" && components[1]==="diode"){
+        control2.classList.add("hide");
+    }else if(components[0]==="diode" && components[1]==="diode"){
+        control1.classList.add("hide");
+        control2.classList.add("hide");
+    }else if(components[0]==="diode" && components[1]==="scr"){
+        control1.classList.add("hide");
+    }
 
     for(let i=0; i<=720; i++){
         labelValue.push(i+"");

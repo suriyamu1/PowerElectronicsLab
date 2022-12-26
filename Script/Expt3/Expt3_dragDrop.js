@@ -9,25 +9,32 @@ const transistor = document.getElementById("transistor");
 const DcSource = document.getElementById("DcSource");
 
 let dragId;
-let loadType = null;
+let dragComponentName;
 let components =[null,null,null,null,null,null];
+let componentsName= [null,null,null,null,null,null];
 
 function allowDrop(ev) {
 ev.preventDefault();
 }
 
-diode.ondragstart    = (ev)=> { dragId = ev.target.id; }
-rload.ondragstart    = (ev)=> { dragId = ev.target.id; }
-rl_load.ondragstart  = (ev)=> {
-  dragId = ev.target.id;
-  loadType = "rl_load" 
-}
-mca.ondragstart      = (ev)=> { dragId = ev.target.id; }
-mcv.ondragstart      = (ev)=> { dragId = ev.target.id; }
-mia.ondragstart      = (ev)=> { dragId = ev.target.id; }
-miv.ondragstart      = (ev)=> { dragId = ev.target.id; }
-transistor.ondragstart = (ev)=> { dragId = ev.target.id;}
-DcSource.ondragstart = (ev)=> { dragId = ev.target.id; }
+diode.ondragstart    = (ev)=> { dragId = ev.target.id;
+                                dragComponentName = ev.target.alt;}
+rload.ondragstart    = (ev)=> { dragId = ev.target.id;
+                                dragComponentName = ev.target.alt;}
+rl_load.ondragstart  = (ev)=> { dragId = ev.target.id;
+                                dragComponentName = ev.target.alt;}
+mca.ondragstart      = (ev)=> { dragId = ev.target.id;
+                                dragComponentName = ev.target.alt;}
+mcv.ondragstart      = (ev)=> { dragId = ev.target.id;
+                                dragComponentName = ev.target.alt;}
+mia.ondragstart      = (ev)=> { dragId = ev.target.id;
+                                dragComponentName = ev.target.alt;}
+miv.ondragstart      = (ev)=> { dragId = ev.target.id;
+                                dragComponentName = ev.target.alt;}
+transistor.ondragstart = (ev)=> { dragId = ev.target.id;
+                                dragComponentName = ev.target.alt;}
+DcSource.ondragstart = (ev)=> { dragId = ev.target.id;
+                                dragComponentName = ev.target.alt;}
 
 function drop(ev) {
     ev.preventDefault();
@@ -37,6 +44,7 @@ function drop(ev) {
     console.log(dragId);
 
     components[Number(dropId)-1] = dragId;
+    componentsName[Number(dropId)-1] = dragComponentName;
 
     if(dropId==="2" && (dragId==="miv" || dragId==="mcv" || dragId==="rl_load" || dragId==="rload" || dragId==="diode")){
       dragId = dragId+"_h";
@@ -72,8 +80,12 @@ function drop(ev) {
       alert('The voltage source is DC. We use moving coil instruments for DC circuits. Hence use a moving coil ammeter.');
       location.reload(); 
       return;
+    }else if(components[1]==="miv" || components[1]==="mcv"){
+      alert(componentsName[1]+" is connected in wrong position. Voltmeter should be connected in series with the voltage source.");
+      location.reload(); 
+      return;
     }else if(components[1]!=="mca"){
-      alert(components[1]+" is connected in wrong position");
+      alert(componentsName[1]+" is connected in wrong position");
       location.reload(); 
       return;
     }

@@ -3,6 +3,7 @@ const simulation = document.getElementById("simulation");
 const avgDisplay = document.getElementById("avgDisplay");
 const rmsDisplay = document.getElementById("rmsDisplay");
 const voltageDisplay = document.getElementById("voltageDisplay");
+const pwmCircuit = document.getElementById("PWM");
 
 let chart1=null;
 let chart2=null;
@@ -205,11 +206,21 @@ function showGraph(){
     simulation.classList.add("hide");
 }
 
-function showCircuit(){
+function showCircuit1(){
     chart1.destroy();
     chart2.destroy();
     chart3.destroy();
     output.classList.add("hide");
+    simulation.classList.remove("hide");
+}
+
+function showPwm(){
+    pwmCircuit.classList.remove("hide");
+    simulation.classList.add("hide");
+}
+
+function showCircuit2(){
+    pwmCircuit.classList.add("hide");
     simulation.classList.remove("hide");
 }
 

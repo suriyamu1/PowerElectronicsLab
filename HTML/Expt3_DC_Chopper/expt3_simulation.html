@@ -109,7 +109,7 @@
                         <img src="../../Assets/Images/DC_chopper/middle.png" alt="middle">
                     </div>
                     <div class="bottom">
-                        <img src="../../Assets/Images/DC_chopper/bottom.png" alt="bottom">
+                        <img src="../../Assets/Images/DC_chopper/bottom.png" alt="bottom" onclick="showPwm()" style="cursor:pointer;">
                     </div>
                     <div class="bottomRight">
                         <img src="../../Assets/Images/DC_chopper/bottom_right.png" alt="bottom_right">
@@ -128,7 +128,7 @@
         </section>
 
         <section id="output" class="hide">
-            <span class="cancel" onclick="showCircuit()">X</span>
+            <span class="cancel" onclick="showCircuit1()">X</span>
             <div style="width:800px;height:600px;margin:10px;" class="graph1">
                 <canvas id="waveform1" height="600px" width="1000px">
                 </canvas>
@@ -146,6 +146,15 @@
             <div style="width:800px;height:600px;margin:10px;" class="graph3">
                 <canvas id="waveform3" height="600px" width="1000px">
                 </canvas>
+            </div>
+        </section>
+
+        <section id="PWM" class="hide">
+            <span class="cancel" onclick="showCircuit2()">X</span>
+            <div class="pwmCircuitBox">
+                <div class="pwmCircuit">
+                    <img class="pwmImage" src="../../Assets/Images/DC_chopper/PWM_Circuit.png" alt="PWM Circuit">
+                </div>
             </div>
         </section>
 

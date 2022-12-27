@@ -177,6 +177,31 @@
     display: block;
 }
 
+#PWM{
+    height:81vh;
+    width: 100vw;
+    position: relative;
+    top:19vh;
+    overflow-x: hidden;
+}
+
+.pwmCircuitBox{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.pwmCircuit{
+    height: 500px;
+    width: 700px;
+}
+
+.pwmImage{
+    background-repeat: no-repeat;
+    height:100%;
+    width: 100%;
+}
+
 #output{
     height:81vh;
     width: 100vw;

@@ -34,8 +34,6 @@ miv.ondragstart      = (ev)=> { dragId = ev.target.id;
 
 function drop(ev) {
     ev.preventDefault();
-
-
     let img = document.createElement('img');
     let dropId=ev.target.id;
     console.log(dropId);
@@ -56,8 +54,6 @@ function drop(ev) {
   }
 
   function verifyCircuit(){
-
-    console.log(firingAngle1.value,firingAngle2.value);
 
     if(components.includes(null)){
       alert('The circuit is open circuited. Complete the circuit and try again.');
@@ -118,17 +114,17 @@ function drop(ev) {
     //verify firing angle
 
     if(components[0]==="scr" && components[1]==="scr"){
-      if(firingAngle1.value!=="a" && firingAngle2.value!=="180 + a"){
+      if(firingAngle1.value!=="a" && firingAngle2.value!=="180+a"){
         alert('Given firing angle for both the components are not correct.');
         location.reload(); 
         return;
       }
-      if(firingAngle1.value==="a" && firingAngle2.value!=="180 + a"){
+      if(firingAngle1.value==="a" && firingAngle2.value!=="180+a"){
         alert('Given firing angle for the component 2 is not correct.');
         location.reload(); 
         return;
       }
-      if(firingAngle1.value!=="a" && firingAngle2.value==="180 + a"){
+      if(firingAngle1.value!=="a" && firingAngle2.value==="180+a"){
         alert('Given firing angle for the component 1 is not correct.');
         location.reload(); 
         return;

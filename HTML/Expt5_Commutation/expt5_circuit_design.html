@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../Styles/nav_bar.css">
+        <link rel="stylesheet" href="../../Styles/circuit_design.css">
+        <link rel="icon" type="image/x-icon" href="../../Assets/Images/TCE_logo.png">
+        <title>4. AC Voltage Controller - Circuit Design</title>
+    </head>
+    <body>
+        <header>
+            <div class="college_logo_name">
+                <img src="../../Assets/Images/TCE_logo.png" alt="Logo" height="50px">
+                <h2>Thiagarajar College of Engineering<br>Department of EEE</h2>
+            </div>
+            
+            <div class="heading_virtual_labs">
+                <h1>Power Electronics Virtual Laboratory</h1>
+            </div>
+
+            <div class="nav_links">
+                <li>
+                    <ul><a href="../../index.html">Home</a></ul>
+                    <ul><a href="https://www.tce.edu/" target="_blank">About TCE</a></ul>
+                    <ul><a href="../feedback.html">Feedback</a></ul>
+                    <ul><a href="../more.html">More</a></ul>
+                </li>
+            </div>
+        </header>
+
+        <!-- Experiment Title -->
+        <section class="sub_navigation">
+            <div class="title">
+                <h1>AC Voltage Controller</h1>
+            </div>
+            <div class="navigation">
+                <li>
+                    <ul><a href="expt5_aim.html">Aim</a></ul>
+                    <ul><a href="expt5_theory.html">Theory</a></ul>
+                    <ul><a href="expt5_preQuiz.html">Pre-Quiz</a></ul>
+                    <ul><a href="#" id="current_link">Circuit Design</a></ul>
+                    <ul><a href="expt5_simulation.html">Simulation</a></ul>
+                    <ul><a href="expt5_post_quiz.html">Post-Quiz</a></ul>
+                </li>
+            </div>
+        </section>
+        <section class="main_container">
+            <div class="container">
+                <div class="verification_div glassmorphism">
+                    <h1>Choose the components and their ratings</h1>
+                    <div class="sliderDiv">
+                        <h2>Input Voltage &nbsp;= &nbsp;<span id="voltSpan">230 V AC</span></h2>
+                        <input type="range" min="0" max="500" value="230" id="voltSlider">
+                    </div>
+    
+                    <div class="sliderDiv">
+                        <h2>Load Resistance = <span id="resSpan">50 &#8486;</span></h2>
+                        <input type="range" min="10" max="1000" value="50" id="resSlider">
+                    </div>
+    
+                    <div class="choose_components">
+                        <div class="scr_diode glassmorphism">
+                            <div class="box">
+                                <h3>SCR</h3>
+                                <select id="scr1">
+                                    <option disabled selected>Choose...</option>
+                                    <option>S4S1</option><option>H2P4M</option>
+                                    <option>S6004V</option><option>SK006L</option>
+                                </select>
+                            </div>
+    
+                            <div class="box">
+                                <h3>Diode</h3>
+                                <select id="diode1">
+                                    <option disabled selected>Choose...</option>
+                                    <option>1N4004</option><option>CMF01</option>
+                                    <option>PSC406</option><option>6A10</option>
+                                </select>
+                            </div>    
+                        </div>
+
+                        <div class="ammeter_voltmeter glassmorphism">
+                            <div class="box">
+                                <h3>Ammeter</h3>
+                                <select id="ammeter">
+                                    <option disabled selected>Choose...</option>
+                                    <option>(0 - 2A) Moving Coil</option><option>(0 - 2A) Moving Iron</option>
+                                    <option>(0 - 5A) Moving Coil</option><option>(0 - 5A) Moving Iron</option>
+                                    <option>(0 - 7.5A) Moving Coil</option><option>(0 - 7.5A) Moving Iron</option>
+                                </select>
+                            </div>
+                            <div class="box">
+                                <h3>Voltmeter</h3>
+                                <select id="voltmeter">
+                                    <option disabled selected>Choose...</option>
+                                    <option>(0-200V) Moving Coil</option><option>(0-200V) Moving Iron</option>
+                                    <option>(0-500V) Moving Coil</option><option>(0-500V) Moving Iron</option>
+                                    <option>(0-750V) Moving Coil</option><option>(0-750V) Moving Iron</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="buttonDiv">
+                        <button id="verify_btn" onclick="verification()" class="btn1">Verify your circuit design</button>
+                        <button class="btn2" onclick="location.reload()">Reset</button>
+                    </div>
+                </div>
+    
+                <div class="explanation_div glassmorphism" id="explanation_div">
+                    <div id="exp_div1">
+                        <div id="crct_img_div">
+                            <img src="../../Assets/Images/tick.png" alt="correct_image" height="100px">
+                        </div>
+                        <div id="wrong_img_div">
+                            <img src="../../Assets/Images/wrong.png" alt="wrong_image" height="100px">
+                        </div>
+                    </div>
+                    <div id="exp_div2">
+                        <h1>Kindly choose the components and their ratings and click <span>"Verify"</span> Button</h1>
+                        <br>
+                        <!-- <h4>(Scroll down to view the <span>datasheets</span> of the available components)</h4> -->
+                    </div>
+                    <div id="exp_div3">
+                        <h3><a href="#section2">Click here</a> to view datasheets</h3>
+                        <h3><a href="#section3">Click here</a> to learn how to design the circuit.</h3>
+                    </div>
+                </div>
+            </div>
+
+            <div class="container2" id="section2">
+
+                <h1 id="availableComponents">Available Components</h1>
+                <div class="specifications glassmorphism">
+                    <h2>Available SCRs</h2>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>SCR Name</th>
+                            <th>PIV</th>
+                            <th>I<sub>f max</sub></th>
+                            <th>I<sub>g</sub> max</th>
+                            <th>I<sub>s max</sub></th>
+                            <th>Datasheet</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>S4S1</td>
+                            <td>400 V</td>
+                            <td>0.8 A</td>
+                            <td>1.0 A</td>
+                            <td>20 A for 16ms</td>
+                            <td><a href="../../Assets/Datasheets/SCRs/S4S1_S6004V_scr_0.8A_4A.pdf" target="_blank">S4S1</a></td>
+                        </tr>
+    
+                        <tr>
+                            <td>2</td>
+                            <td>H2P4M</td>
+                            <td>400 V</td>
+                            <td>2.0 A</td>
+                            <td>0.2 A</td>
+                            <td>20 A for 10ms</td>
+                            <td><a href="../../Assets/Datasheets/SCRs/H2P4M_SCR_2A.pdf" target="_blank">H2P4M</a></td>
+                        </tr>
+    
+                        <tr>
+                            <td>3</td>
+                            <td>S6004V</td>
+                            <td>600 V</td>
+                            <td>4.0 A</td>
+                            <td>1.0 A</td>
+                            <td>30 A for 25ms</td>
+                            <td><a href="../../Assets/Datasheets/SCRs/S4S1_S6004V_scr_0.8A_4A.pdf" target="_blank">S6004V</a></td>
+                        </tr>
+    
+                        <tr>
+                            <td>4</td>
+                            <td>SK006L</td>
+                            <td>1000 V</td>
+                            <td>6.0 A</td>
+                            <td>2.0 A</td>
+                            <td>100 A for 83ms</td>
+                            <td><a href="../../Assets/Datasheets/SCRs/SK006L_scr_6A.pdf" target="_blank">SK006L</a></td>
+                        </tr>
+                    </table>
+    
+                    <h2>Available Diodes</h2>
+                    <table>
+                        <tr>
+                            <th></th>
+                            <th>Diode Name</th>
+                            <th>PIV</th>
+                            <th>V<sub>f</sub></th>
+                            <th>I<sub>f</sub> max</th>
+                            <th>I<sub>s max</sub></th>
+                            <th>Datasheet</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>1N4004</td>
+                            <td>400 V</td>
+                            <td>1.0 V</td>
+                            <td>1.0 A</td>
+                            <td>30 A for 8.3ms</td>
+                            <td><a href="../../Assets/Datasheets/Diodes/1n4004_diode_1A.pdf" target="_blank">1N4004</a></td>
+                        </tr>
+    
+                        <tr>
+                            <td>2</td>
+                            <td>CMF01</td>
+                            <td>600 V</td>
+                            <td>2.0 V</td>
+                            <td>2.0 A</td>
+                            <td>30 A (50Hz)</td>
+                            <td><a href="../../Assets/Datasheets/Diodes/CMF01_diode_2A.pdf" target="_blank">CMF01</a></td>
+                        </tr>
+    
+                        <tr>
+                            <td>3</td>
+                            <td>PSC406</td>
+                            <td>600 V</td>
+                            <td>2.0 V</td>
+                            <td>4.0 A</td>
+                            <td>14 A for 10ms</td>
+                            <td><a href="../../Assets/Datasheets/Diodes/PSC406_diode_4A.pdf" target="_blank">PSC406</a></td>
+                        </tr>
+    
+                        <tr>
+                            <td>4</td>
+                            <td>6A10</td>
+                            <td>1000 V</td>
+                            <td>0.9 V</td>
+                            <td>6.0 A</td>
+                            <td>400 A for 8.3ms</td>
+                            <td><a href="../../Assets/Datasheets/Diodes/6A10_diode_10A.pdf" target="_blank">6A10</a></td>
+                        </tr>
+                    </table>
+    
+                </div>
+            </div>
+
+            <div class="container3" id="section3">
+                <h1>How to choose the right components?</h1>
+                <div class="accordion">
+                    <div class="contentBox">
+                        <div class="label">Diode</div>
+                        <div class="content">
+                            <ol>
+                                <li>The voltage applied across the diode when it is <b>reverse biased</b> must always be lesser than the <b>Peak Inverse Voltage (PIV)</b> specified in the datasheet of the diode.</li>
+                                <li>The current through the diode (load current) must be lesser than the <b>maximum anode current (I<sub>a</sub>)</b> specified in the datasheet of the diode.</li>
+                                <li>The current flows through the diode only when it is forward biased. The maximum value of current through diode <b>I<sub>max</sub> = V<sub>peak</sub> / R<sub>load</sub></b>.</li>
+                                <li>For safe operation, <b>I<sub>max</sub> &lt; I<sub>a max</sub></b>. However the diode can withstand non-repetitive surge currents for a very short time.</li>
+                            </ul>
+                        </div>
+                    </div>
+    
+                    <div class="contentBox">
+                        <div class="label">SCR</div>
+                        <div class="content">
+                            <ul>
+                                <li>All the design aspects of diode are applicable to SCR.</li>
+                                <li>Additionally, SCRs have another terminal (Gate).</li>
+                                <li>The gate current applied to the SCR must not exceed the <b>maximum gate current (I<sub>GM</sub>)</b> specified in the datasheet</li>
+                                <li>The power (voltage * current) applied to the gate terminal must not exceed the <b>maximum gate power (P<sub>GM</sub>)</b> specified in the datasheet</li>
+                                <li>By increasing the gate current of the SCR, the <b>forward voltage drop of the SCR can be reduced</b>.</li>
+                            </ul>
+                        </div> 
+                    </div>
+
+                    <div class="contentBox">
+                        <div class="label">Load resistance</div>
+                        <div class="content">
+                            <ul>
+                                <li>In this virtual lab setup, we assume we have a rheostat (slider)</li>
+                                <li><b>Current Rating of rheostat:</b> (0 - 6) A</li>
+                                <li><b>Power rating of rheostat:</b> 10,000 W</li>
+                                <li><b>Resistance Values: </b>10&#8486; to 1000&#8486;</li>
+                                <li>The load resistance must be chosen such that the load current will be less than the maximum anode current of the SCRs and diodes.</li>
+                            </ul>
+                        </div> 
+                    </div>
+
+                    <div class="contentBox">
+                        <div class="label">Voltmeter</div>
+                        <div class="content">
+                            <ul>
+                                <li>The output voltage of a AC voltage controller is AC.</li>
+                                <li>To measure AC voltage, Moving Iron Voltmeters are used. MI voltmeters give the rms value of the voltage.</li>
+                                <li>To have higher accuracy, do not choose voltmeters with very high range than actually needed.</li>
+                                <li><b>For example: </b>To measure 450V rms AC, choosing 750V MI voltmeter will give inaccurate measurements. But choosing a 500V MI voltmeter will give accurate measurements.</li>    
+                            </ul>
+                        </div> 
+                    </div>
+
+                    <div class="contentBox">
+                        <div class="label">Ammeter</div>
+                        <div class="content">
+                            <ul>
+                                <li>To measure AC current, MI Ammeters are used.<br>MI ammeters give the rms value of the current.</li>
+                                <li>To have higher accuracy, do not choose ammeters with very high range than actually needed.</li>
+                                <li><b>For example: </b>To measure 4A AC, choosing 7.5A MI ammeter will give inaccurate measurements. But choosing a 5A MI ammeter will give accurate measurements.</li>    
+                            </ul>
+                        </div> 
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        <script>
+            const accordion = document.getElementsByClassName('contentBox');
+
+            for(i = 0; i<accordion.length; i++) {
+                accordion[i].addEventListener('click', function() {
+                    this.classList.toggle('active')
+                })
+            }
+        </script>
+        <script src="../../Script/Expt4/Expt4_circuitDesign.js"></script>
+        <!-- <script src="../../Script/Expt1/Expt1_simulation.js"></script> -->
+    </body>
+</html>

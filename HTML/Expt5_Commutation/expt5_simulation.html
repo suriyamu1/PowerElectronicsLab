@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../Styles/nav_bar.css">
+        <link rel="stylesheet" href="../../Styles/simulation_page_expt5.css">
+        <link rel="icon" type="image/x-icon" href="../../Assets/Images/TCE_logo.png">
+        <title>4. AC Voltage Controller - Simulation</title>
+    </head>
+    <body>
+        <header>
+            <div class="college_logo_name">
+                <img src="../../Assets/Images/TCE_logo.png" alt="Logo" height="50px">
+                <h2>Thiagarajar College of Engineering<br>Department of EEE</h2>
+            </div>
+            
+            <div class="heading_virtual_labs">
+                <h1>Power Electronics Virtual Laboratory</h1>
+            </div>
+
+            <div class="nav_links">
+                <li>
+                    <ul><a href="../../index.html">Home</a></ul>
+                    <ul><a href="https://www.tce.edu/" target="_blank">About TCE</a></ul>
+                    <ul><a href="../feedback.html">Feedback</a></ul>
+                    <ul><a href="../more.html">More</a></ul>
+                </li>
+            </div>
+            
+        </header>
+
+        <!-- Experiment Title -->
+        <section class="sub_navigation">
+            <div class="title">
+                <h1>Commutation of SCR</h1>
+            </div>
+            <div class="main_div">
+                <div class="navigation">
+                    <li>
+                        <ul><a href="expt5_aim.html">Aim</a></ul>
+                        <ul><a href="expt5_theory.html">Theory</a></ul>
+                        <ul><a href="expt5_preQuiz.html">Pre-Quiz</a></ul>
+                        <ul><a href="expt5_circuit_design.html">Circuit Design</a></ul>
+                        <ul><a href="#"  id="current_link">Simulation</a></ul>
+                        <ul><a href="expt5_post_quiz.html">Post-Quiz</a></ul>
+                    </li>
+                </div>
+            </div>
+        </section>
+
+        <section id="simulation" class="simulation">
+            <div class="left">
+                <div class="library">
+                    <h3>Apparatus</h3>
+                    <div class="pair">
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/scr.PNG" alt="SCR" draggable="true" id="scr">
+                        </div>
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/diode.png" alt="Diode" draggable="true" id="diode">
+                        </div>
+                    </div>
+                    <div class="pair">
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/mca.PNG" alt="Moving Coil Ammeter" draggable="true" id="mca">
+                        </div>
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/mcv_h.png" alt="Moving Coil Voltmeter" draggable="true" id="mcv">
+                        </div>
+                    </div>
+                    <div class="pair">   
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/mia.PNG" alt="Moving Iron Ammeter" draggable="true" id="mia">
+                        </div>
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/miv_h.png" alt="Moving Iron Voltmeter" draggable="true" id="miv">
+                        </div>
+                    </div>
+                    <div class="pair">
+                        <div>
+                            <img src="../../Assets/Images/dragAndDropImages/Expt1/rload_h.png" alt="Resistive Load" draggable="true" id="rload">
+                        </div>
+                    </div>
+                </div>
+                <div class="firing_pulse">
+                    <h1>Firing Pulse Generator</h1>
+                    <div class="box">
+                        <h3>Component 1</h3>
+                        <select id="component1">
+                            <option selected>Nil</option>
+                            <option>a</option><option>180 + a</option>
+                        </select>
+                    </div>
+
+                    <div class="box">
+                        <h3>Component 2</h3>
+                        <select id="component2">
+                            <option selected>Nil</option>
+                            <option>a</option><option>180 + a</option>
+                        </select>
+                    </div>
+                </div>    
+            </div>
+            
+            <!-- circuit diagram div     -->
+            <div class="main">
+                <div class="circuit" >
+                    <div class="leftBottom1">
+                        <img src="../../Assets/Images/Commutation/Left_Bottom_1.png" alt="leftBottom1">
+                    </div>
+                    <div class="leftTop">
+                        <img src="../../Assets/Images/Commutation/Left_Top.png" alt="leftTop">
+                    </div>
+                      <div class="bottomLine1">
+                        <img src="../../Assets/Images/Commutation/Bottom_Line_1.png" alt="bottomLine1">
+                    </div>
+                    <div class="centralLine">
+                        <img src="../../Assets/Images/Commutation/Central_Line.png" alt="centralLine">
+                    </div>
+                    <!-- <div class="leftBottom2">
+                        <img src="../../Assets/Images/Commutation/Left_Bottom_2.png" alt="leftBottom2">
+                    </div>
+                  
+                    <div class="bottomLine2">
+                        <img src="../../Assets/Images/Commutation/Bootom_Line_2.png" alt="bottomLine2">
+                    </div>
+                    <div class="rightTop">
+                        <img src="../../Assets/Images/Commutation/Right_Top.png" alt="rightTop">
+                    </div>
+                    <div class="rightBottom">
+                        <img src="../../Assets/Images/Commutation/Right_Bottom.png"  alt="rightBottom">
+                    </div>
+                    
+                    <div class="switchCircuit1">
+                        <img src="../../Assets/Images/Commutation/Switch_Circuit_1.png" alt="switchCircuit1">
+                    </div>
+                    <div class="switchCircuit2">
+                        <img src="../../Assets/Images/Commutation/Switch_Circuit_2.png" alt="switchCircuit2">
+                    </div>
+                    <div class="switchCircuit3">
+                        <img src="../../Assets/Images/Commutation/Switch_Circuit_3.png" alt="switchCircuit3">
+                    </div>
+                    <div class="voltageSource1" ondrop="drop(event)" ondragover="allowDrop(event)" id="1">1</div>
+                    <div class="voltageSource1" ondrop="drop(event)" ondragover="allowDrop(event)" id="2">2</div>
+                    <div class="capacitor" ondrop="drop(event)" ondragover="allowDrop(event)" id="3">3</div>
+                    <div class="ammeter" ondrop="drop(event)" ondragover="allowDrop(event)" id="4">4</div>
+                    <div class="inductor" ondrop="drop(event)" ondragover="allowDrop(event)" id="5">5</div>
+                    <div class="scr1" ondrop="drop(event)" ondragover="allowDrop(event)" id="6">6</div>
+                    <div class="scr2" ondrop="drop(event)" ondragover="allowDrop(event)" id="7">7</div>
+                    <div class="voltmeter" ondrop="drop(event)" ondragover="allowDrop(event)" id="8">8</div>
+                    <div class="load" ondrop="drop(event)" ondragover="allowDrop(event)" id="9">9</div> -->
+                </div>
+            </div>
+        </section>
+
+        <section id="output" class="hide">
+            <span class="cancel" onclick="showCircuit()">X</span>
+            <div style="width:755px;height:600px;margin:10px;" class="graph">
+                <canvas id="waveform" height="600px" width="1000px">
+                </canvas>
+            </div>
+            <div class="firingAngle">
+                <div id="control1">
+                    <h1>Firing Angle 1(&#945;) = <span id="angleDisplay1"> 0&#176; </span></h1>
+                    <input id="alpha1" type="range" min="0" max="180" value="0">
+                </div>
+                <div id="control2">
+                    <h1>Firing Angle 2(&#945;) = <span id="angleDisplay2"> 0&#176; </span></h1>
+                    <input id="alpha2" type="range" min="0" max="180" value="0">
+                </div>
+                <h1 style="margin-top:30px">Average voltage = <span id="avgDisplay"> 0 V </span></h1>
+                <h1 style="margin-top:30px">RMS voltage = <span id="rmsDisplay"> 0 V</span></h1>
+            </div>
+        </section>
+
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.js"
+        integrity="sha512-Lii3WMtgA0C0qmmkdCpsG0Gjr6M0ajRyQRQSbTF6BsrVh/nhZdHpVZ76iMIPvQwz1eoXC3DmAg9K51qT5/dEVg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="../../Script/Expt4/Expt4_dragDrop.js"></script>
+        <script src="../../Script/Expt4/Expt4_simulation.js"></script>
+    </body>
+</html>

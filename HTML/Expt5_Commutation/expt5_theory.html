@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../../Styles/nav_bar.css">
+        <link rel="stylesheet" href="../../Styles/theory_page.css">
+        <link rel="icon" type="image/x-icon" href="../../Assets/Images/TCE_logo.png">
+        <title>4. AC Voltage Controller - Theory</title>
+    </head>
+    <body>
+        <header>
+            <div class="college_logo_name">
+                <img src="../../Assets/Images/TCE_logo.png" alt="Logo" height="50px">
+                <h2>Thiagarajar College of Engineering<br>Department of EEE</h2>
+            </div>
+            
+            <div class="heading_virtual_labs">
+                <h1>Power Electronics Virtual Laboratory</h1>
+            </div>
+
+            <div class="nav_links">
+                <li>
+                    <ul><a href="../../index.html">Home</a></ul>
+                    <ul><a href="https://www.tce.edu/" target="_blank">About TCE</a></ul>
+                    <ul><a href="../feedback.html">Feedback</a></ul>
+                    <ul><a href="../more.html">More</a></ul>
+                </li>
+            </div>
+            
+        </header>
+
+        <!-- Experiment Title -->
+        <section class="sub_navigation">
+            <div class="title">
+                <h1>AC Voltage Controller</h1>
+            </div>
+            <div class="navigation">
+                <li>
+                    <ul><a href="expt5_aim.html">Aim</a></ul>
+                    <ul><a href="#" id="current_link">Theory</a></ul>
+                    <ul><a href="expt5_preQuiz.html">Pre-Quiz</a></ul>
+                    <ul><a href="expt5_circuit_design.html">Circuit Design</a></ul>
+                    <ul><a href="expt5_simulation.html">Simulation</a></ul>
+                    <ul><a href="expt5_post_quiz.html">Post-Quiz</a></ul>
+                </li>
+            </div>
+        </section>
+        <section class="container">
+
+            <div class="infoBox glassmorphism">
+                <h3>AC Voltage Controller - Introduction</h3>
+                <ul>
+                    <li>AC voltage controllers are <b>thyristor based</b> devices which convert fixed AC directly to variable AC without a change in frequency.</li>
+                    <li>Thyristor based voltage controllers have high efficiency, flexibility in control and compact size.</li>
+                    <li>The thyristors will be naturally commutated by the AC supply so external commutation is not required.</li>
+                    <li>There are majorly two types of control methods used in AC voltage controllers
+                        <ol>
+                            <li>Phase Control (more common)</li>
+                            <li>Integral Cycle Control</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="infoBox glassmorphism">
+                <h3>Types of Phase Controlled AC Voltage Controllers</h3>
+
+                <table>
+                    <tr>
+                        <th>Half wave voltage controller</th>
+                        <th>Full wave voltage controller</th>
+                    </tr>
+                    <tr>
+                        <td><img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/half_wave_ACVR_diagram.PNG" alt=""></td>
+                        <td><img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/full_wave_ACVR_diagram.PNG" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td><img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/half_wave_ACVR_waveform.PNG" alt=""></td>
+                        <td><img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/full_wave_ACVR_waveform.PNG" alt=""></td>
+                    </tr>
+                    <tr>
+                        <td>It has one SCR and one diode. So anyone of the half cycles can only be controlled.</td>
+                        <td>It has two SCRs so both the half cycles can be controlled.</td>
+                    </tr>
+                    <tr>
+                        <td>Since both the half cycles are not symmetrical, a dc component is introduced, which is undesirable.</td>
+                        <td>DC component will not be introduced if the firing angles of both the SCRs are equal.</td>
+                    </tr>
+                </table>
+            </div>
+
+            <h1 id="additionalTheory">Additional Theory</h1>
+
+            
+            <div class="accordion">
+
+                <div class="contentBox">
+                    <div class="label">Integral Cycle Control</div>
+                    <div class="content">
+                        <div class="imgDiv">
+                            <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/integralCycleControl.png" alt="Cycle control waveform diagram" width="80%">
+                        </div>
+                        <ul>
+                            <li>Integral cycle control consists of switching on the supply to load for an integral number of cycles and then switching off the supply for a further number of cycles</li>
+                            <li>This control technique is used in applications where mechanical time constant or thermal time constant is of the order of several seconds.</li>
+                            <li><b>For example,</b> mechanical time constant for many of the speed-control drives or thermal time constant for many of the heating load is usually quite high. For such applications, almost no variation in speed or temperature will be noticed if control is achieved by connecting the load to source for some on-cycles and then disconnecting the load for some off-cycles</li>
+                            <li>The equation of output RMS voltage is given below. </li>
+                            <div class="imgDiv">
+                                <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/integralCycleControlFormula.jpg" alt="" height="75px" id="moreMarginNeeded">
+                            </div>
+                            <li>where, n indicates the number of on-cycles, m indicates the number of off-cycles and V<sub>s</sub> is the RMS value of supply voltage. </li>
+                        </ul>   
+                    </div> 
+                </div>
+
+                <div class="contentBox">
+                    <div class="label">Other possible configurations of AC voltage controllers</div>
+                    <div class="content">
+                        <p><b>Note:</b> The below are the other configurations of phase controlled full wave AC voltage controller.</p>
+                        <br><br>
+                        <h2>ACVR with Triac</h2>
+                        <div class="imgDiv">
+                            <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/AcvrWithTriac.PNG" alt="ACVR with triac" width="50%">
+                            <ul>
+                                <li>This configuration is suitable for <b>low-power applications</b> where the load is resistive and has only a small inductance.</li>
+                            </ul> 
+                        </div>
+                         
+                        <br>
+                        <h2>ACVR with only one SCR</h2>
+                        <div class="imgDiv">
+                            <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/acvrWithOneSCR.PNG" alt="ACVR with only one SCR" width="50%">
+                            <ul>
+                                <li>This configuration uses 4 power diodes and 1 SCR.</li>
+                                <li>In the positive half cycle, diodes D1, D3 and SCR T1 will conduct. During negative half cycle, diodes D2, D4 and SCR T1 will conduct.</li>
+                                <li>This configuration is <b>cheaper</b> as only one SCR is used (only one firing pulse circuitry is required)</li>
+                                <li>The disadvantage of this configuration is that, at any time, 3 devices (2 diodes and 1 SCR) will be conducting. This causes <b>more voltage drop</b>.</li>
+                            </ul>
+                        </div>
+                        <br>
+                    </div> 
+                </div>
+
+            </div>
+        </section>
+        <script>
+            const accordion = document.getElementsByClassName('contentBox');
+
+            for(i = 0; i<accordion.length; i++) {
+                accordion[i].addEventListener('click', function() {
+                    this.classList.toggle('active')
+                })
+            }
+            
+        </script>
+    </body>
+</html>

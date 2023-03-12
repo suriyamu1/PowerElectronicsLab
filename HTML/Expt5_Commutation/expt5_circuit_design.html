@@ -48,22 +48,40 @@
         </section>
         <section class="main_container">
             <div class="container">
+
                 <div class="verification_div glassmorphism">
                     <h1>Choose the components and their ratings</h1>
+                    <h2 class="sideHeading">Voltage Sources:</h2>
                     <div class="sliderDiv">
-                        <h2>Input Voltage &nbsp;= &nbsp;<span id="voltSpan">230 V AC</span></h2>
-                        <input type="range" min="0" max="500" value="230" id="voltSlider">
+                        <h2>Input Voltage (V<sub>in</sub>)&nbsp;&nbsp;&nbsp;= <span id="inputVoltSpan">200V DC</span></h2>
+                        <span>0V</span><input type="range" min="0" max="1000" value="200" id="inputVoltSlider"><span>1000V</span>
                     </div>
     
                     <div class="sliderDiv">
-                        <h2>Load Resistance = <span id="resSpan">50 &#8486;</span></h2>
-                        <input type="range" min="10" max="1000" value="50" id="resSlider">
+                        <h2>Comm. Voltage (V<sub>c</sub>) = <span id="commVoltSpan">250V DC</span></h2>
+                        <span>0V</span><input type="range" min="0" max="1000" value="250" id="commVoltSlider"><span>1000V</span>
+                    </div>
+
+                    <div class="sliderDiv">
+                        <h2>Gate Voltage (V<sub>g</sub>) &nbsp;&nbsp;&nbsp;&nbsp;= <span id="gateVoltSpan">15V DC</span></h2>
+                        <span>0V</span><input type="range" min="0" max="30" value="15" id="gateVoltSlider"><span>&nbsp;&nbsp;30V&nbsp;&nbsp;</span>
+                    </div>
+
+                    <h2 class="sideHeading">Resistors:</h2>
+                    <div class="sliderDiv">
+                        <h2>Gate Resistance (R<sub>g</sub>)&nbsp;= &nbsp;<span id="gateResSpan">50 &#8486;</span></h2>
+                        <span>10 &#8486;</span><input type="range" min="10" max="500" value="50" id="gateResSlider"><span>500 &#8486;</span>
+                    </div>
+
+                    <div class="sliderDiv">
+                        <h2>Load Resistance (R<sub>L</sub>)&nbsp;= &nbsp;<span id="loadResSpan">50 &#8486;</span></h2>
+                        <span>10 &#8486;</span><input type="range" min="10" max="5000" value="50" id="loadResSlider"><span>5000 &#8486;</span>
                     </div>
     
-                    <div class="choose_components">
-                        <div class="scr_diode glassmorphism">
+                    <div class="choose_components" style="margin: 1.5rem">
+                        <div class="ammeter_voltmeter glassmorphism" style="width:45%; height: 70%;">
                             <div class="box">
-                                <h3>SCR</h3>
+                                <h3>Main SCR&nbsp;</h3>
                                 <select id="scr1">
                                     <option disabled selected>Choose...</option>
                                     <option>S4S1</option><option>H2P4M</option>
@@ -72,16 +90,25 @@
                             </div>
     
                             <div class="box">
-                                <h3>Diode</h3>
+                                <h3>Aux. SCR&nbsp;</h3>
+                                <select id="scr2">
+                                    <option disabled selected>Choose...</option>
+                                    <option>S4S1</option><option>H2P4M</option>
+                                    <option>S6004V</option><option>SK006L</option>
+                                </select>
+                            </div> 
+                            
+                            <div class="box">
+                                <h3>Capacitor</h3>
                                 <select id="diode1">
                                     <option disabled selected>Choose...</option>
-                                    <option>1N4004</option><option>CMF01</option>
-                                    <option>PSC406</option><option>6A10</option>
+                                    <option>cap1</option><option>cap2</option>
+                                    <option>cap3</option><option>cap4</option>
                                 </select>
-                            </div>    
+                            </div> 
                         </div>
 
-                        <div class="ammeter_voltmeter glassmorphism">
+                        <div class="ammeter_voltmeter glassmorphism" style="width:45%; height: 70%;">
                             <div class="box">
                                 <h3>Ammeter</h3>
                                 <select id="ammeter">
@@ -100,6 +127,14 @@
                                     <option>(0-750V) Moving Coil</option><option>(0-750V) Moving Iron</option>
                                 </select>
                             </div>
+                            <div class="box">
+                                <h3>Inductor&nbsp;&nbsp;</h3>
+                                <select id="diode1">
+                                    <option disabled selected>Choose...</option>
+                                    <option>1N4004</option><option>CMF01</option>
+                                    <option>PSC406</option><option>6A10</option>
+                                </select>
+                            </div> 
                         </div>
                     </div>
                     <div class="buttonDiv">
@@ -120,7 +155,7 @@
                     <div id="exp_div2">
                         <h1>Kindly choose the components and their ratings and click <span>"Verify"</span> Button</h1>
                         <br>
-                        <!-- <h4>(Scroll down to view the <span>datasheets</span> of the available components)</h4> -->
+                         <h4>(Scroll down to view the <span>datasheets</span> of the available components)</h4>
                     </div>
                     <div id="exp_div3">
                         <h3><a href="#section2">Click here</a> to view datasheets</h3>
@@ -128,7 +163,42 @@
                     </div>
                 </div>
             </div>
-
+            <!-- <div class="container1">
+                <div class="left">
+                    <h1>Circuit diagram</h1>
+                    <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/integralCycleControl.png" alt="">
+                    <div class="explanation">
+                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Exercitationem tempora assumenda animi rem obcaecati quibusdam quaerat excepturi accusamus at nam illum fugit eligendi, pariatur ad?
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="componentSelection glassmorphism">
+                        <h1>Select the components and their ratings</h1>
+                        <h2>Voltage Sources:</h2>
+                        <div class="sliderDiv">
+                            <h2>Input Voltage (V<sub>in</sub>)&nbsp;= &nbsp;<span id="voltSpan">230 V</span></h2>
+                            <input type="range" min="0" max="500" value="230" id="voltSlider">
+                        </div>
+                        <div class="sliderDiv">
+                            <h2>Comm. Voltage (V<sub>c</sub>)&nbsp;= &nbsp;<span id="voltSpan">230 V</span></h2>
+                            <input type="range" min="0" max="500" value="230" id="voltSlider">
+                        </div>
+                        <div class="sliderDiv">
+                            <h2>Gate Voltage (V<sub>g</sub>)&nbsp;= &nbsp;<span id="voltSpan">230 V</span></h2>
+                            <input type="range" min="0" max="500" value="230" id="voltSlider">
+                        </div>
+                        <h2>Resistors:</h2>
+                        <div class="sliderDiv">
+                            <h2>Gate Resistance (R<sub>g</sub>)&nbsp;= &nbsp;<span id="voltSpan">230 V</span></h2>
+                            <input type="range" min="0" max="500" value="230" id="voltSlider">
+                        </div>
+                        <div class="sliderDiv">
+                            <h2>Load Resistance (R<sub>L</sub>)&nbsp;= &nbsp;<span id="voltSpan">230 V</span></h2>
+                            <input type="range" min="0" max="500" value="230" id="voltSlider">
+                        </div>
+                    </div>
+                </div>
+            </div> -->
             <div class="container2" id="section2">
 
                 <h1 id="availableComponents">Available Components</h1>
@@ -317,7 +387,6 @@
                 })
             }
         </script>
-        <script src="../../Script/Expt4/Expt4_circuitDesign.js"></script>
-        <!-- <script src="../../Script/Expt1/Expt1_simulation.js"></script> -->
+        <script src="../../Script/Expt5/Expt5_circuitDesign.js"></script>
     </body>
 </html>

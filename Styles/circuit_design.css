@@ -31,9 +31,17 @@ body {
   font-size: 1.1rem;
   margin-bottom: 2rem;
 }
+.container .verification_div .sideHeading {
+  color: darkblue;
+}
 .container .verification_div .sliderDiv {
   margin: 20px 10px;
   display: flex;
+  align-items: center;
+}
+.container .verification_div .sliderDiv span {
+  font-weight: bold;
+  margin: 0px 5px;
 }
 .container .verification_div .sliderDiv h2 {
   width: 40%;
@@ -41,8 +49,11 @@ body {
 .container .verification_div .sliderDiv h2 span {
   color: blue;
 }
+.container .verification_div .sliderDiv h2 sub {
+  font-size: 0.85rem;
+}
 .container .verification_div .sliderDiv input {
-  width: 65%;
+  width: 45%;
 }
 .container .verification_div .choose_components {
   margin: 2.5rem 0rem;
@@ -363,7 +374,6 @@ body {
   content: "-";
 }
 .accordion .contentBox.active .content {
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   transition: 0s;

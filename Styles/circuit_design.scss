@@ -33,21 +33,33 @@ body {
             margin-bottom: 2rem;
         }
 
+        .sideHeading {
+            color: darkblue;
+        }
+
         .sliderDiv {
             margin: 20px 10px;
             display: flex;
+            align-items: center;
+
+            span {
+                font-weight: bold;
+                margin: 0px 5px;
+            }
 
             h2 {
                 width: 40%;
-                // text-align: center;
 
                 span {
                     color: blue;
                 }
+                sub {
+                    font-size: 0.85rem;
+                }
             }
 
             input {
-                width: 65%;
+                width: 45%;
             }
         }
 
@@ -57,7 +69,7 @@ body {
             display: flex;
             align-items: center;
             justify-content: space-between;
-
+            
             .scr_diode {
                 // glassmorphism class is included
                 border-radius: 10px;
@@ -255,7 +267,6 @@ body {
             .ok_green {
                 background-color: lightgreen;
             }
-    
         } 
         
         #exp_div3 {
@@ -451,3 +462,71 @@ body {
     -webkit-backdrop-filter: blur( 3.5px );
     border: 1px solid rgba( 255, 255, 255, 0.18 );
 }
+
+// For commutation of SCR circuit design page
+// .container1 {
+//     padding: 20.5vh 3% 1% 3%;
+//     height: 100vh;
+//     // background-color: whitesmoke;
+//     display: flex;
+
+
+//     .left {
+//         border: 1px solid black;
+//         width: 65%;
+//         display: flex;
+//         flex-direction: column;
+//         align-items: center;
+//         justify-content: space-around;
+//         img {
+//             width: 90%;
+//         }
+//         .explanation {
+//             height: 25%;
+//             border: 1px solid black;
+//             width: 90%;
+//         }
+//     }
+
+//     .right {
+//         border: 1px solid black;
+//         width: 50%;  //donot remove this line
+//         display: flex;
+//         align-items: center;
+//         justify-content: center;
+
+//         .componentSelection {
+//             width: 80%;
+//             padding: 5%;
+//             // border: 1px solid black;
+//             border-radius: 15px;
+
+//             h1 {
+//                 text-align: center;
+//                 font-size: 1.3rem;
+//             }
+
+//             .sliderDiv {
+//                 // border: 1px solid black;
+
+//                 display: flex;
+//                 align-items: center;
+//                 justify-content: space-between;
+//                 margin-bottom: 3%;
+
+//                 h2 {
+//                     border: 1px solid black;
+
+//                     sub {
+//                         font-size: 0.85rem;
+//                     }
+//                 }
+
+//                 input {
+//                     width: 50%;
+//                 }
+//             }
+//         }
+
+//     }
+// }

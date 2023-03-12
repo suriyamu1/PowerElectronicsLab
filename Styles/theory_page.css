@@ -149,7 +149,6 @@
   content: "-";
 }
 .container .accordion .contentBox.active .content {
-  height: -webkit-fit-content;
   height: -moz-fit-content;
   height: fit-content;
   transition: 0s;

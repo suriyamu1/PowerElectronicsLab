@@ -21,7 +21,6 @@
     margin-left: 30px;
     position:relative;
     top:250px;
-    border: 1px solid red;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -80,10 +79,9 @@
 
 #output{
     height:600px;
-    width:400px;
+    width:450px;
     position: absolute;
     top:250px;
-    left:1300px;
+    left:1250px;
     overflow: hidden;
-    border: 1px solid red;
 }

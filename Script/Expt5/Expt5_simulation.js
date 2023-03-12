@@ -8,6 +8,7 @@ var chart = null;
 var circuitName = "VC";
 var pushCondition = "unpushed";
 var position = 0;
+var voltageArr =[0,0,0,0,0,0,0,0];
 
 window.onload = function() {
     voltageCom = document.getElementById('voltageCom');
@@ -73,13 +74,32 @@ function changeTriSwitchCircuit(){
         triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position0.png";
         position = 0;
     }
+    setVoltage(position);
+}
 
+function setVoltage(switchPosition){
+
+   let voltage = localStorage.getItem("inputVolt");
+
+   if(voltage!=null){
+    if(switchPosition===1){
+        voltageArr = [];
+        for(let i=0;i<8;i++){
+            voltageArr.push(voltage);
+        }
+    }else if(switchPosition===2){
+        voltageArr =[0,0,0,0,0,0,0,0];
+    }
+    showGraph();
+   }else if(voltage==null){
+    alert("Do Circuit Design Verfication First");
+    window.location.href = "/HTML/Expt5_Commutation/expt5_circuit_design.html"
+   }
 }
 
 function showGraph(){
    
-    let voltage =[0,0,0,0,0,0,0,0];
-
+    console.log(voltageArr);
     const ctx = document.getElementById("waveform");
 
     if(chart!==null) chart.destroy();
@@ -92,7 +112,7 @@ function showGraph(){
                 lineTension:0.17,
                 backgroundColor:"rgba(255, 121, 121,1.0)",
                 borderColor:"#2E0249",
-                data:voltage
+                data:voltageArr
             }]
         },
         options: {

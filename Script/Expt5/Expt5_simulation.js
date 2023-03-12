@@ -1,99 +1,99 @@
-const output = document.getElementById("output");
-const simulation = document.getElementById("simulation");
-const alpha1 = document.getElementById("alpha1");
-const alpha2 = document.getElementById("alpha2");
-const angleDisplay1 = document.getElementById("angleDisplay1");
-const angleDisplay2 = document.getElementById("angleDisplay2");
-const avgDisplay = document.getElementById("avgDisplay");
-const rmsDisplay = document.getElementById("rmsDisplay");
-const control1 = document.getElementById("control1");
-const control2 = document.getElementById("control2");
+var voltageCom = null;
+var currentCom = null;
+var push =  null;
+var triSwitch = null;
+var pushCircuit = null;
+var triSwitchCircuit = null;
+var chart = null;
+var circuitName = "VC";
+var pushCondition = "unpushed";
+var position = 0;
 
-let scr1;
-let scr2;
-let diode1;
-let diode2;
+window.onload = function() {
+    voltageCom = document.getElementById('voltageCom');
+    currentCom = document.getElementById('currentCom');
+    push = document.getElementById('push');
+    triSwitch = document.getElementById('switch');
+    pushCircuit = document.getElementById('pushCircuit');
+    triSwitchCircuit = document.getElementById('triCircuit');
 
-const data ={
-    firingangle1:0,
-    firingangle2:180,
-    voltage:230
-}
+    voltageCom.onclick = changeCircuit;
+    currentCom.onclick = changeCircuit;
+    push.onclick = changePushCircuit;
+    triSwitch.onclick = changeTriSwitchCircuit;
 
-function calculateCos(degrees) {
-    var radians = (Math.PI / 180) * degrees;
-    return Math.cos(radians);
-}
-
-function calculateSine(degrees) {
-    var radians = (Math.PI / 180) * degrees;
-    return Math.sin(radians);
-}
-
-alpha1.oninput=()=>{
-    data.firingangle1=Number(alpha1.value);
-    angleDisplay1.innerHTML=data.firingangle1+"&#176;";
-    // let avg = ((2*data.voltage)/Math.PI)*(calculateCos(angle));
-    // avgDisplay.innerHTML=avg.toPrecision(5)+" V";
-    // // console.log(avg);
-    // let rms = (data.voltage/Math.sqrt(2*Math.PI))*Math.sqrt(Math.PI-( (Math.PI / 180) * angle)+(calculateSine(angle)/2));
-    // rmsDisplay.innerHTML=rms.toPrecision(5)+" V";
-    // // console.log(rms);
     showGraph();
 }
 
-alpha2.oninput=()=>{
-    data.firingangle2=180+Number(alpha2.value);
-    angleDisplay2.innerHTML= data.firingangle2+"&#176;";
-    showGraph();
+
+function changeCircuit(){
+    let clickedButton = document.querySelector('input[name="circuitOption"]:checked') 
+    circuitName = clickedButton.value;
+
+    if(circuitName === "VC"){
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_V.png"
+    }else if (circuitName === "CC"){
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_C.png"
+    }
+
+    triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position0.png";
+    position =0;
 }
 
-let chart=null;
+function changePushCircuit(){
+
+   if(pushCondition==="unpushed"){
+       if(circuitName === "VC"){
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Pushed_V.png"
+       }else if (circuitName === "CC"){
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Pushed_C.png"
+       }
+       pushCondition = "pushed";
+   } 
+   else if(pushCondition==="pushed"){
+        if(circuitName === "VC"){
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_V.png"
+        }else if (circuitName === "CC"){
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_C.png"
+        }
+        pushCondition = "unpushed";
+   }  
+
+}
+
+function changeTriSwitchCircuit(){
+   
+    if(position===0){
+        triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position1.png";
+        position = 1;
+    }else if(position===1){
+        triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position2.png";
+        position = 2;
+    }else if(position===2){
+        triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position0.png";
+        position = 0;
+    }
+
+}
 
 function showGraph(){
-    let sineValues=[];
-    let labelValue=[];
-    let theta=0;
-
-    if(components[0]==="scr" && components[1]==="diode"){
-        control2.classList.add("hide");
-    }else if(components[0]==="diode" && components[1]==="diode"){
-        control1.classList.add("hide");
-        control2.classList.add("hide");
-    }else if(components[0]==="diode" && components[1]==="scr"){
-        control1.classList.add("hide");
-    }
-
-    for(let i=0; i<=720; i++){
-        labelValue.push(i+"");
-    }
-
-    for(let i=0;i<=720;i++){
-        theta=theta%360;
-        let x= data.voltage*Math.sqrt(2)*calculateSine(theta);
-        if(theta>=data.firingangle1 && theta<=180){
-            sineValues.push(x);
-        }else if(theta >= data.firingangle2 && theta<=360){
-            sineValues.push(x);
-        }else{
-            sineValues.push(0);
-        }
-        theta+=1;
-    }
+   
+    let voltage =[0,0,0,0,0,0,0,0];
 
     const ctx = document.getElementById("waveform");
+
     if(chart!==null) chart.destroy();
     chart = new Chart(ctx, {
         type: 'line',
         data: {
+            labels:[1,2,3,4,5,6,7,8],
             datasets:[{
-                label:"AC voltage controller waveform",
+                label:"SCR Commutation",
                 lineTension:0.17,
                 backgroundColor:"rgba(255, 121, 121,1.0)",
                 borderColor:"#2E0249",
-                data:sineValues
-            }],
-            labels:labelValue,
+                data:voltage
+            }]
         },
         options: {
             elements:{
@@ -103,8 +103,8 @@ function showGraph(){
             },
             scales:{
                 y: {
-                    suggestedMin: -15,
-                    suggestedMax: 15
+                    suggestedMin: -30,
+                    suggestedMax: 30
                 },
                 yAxes:{
                     title:{
@@ -118,7 +118,7 @@ function showGraph(){
                 xAxes:{
                     title:{
                         display:true,
-                        text:"Angle(degrees)",
+                        text:"time(milliseconds)",
                         font: {
                             size: 15
                         }
@@ -127,14 +127,9 @@ function showGraph(){
             }
         }
     });
-
-    output.classList.remove("hide");
-    simulation.classList.add("hide");
 }
 
 function showCircuit(){
     chart.destroy();
-    output.classList.add("hide");
-    simulation.classList.remove("hide");
 }
 

@@ -1,3 +1,9 @@
+window.onload = function() {
+    if(localStorage.getItem("inputVolt")!=null) {
+        localStorage.removeItem("inputVolt");
+    }
+}
+
 const inputVoltSlider = document.getElementById("inputVoltSlider");
 const commVoltSlider = document.getElementById("commVoltSlider");
 const gateVoltSlider = document.getElementById("gateVoltSlider");

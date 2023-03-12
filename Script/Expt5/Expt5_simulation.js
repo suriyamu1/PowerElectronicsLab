@@ -9,6 +9,7 @@ var circuitName = "VC";
 var pushCondition = "unpushed";
 var position = 0;
 var voltageArr =[0,0,0,0,0,0,0,0];
+var pushFlag = false;
 
 window.onload = function() {
     voltageCom = document.getElementById('voltageCom');
@@ -30,7 +31,7 @@ window.onload = function() {
 function changeCircuit(){
     let clickedButton = document.querySelector('input[name="circuitOption"]:checked') 
     circuitName = clickedButton.value;
-
+    
     if(circuitName === "VC"){
         pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_V.png"
     }else if (circuitName === "CC"){
@@ -44,6 +45,9 @@ function changeCircuit(){
 function changePushCircuit(){
 
    if(pushCondition==="unpushed"){
+       
+       pushFlag = true;
+       alert("Release the push button after few seconds");
        if(circuitName === "VC"){
         pushCircuit.src = "/Assets/Images/Commutation/Circuit_Pushed_V.png"
        }else if (circuitName === "CC"){
@@ -68,9 +72,17 @@ function changeTriSwitchCircuit(){
         triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position1.png";
         position = 1;
     }else if(position===1){
-        triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position2.png";
-        position = 2;
-    }else if(position===2){
+        if(!pushFlag){
+            alert("Let the Capacitor to charge by pushing the push button for few seconds");
+         }
+        else if(pushFlag && pushCondition==="pushed"){
+             alert("Release the push button, Capacitor is charged");
+         }
+        else{        
+            triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position2.png";
+            position = 2;
+         }
+    }else if(position===2){   
         triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position0.png";
         position = 0;
     }
@@ -147,9 +159,5 @@ function showGraph(){
             }
         }
     });
-}
-
-function showCircuit(){
-    chart.destroy();
 }
 

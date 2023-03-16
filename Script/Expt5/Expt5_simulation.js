@@ -58,12 +58,12 @@ function changeCircuit(){
     circuitName = clickedButton.value;
     
     if(circuitName === "VC"){
-        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_V.png"
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_V.PNG"
     }else if (circuitName === "CC"){
-        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_C.png"
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_C.PNG"
     }
 
-    triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position0.png";
+    triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position0.PNG";
     position =0;
 }
 
@@ -74,17 +74,17 @@ function changePushCircuit(){
        pushFlag = true;
        alert("Release the push button after few seconds");
        if(circuitName === "VC"){
-        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Pushed_V.png"
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Pushed_V.PNG"
        }else if (circuitName === "CC"){
-        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Pushed_C.png"
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Pushed_C.PNG"
        }
        pushCondition = "pushed";
    } 
    else if(pushCondition==="pushed"){
         if(circuitName === "VC"){
-        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_V.png"
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_V.PNG"
         }else if (circuitName === "CC"){
-        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_C.png"
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_C.PNG"
         }
         pushCondition = "unpushed";
    }  
@@ -94,7 +94,7 @@ function changePushCircuit(){
 function changeTriSwitchCircuit(){
    
     if(position===0){
-        triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position1.png";
+        triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position1.PNG";
         position = 1;
     }else if(position===1){
         if(!pushFlag){
@@ -104,11 +104,11 @@ function changeTriSwitchCircuit(){
              alert("Release the push button, Capacitor is charged");
          }
         else{        
-            triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position2.png";
+            triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position2.PNG";
             position = 2;
          }
     }else if(position===2){   
-        triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position0.png";
+        triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position0.PNG";
         position = 0;
         pushFlag = false;
         pushCondition = "unpushed";

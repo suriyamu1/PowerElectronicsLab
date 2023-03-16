@@ -17,8 +17,9 @@ const gateResSpan = document.getElementById("gateResSpan");
 const loadResSpan = document.getElementById("loadResSpan");
 
 const scr1 = document.getElementById("scr1");
+const scr2 = document.getElementById("scr2");
 const diode1 = document.getElementById("diode1");
-
+const capacitor = document.getElementById("capacitor");
 const ammeter = document.getElementById("ammeter");
 const voltmeter = document.getElementById("voltmeter");
 
@@ -57,9 +58,9 @@ function verification() {
     let vinMax = inputVoltSlider.value;
     let i_max = vinMax / loadResSlider.value;
     let i_gate = gateVoltSlider.value / gateResSlider.value;
+
     localStorage.setItem("inputVolt",vinMax);
     localStorage.setItem("loadCurrent",i_max);
-
     //displaying output voltage, load current and load resistance values
     exp_div2.innerHTML = 
         "<h3 class='glassmorphism'>The output voltage (V<sub>in</sub>) = "+vinMax+"V<br>"+
@@ -79,40 +80,42 @@ function verification() {
     }
     exp_div2.innerHTML += "<h3 class='ok_green'>The value of load resistance is chosen correctly.</h3>";
 
-    // CHOOSING SCR
+    // CHOOSING AND VERIFICATION OF MAIN SCR
     if(scr1.value == "Choose...") {
-        exp_div2.innerHTML += "<h2>You have not chosen the SCR</h2>";
+        exp_div2.innerHTML += "<h2>You have not chosen the Main SCR</h2>";
         return;
     }
-
-    // VERIFICATION FOR SCR
     if(verify_PIV("Main SCR",scr1.value, vinMax)==false)   return;
     if(verify_i_max("Main SCR",scr1.value, i_max)==false) return;
 
-    exp_div2.innerHTML += "<h3 class='ok_green'>You have chosen the SCR correctly!!</h3>";
+    // CHOOSING AND VERIFICATION OF AUX SCR
+    if(scr2.value == "Choose...") {
+        exp_div2.innerHTML += "<h2>You have not chosen the Auxiliary SCR</h2>";
+        return;
+    }
+    if(verify_PIV("Auxiliary SCR",scr2.value, vinMax)==false)   return;
+    if(verify_i_max("Auxiliary SCR",scr2.value, i_max)==false) return;
+
+    exp_div2.innerHTML += "<h3 class='ok_green'>You have chosen the Main and Auxiliary SCR correctly!!</h3>";
 
     // VERIFICATION OF MAIN SCR GATE CURRENT
     if (verify_i_gate("Main SCR",scr1.value, i_gate)==false)  return;
     exp_div2.innerHTML += "<h3 class='ok_green'>You have designed the firing circuit correctly!!</h3>";
-    
-    // CHOOSING DIODE (Optional)
-    if(diode1.value != "Choose...") {
-        //But if the user has chosen it, it should be chosen correctly
-        if(verify_PIV("Diode",diode1.value, vinMax)==false)   return;
-        if(verify_i_max("Diode",diode1.value, i_max)==false) return;
-        exp_div2.innerHTML += "<h3 class='ok_green'>You have chosen the Diode correctly!!</h3>";
-    }
 
+    // VERIFICATION OF CAPACITOR
+    // if(capacitor.value == "Choose...") {
+
+    // }
     // VERIFICATION OF AMMETER
     if(ammeter.value == "Choose...") {
         exp_div2.innerHTML += "<h2>Choose an appropriate ammeter!!</h2>";
         return;
     }
-    if(meter_type(ammeter.value)!="Iron") {
-        exp_div2.innerHTML += "<h3 class='alert_red'>The output of a AC Voltage Controller is also AC. Hence, the load current will be AC. Hence use a Moving Iron Ammeter</h3>";
-        wrong_img_div.style.display = "block";
-        return;
-    }
+    // if(meter_type(ammeter.value)=="Iron") {
+    //     exp_div2.innerHTML += "<h3 class='alert_red'>The output of a AC Voltage Controller is also AC. Hence, the load current will be AC. Hence use a Moving Iron Ammeter</h3>";
+    //     wrong_img_div.style.display = "block";
+    //     return;
+    // }
     if(rated_i(ammeter.value) < i_max) {
         exp_div2.innerHTML += "<h3 class='alert_red'>The current rating of the chosen ammeter ("+rated_i(ammeter.value)+"A) is lesser than the maximum load current ("+ i_max.toFixed(2)+"A). Hence this ammeter cannot be chosen.</h3>";
         wrong_img_div.style.display = "block";
@@ -137,6 +140,11 @@ function verification() {
     }
     crct_img_div.style.display = "block";
     exp_div2.innerHTML += "<h3 class='ok_green'>The voltmeter is chosen correctly.</h3>";
+
+    expt5_values = {};
+    expt5_values.inputVoltage = vinMax;
+    expt5_values.loadCurrent = i_max;
+    localStorage.setItem("expt5_values",expt5_values);
 }
 
 function get_PIV(component) {

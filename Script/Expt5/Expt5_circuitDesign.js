@@ -58,9 +58,21 @@ function verification() {
     let vinMax = inputVoltSlider.value;
     let i_max = vinMax / loadResSlider.value;
     let i_gate = gateVoltSlider.value / gateResSlider.value;
+    let loadresistor = loadResSlider.value;
+    let commonVoltage =commVoltSlider.value;
+    let gateVoltage = gateVoltSlider.value;
+    let gateResistor = gateResSlider.value;
 
-    localStorage.setItem("inputVolt",vinMax);
-    localStorage.setItem("loadCurrent",i_max);
+    expt5_values = {};
+    expt5_values.inputVoltage = vinMax;
+    expt5_values.loadCurrent = i_max;
+    expt5_values.commonVoltage = commonVoltage;
+    expt5_values.gateVoltage = gateVoltage;
+    expt5_values.loadresistor = loadresistor;
+    expt5_values.gateResistor = gateResistor;
+
+    localStorage.setItem("expt5_values",JSON.stringify(expt5_values));
+    
     //displaying output voltage, load current and load resistance values
     exp_div2.innerHTML = 
         "<h3 class='glassmorphism'>The output voltage (V<sub>in</sub>) = "+vinMax+"V<br>"+
@@ -141,10 +153,7 @@ function verification() {
     crct_img_div.style.display = "block";
     exp_div2.innerHTML += "<h3 class='ok_green'>The voltmeter is chosen correctly.</h3>";
 
-    expt5_values = {};
-    expt5_values.inputVoltage = vinMax;
-    expt5_values.loadCurrent = i_max;
-    localStorage.setItem("expt5_values",expt5_values);
+   
 }
 
 function get_PIV(component) {

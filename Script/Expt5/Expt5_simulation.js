@@ -4,12 +4,20 @@ var push =  null;
 var triSwitch = null;
 var pushCircuit = null;
 var triSwitchCircuit = null;
+var inVolt = null;
+var outVolt = null;
+var gateVolt = null;
+var current = null;
+var loadRes = null;
+var gateRes = null;
+var comVolt = null;
 var chart = null;
 var circuitName = "VC";
 var pushCondition = "unpushed";
 var position = 0;
 var voltageArr =[0,0,0,0,0,0,0,0];
 var pushFlag = false;
+var expt_values = null;
 
 window.onload = function() {
     voltageCom = document.getElementById('voltageCom');
@@ -18,6 +26,23 @@ window.onload = function() {
     triSwitch = document.getElementById('switch');
     pushCircuit = document.getElementById('pushCircuit');
     triSwitchCircuit = document.getElementById('triCircuit');
+    inVolt = document.getElementById('inVolt');
+    outVolt = document.getElementById('outVolt');
+    gateVolt = document.getElementById('gateVolt');
+    current = document.getElementById('current');
+    loadRes = document.getElementById('loadRes');
+    gateRes = document.getElementById('gateRes');;
+    comVolt = document.getElementById('comVolt');
+
+   expt_values = JSON.parse(localStorage.getItem('expt5_values'));
+   
+   inVolt.innerHTML = expt_values.inputVoltage+" V";
+   outVolt.innerHTML = expt_values.inputVoltage+" V";
+   gateVolt.innerHTML = expt_values.gateVoltage+" V";
+   current.innerHTML = expt_values.loadCurrent.toFixed(2)+" A";
+   comVolt.innerHTML = expt_values.commonVoltage+" V";
+   loadRes.innerHTML = expt_values.loadresistor+" ohm";
+   gateRes.innerHTML = expt_values.gateResistor+" ohm";
 
     voltageCom.onclick = changeCircuit;
     currentCom.onclick = changeCircuit;
@@ -85,13 +110,15 @@ function changeTriSwitchCircuit(){
     }else if(position===2){   
         triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position0.png";
         position = 0;
+        pushFlag = false;
+        pushCondition = "unpushed";
     }
     setVoltage(position);
 }
 
 function setVoltage(switchPosition){
 
-   let voltage = localStorage.getItem("inputVolt");
+   let voltage =  expt_values.inputVoltage;
 
    if(voltage!=null){
     if(switchPosition===1){
@@ -110,8 +137,7 @@ function setVoltage(switchPosition){
 }
 
 function showGraph(){
-   
-    console.log(voltageArr);
+
     const ctx = document.getElementById("waveform");
 
     if(chart!==null) chart.destroy();

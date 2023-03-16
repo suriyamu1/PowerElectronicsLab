@@ -59,10 +59,68 @@
     left:720px;
 }
 
+#inVolt{
+    position:absolute;
+    top:250px;
+    left:0px;
+    height: 30px;
+    width:60px;
+}
+
+#comVolt{
+    position:absolute;
+    top:250px;
+    left:140px;
+    height: 30px;
+    width:60px;
+}
+
+#gateVolt{
+    position:absolute;
+    top:85px;
+    left:1140px;
+    height:30px;
+    width:60px;
+}
+
+#loadRes{
+    position:absolute;
+    top:350px;
+    left:1125px;
+    height:30px;
+    width:95px;
+}
+
+#gateRes{
+    position:absolute;
+    top:70px;
+    left:930px;
+    height:30px;
+    width:95px;
+}
+
+#outVolt{
+    position:absolute;
+    top:340px;
+    left:890px;
+    height:30px;
+    width:60px;
+}
+
+#current{
+    position:absolute;
+    top:100px;
+    left:470px;
+    height:30px;
+    width:80px;   
+}
+
 .invisible{
     height:100px;
     width: 100px;
     z-index: 99;
+    font-size: large;
+    font-weight: bolder;
 }
 
 .invisible:hover{

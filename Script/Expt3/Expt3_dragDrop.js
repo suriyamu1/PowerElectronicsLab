@@ -40,8 +40,6 @@ function drop(ev) {
     ev.preventDefault();
     let img = document.createElement('img');
     let dropId=ev.target.id;
-    console.log(dropId);
-    console.log(dragId);
 
     components[Number(dropId)-1] = dragId;
     componentsName[Number(dropId)-1] = dragComponentName;

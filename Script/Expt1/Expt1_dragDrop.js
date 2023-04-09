@@ -43,7 +43,6 @@ function drop(ev) {
     dragId=dragId+"_v";
   }
   items[dropId] = dragId;
-  console.log(items);
   if(png_images.includes(dragId))
     img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.png`;
   else
@@ -168,7 +167,6 @@ function verify_circuit() {
     theta = components[i].value;
 
     if(items[i]=='scr') {
-      console.log('Item is scr, its firing angle is ' + theta);
       if(theta === 'Nil') {
         alert('Give firing pulse to the SCR-'+i);
         return;
@@ -181,10 +179,6 @@ function verify_circuit() {
       }
     }
   }
-
-  // upto here
-
-  // Verify firing angle and scr combo together
   let scr_count = 0, diode_count = 0;
   for(i=1; i<=4; i++) {
     if(items[i]=='scr')
@@ -192,8 +186,6 @@ function verify_circuit() {
     else if(items[i]=='diode')
       diode_count++;
   }
-  console.log("scr count = "+scr_count);
-  console.log("diode count = "+diode_count);
 
   if(scr_count !== 2 || diode_count !== 2) {
     alert('1-Phase Semi converter should have 2 SCRs and 2 diodes.');

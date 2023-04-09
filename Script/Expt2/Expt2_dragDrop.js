@@ -45,7 +45,6 @@ function drop(ev) {
     dragId=dragId+"_v"; //id-6 and id-7 => load or mcv // so if mi,mca are dropped there, insert their vertical images
   }
   items[dropId] = dragId;
-  console.log(items);
   if(png_images.includes(dragId))
     img.src = `../../Assets/Images/dragAndDropImages/Expt1/${dragId}.png`;
   else
@@ -165,7 +164,6 @@ function verify_circuit() {
     theta = components[i].value;
 
     if(items[i]=='scr') {
-      console.log('Item is scr, its firing angle is ' + theta);
       if(theta === 'Nil') {
         alert('Give firing pulse to the SCR-'+i);
         return;
@@ -186,8 +184,6 @@ function verify_circuit() {
     else if(items[i]=='diode')
       diode_count++;
   }
-  console.log("scr count = "+scr_count);
-  console.log("diode count = "+diode_count);
 
   if(scr_count !== 4) {
     alert('1-Phase Full Converter must have 4 SCRs (2 SCRs for each half cycle).');

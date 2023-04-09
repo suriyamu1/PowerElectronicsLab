@@ -27,10 +27,8 @@ alpha.oninput=()=>{
     angleDisplay.innerHTML=angle+"&#176;";
     let avg = ((2*data.voltage)/Math.PI)*(calculateCos(angle));
     avgDisplay.innerHTML=avg.toPrecision(5)+" V";
-    // console.log(avg);
     let rms = (data.voltage/Math.sqrt(2*Math.PI))*Math.sqrt(Math.PI-( (Math.PI / 180) * angle)+(calculateSine(angle)/2));
     rmsDisplay.innerHTML=rms.toPrecision(5)+" V";
-    // console.log(rms);
     showGraph();
 }
 

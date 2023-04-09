@@ -137,7 +137,10 @@ function setVoltage(switchPosition){
 }
 
 function showGraph(){
+<<<<<<< Updated upstream
 
+=======
+>>>>>>> Stashed changes
     const ctx = document.getElementById("waveform");
 
     if(chart!==null) chart.destroy();

@@ -34,7 +34,7 @@
         <!-- Experiment Title -->
         <section class="sub_navigation">
             <div class="title">
-                <h1>Commutation of SCR</h1>
+                <h1>Resonant Pulse Commutation</h1>
             </div>
             <div class="navigation">
                 <li>
@@ -52,43 +52,64 @@
             <div class="infoBox glassmorphism">
                 <h3>SCR Commutation - Introduction</h3>
                 <ul>
-                    <li>AC voltage controllers are <b>thyristor based</b> devices which convert fixed AC directly to variable AC without a change in frequency.</li>
-                    <li>Thyristor based voltage controllers have high efficiency, flexibility in control and compact size.</li>
-                    <li>The thyristors will be naturally commutated by the AC supply so external commutation is not required.</li>
-                    <li>There are majorly two types of control methods used in AC voltage controllers
+                    <li>Commutation is defined as the process of <b>turning-off a SCR</b>.</li>
+                    <li>Once an SCR starts conducting, gate loses control over the device, therefore, <b>external means</b> may have to be adopted to commutate the SCR.</li>
+                    <li>An SCR is said to be turned OFF if there is no flow of forward current and even if the SCR is once again forward biased, the SCR will not conduct without gate pulse.</li>
+                    <li>There are majorly two types of SCR commutation:
                         <ol>
-                            <li>Phase Control (more common)</li>
-                            <li>Integral Cycle Control</li>
+                            <li>Natural Commutation</li>
+                            <li>Forced Commutation</li>
                         </ol>
                     </li>
                 </ul>
             </div>
 
             <div class="infoBox glassmorphism">
-                <h3>Types of Phase Controlled AC Voltage Controllers</h3>
+                <h3>Conditions to properly turn-off an SCR</h3>
+                <ol>
+                    <li>The forward current of SCR must be reduced below the holding current.</li>
+                    <li>A sufficient reverse voltage must be applied across the SCR to regain its forward blocking state.</li>
+                </ol>
+                <p>When the SCR is turned OFF by reducing forward current to zero, excess charge carriers exists in different layers. To regain the forward blocking state of an SCR, these excess carriers must be recombined. Therefore, in order to accelerate this recombination process, a reverse voltage is applied across the SCR.</p>
+            </div>
 
-                <table>
-                    <tr>
-                        <th>Half wave voltage controller</th>
-                        <th>Full wave voltage controller</th>
-                    </tr>
-                    <tr>
-                        <td><img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/half_wave_ACVR_diagram.PNG" alt=""></td>
-                        <td><img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/full_wave_ACVR_diagram.PNG" alt=""></td>
-                    </tr>
-                    <tr>
-                        <td><img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/half_wave_ACVR_waveform.PNG" alt=""></td>
-                        <td><img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/full_wave_ACVR_waveform.PNG" alt=""></td>
-                    </tr>
-                    <tr>
-                        <td>It has one SCR and one diode. So anyone of the half cycles can only be controlled.</td>
-                        <td>It has two SCRs so both the half cycles can be controlled.</td>
-                    </tr>
-                    <tr>
-                        <td>Since both the half cycles are not symmetrical, a dc component is introduced, which is undesirable.</td>
-                        <td>DC component will not be introduced if the firing angles of both the SCRs are equal.</td>
-                    </tr>
-                </table>
+            <div class="infoBox glassmorphism">
+                <h3>Natural Commutation</h3>
+                <ul>
+                    <li>Natural Commutation occurs only in AC circuits and it is named so because it does not require any external circuit.</li>
+                    <li>If the SCR is connected to an AC supply, at every end of the positive half cycle, the anode current naturally becomes zero (due to the alternating nature of the AC Supply).</li>
+                    <li>As the current in the circuit goes through the natural zero, a reverse voltage is applied immediately across the SCR (due to the negative half cycle).</li>
+                    <li>This method of commutation is also called as Source Commutation or AC Line Commutation or Class F Commutation.</li>
+                    <li>This commutation is possible with line commutated inverters, controlled rectifiers, cyclo converters and AC voltage regulators.</li>
+                </ul>
+            </div>
+            
+            <div class="infoBox glassmorphism">
+                <h3>Forced Commutation</h3>
+                <ul>
+                    <li>Forced Commutation is used only in DC circuits since there is no natural zero crossing in DC Circuits.</li>
+                    <li>It is also called as DC commutation</li>
+                    <li>It requires commutating elements like inductors and capacitors to <b>forcefully reduce the anode current</b> of the SCR below the holding current value. This is why it is called as Forced Commutation.</li>
+                    <li>Forced commutation is used in Chopper and Inverters circuits.</li>
+                    <li>Forced commutation is further divided into five categories:
+                        <ol>
+                            <li><b>Class A:</b> Self or Load Commutation</li>
+                            <li><b>Class B:</b> Resonant Pulse Commutation</li>
+                            <li><b>Class C:</b> Complementary Commutation</li>
+                            <li><b>Class D:</b> Impulse Commutation</li>
+                            <li><b>Class E:</b> External Pulse Commutation</li>
+                        </ol>
+                    </li>
+                </ul>
+            </div>
+
+            
+
+            <div class="infoBox glassmorphism">
+                <h3>Class-B Commutation: Resonant Pulse Commutation</h3>
+                <ul>
+                    <li>In class-B commutation, the LC circuit is connected in parallel to the main SCR.</li>
+                </ul>
             </div>
 
             <h1 id="additionalTheory">Additional Theory</h1>
@@ -97,10 +118,10 @@
             <div class="accordion">
 
                 <div class="contentBox">
-                    <div class="label">Integral Cycle Control</div>
+                    <div class="label">Load Commutation</div>
                     <div class="content">
                         <div class="imgDiv">
-                            <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/integralCycleControl.png" alt="Cycle control waveform diagram" width="80%">
+                            <!-- <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/integralCycleControl.png" alt="Cycle control waveform diagram" width="80%"> -->
                         </div>
                         <ul>
                             <li>Integral cycle control consists of switching on the supply to load for an integral number of cycles and then switching off the supply for a further number of cycles</li>
@@ -108,7 +129,7 @@
                             <li><b>For example,</b> mechanical time constant for many of the speed-control drives or thermal time constant for many of the heating load is usually quite high. For such applications, almost no variation in speed or temperature will be noticed if control is achieved by connecting the load to source for some on-cycles and then disconnecting the load for some off-cycles</li>
                             <li>The equation of output RMS voltage is given below. </li>
                             <div class="imgDiv">
-                                <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/integralCycleControlFormula.jpg" alt="" height="75px" id="moreMarginNeeded">
+                                <!-- <img src="../../Assets/Images/TheoryPage_Images/AC_Voltage_Controller/integralCycleControlFormula.jpg" alt="" height="75px" id="moreMarginNeeded"> -->
                             </div>
                             <li>where, n indicates the number of on-cycles, m indicates the number of off-cycles and V<sub>s</sub> is the RMS value of supply voltage. </li>
                         </ul>   

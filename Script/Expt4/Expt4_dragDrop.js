@@ -34,21 +34,11 @@ miv.ondragstart      = (ev)=> { dragId = ev.target.id;
 
 function drop(ev) {
     ev.preventDefault();
-
-
     let img = document.createElement('img');
     let dropId=ev.target.id;
-    console.log(dropId);
-    console.log(dragId);
-
     components[Number(dropId)-1] = dragId;
     componentsName[Number(dropId)-1] = dragComponentName;
-
-    console.log(components);
-    console.log(componentsName);
-
     dragId = dragId+"_"+dropId;
-
     ev.target.style.border = "none";
     img.src = `../../Assets/Images/ACVR/DragAndDrop/${dragId}.png`;
     ev.target.innerHTML=null;
@@ -56,9 +46,6 @@ function drop(ev) {
   }
 
   function verifyCircuit(){
-
-    console.log(firingAngle1.value,firingAngle2.value);
-
     if(components.includes(null)){
       alert('The circuit is open circuited. Complete the circuit and try again.');
       location.reload();

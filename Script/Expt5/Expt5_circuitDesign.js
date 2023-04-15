@@ -58,20 +58,6 @@ function verification() {
     let vinMax = inputVoltSlider.value;
     let i_max = vinMax / loadResSlider.value;
     let i_gate = gateVoltSlider.value / gateResSlider.value;
-    let loadresistor = loadResSlider.value;
-    let commonVoltage =commVoltSlider.value;
-    let gateVoltage = gateVoltSlider.value;
-    let gateResistor = gateResSlider.value;
-
-    expt5_values = {};
-    expt5_values.inputVoltage = vinMax;
-    expt5_values.loadCurrent = i_max;
-    expt5_values.commonVoltage = commonVoltage;
-    expt5_values.gateVoltage = gateVoltage;
-    expt5_values.loadresistor = loadresistor;
-    expt5_values.gateResistor = gateResistor;
-
-    localStorage.setItem("expt5_values",JSON.stringify(expt5_values));
     
     //displaying output voltage, load current and load resistance values
     exp_div2.innerHTML = 
@@ -170,7 +156,16 @@ function verification() {
                            + "<br>Your design is correct!!</h3>";
     crct_img_div.style.display = "block";
 
-   
+    expt5Values = {
+        inputVoltage: vinMax,
+        loadCurrent: i_max,
+        commVoltage: commVoltSlider.value,
+        gateVoltage: gateVoltSlider.value,
+        gateResistor: gateResSlider.value,
+        gateCurrent: i_gate,
+        loadResistor: loadResSlider.value
+    };
+    localStorage.setItem("expt5Values",JSON.stringify(expt5Values));
 }
 
 function fetchLCVal(component) {

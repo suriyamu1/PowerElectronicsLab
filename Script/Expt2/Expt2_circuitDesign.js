@@ -131,6 +131,20 @@ function verification() {
     }
     crct_img_div.style.display = "block";
     exp_div2.innerHTML += "<h3 class='ok_green'>The voltmeter is chosen correctly.</h3>";
+
+    let expt2Values = {
+        inputVoltageRMS: voltSlider.value,
+        loadResistance: resSlider.value,
+        loadCurrentRMS: voltSlider.value/resSlider.value,
+        peakInputVoltage: v_max,
+        peakLoadCurrent: i_max,
+        scrNames: scr_values,
+        ammeterName: ammeter.value,
+        voltmeterName: voltmeter.value,
+        loadInductance: inductSlider.value
+    }
+    localStorage.setItem("expt2Values",JSON.stringify(expt2Values));
+    console.log(expt2Values);
 }
 
 function get_PIV(component) {

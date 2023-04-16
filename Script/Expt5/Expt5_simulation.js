@@ -20,6 +20,7 @@ var pushFlag = false;
 var expt_values = null;
 
 window.onload = function() {
+    
     voltageCom = document.getElementById('voltageCom');
     currentCom = document.getElementById('currentCom');
     push = document.getElementById('push');
@@ -34,15 +35,15 @@ window.onload = function() {
     gateRes = document.getElementById('gateRes');;
     comVolt = document.getElementById('comVolt');
 
-   expt_values = JSON.parse(localStorage.getItem('expt5_values'));
+    expt_values = JSON.parse(localStorage.getItem('expt5_values'));
    
-   inVolt.innerHTML = expt_values.inputVoltage+" V";
-   outVolt.innerHTML = expt_values.inputVoltage+" V";
-   gateVolt.innerHTML = expt_values.gateVoltage+" V";
-   current.innerHTML = expt_values.loadCurrent.toFixed(2)+" A";
-   comVolt.innerHTML = expt_values.commonVoltage+" V";
-   loadRes.innerHTML = expt_values.loadresistor+" ohm";
-   gateRes.innerHTML = expt_values.gateResistor+" ohm";
+    inVolt.innerHTML = expt_values.inputVoltage+" V";
+    outVolt.innerHTML = expt_values.inputVoltage+" V";
+    gateVolt.innerHTML = expt_values.gateVoltage+" V";
+    current.innerHTML = expt_values.loadCurrent.toFixed(2)+" A";
+    comVolt.innerHTML = expt_values.commonVoltage+" V";
+    loadRes.innerHTML = expt_values.loadresistor+" ohm";
+    gateRes.innerHTML = expt_values.gateResistor+" ohm";
 
     voltageCom.onclick = changeCircuit;
     currentCom.onclick = changeCircuit;

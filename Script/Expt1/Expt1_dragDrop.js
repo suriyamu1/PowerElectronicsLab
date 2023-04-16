@@ -6,6 +6,10 @@ const mca = document.getElementById("mca");
 const mcv = document.getElementById("mcv");
 const mia = document.getElementById("mia");
 const miv = document.getElementById("miv");
+const current = document.getElementById("current");
+const inVolt = document.getElementById("inVolt");
+const outVolt = document.getElementById("outVolt");
+const loadRes = document.getElementById("loadRes");
 
 let components = []; //to store HTML DOM of the scrs and diodes
 let items = []; // to store dropId of components in positions 1,2,3,4,5,6,7

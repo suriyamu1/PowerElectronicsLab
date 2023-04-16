@@ -5,10 +5,26 @@ const angleDisplay = document.getElementById("angleDisplay");
 const avgDisplay = document.getElementById("avgDisplay");
 const rmsDisplay = document.getElementById("rmsDisplay");
 let angle=0;
+var avg =0;
+var rms =0;
+var expt_values = null;
+
+window.onload = function() {
+    expt_values = JSON.parse(localStorage.getItem('expt1_values'));
+    data.voltage = expt_values.InputVoltageRMS;
+    console.log(expt_values);
+}
+  
+function setReadings(){
+    current.innerHTML = expt_values.peakLoadCurrent.toFixed(2)+" A";
+    inVolt.innerHTML = expt_values.InputVoltageRMS+" V";
+    outVolt.innerHTML = expt_values.avg.toFixed(2)+" V";
+    loadRes.innerHTML = expt_values.loadResistance+" ohm";
+}
 
 const data ={
     firingangle :angle,
-    voltage:230
+    voltage:0
 }
 
 function calculateCos(degrees) {
@@ -25,11 +41,13 @@ alpha.oninput=()=>{
     angle=Number(alpha.value);
     data.firingangle=angle;
     angleDisplay.innerHTML=angle+"&#176;";
-    let avg = (data.voltage/Math.PI)*(1+calculateCos(angle));
+    avg = (data.voltage/Math.PI)*(1+calculateCos(angle));
     avgDisplay.innerHTML=avg.toPrecision(5)+" V";
-    let rms = (data.voltage/Math.sqrt(2*Math.PI))*Math.sqrt(Math.PI-( (Math.PI / 180) * angle)+(calculateSine(angle)/2));
+    rms = (data.voltage/Math.sqrt(2*Math.PI))*Math.sqrt(Math.PI-( (Math.PI / 180) * angle)+(calculateSine(angle)/2));
     rmsDisplay.innerHTML=rms.toPrecision(5)+" V";
     showGraph();
+    expt_values.avg = avg;
+    localStorage.setItem("expt1_values",JSON.stringify(expt_values));
 }
 
 let chart=null;
@@ -103,6 +121,7 @@ function showGraph(){
 
 function showCircuit(){
     chart.destroy();
+    setReadings();
     output.classList.add("hide");
     simulation.classList.remove("hide");
 }

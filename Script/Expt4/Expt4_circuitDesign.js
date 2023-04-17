@@ -114,7 +114,7 @@ function verification() {
         ammeterName: ammeter.value,
         voltmeterName: voltmeter.value
     }
-    localStorage.setItem("expt4Values", JSON.stringify(expt4Values));
+    localStorage.setItem("expt4_values", JSON.stringify(expt4Values));
 }
 
 function get_PIV(component) {

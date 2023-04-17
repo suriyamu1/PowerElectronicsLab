@@ -14,6 +14,23 @@ let scr2;
 let diode1;
 let diode2;
 
+var avg =0;
+var rms =0;
+var expt_values = null;
+
+window.onload = function() {
+    expt_values = JSON.parse(localStorage.getItem('expt2_values'));
+    data.voltage = expt_values.inputVoltageRMS;
+    console.log(expt_values);
+}
+  
+function setReadings(){
+    current.innerHTML = expt_values.peakLoadCurrent.toFixed(2)+" A";
+    inVolt.innerHTML = expt_values.inputVoltageRMS+" V";
+    outVolt.innerHTML = expt_values.avg.toFixed(2)+" V";
+    loadRes.innerHTML = expt_values.loadResistance+" ohm";
+}
+
 const data ={
     firingangle1:0,
     firingangle2:180,

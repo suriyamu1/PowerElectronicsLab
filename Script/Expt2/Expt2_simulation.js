@@ -17,7 +17,7 @@ window.onload = function() {
   
 function setReadings(){
     current.innerHTML = expt_values.peakLoadCurrent.toFixed(2)+" A";
-    inVolt.innerHTML = expt_values.inputVoltageRMS+" V";
+    inVolt.innerHTML = expt_values.InputVoltageRMS+"/"+expt_values.InputVoltageRMS+" V";
     outVolt.innerHTML = expt_values.avg.toFixed(2)+" V";
     loadRes.innerHTML = expt_values.loadResistance+" ohm";
 }

@@ -20,6 +20,7 @@ var pushFlag = false;
 var expt_values = null;
 
 window.onload = function() {
+    
     voltageCom = document.getElementById('voltageCom');
     currentCom = document.getElementById('currentCom');
     push = document.getElementById('push');
@@ -34,15 +35,15 @@ window.onload = function() {
     gateRes = document.getElementById('gateRes');;
     comVolt = document.getElementById('comVolt');
 
-   expt_values = JSON.parse(localStorage.getItem('expt5_values'));
+    expt_values = JSON.parse(localStorage.getItem('expt5_values'));
    
-   inVolt.innerHTML = expt_values.inputVoltage+" V";
-   outVolt.innerHTML = expt_values.inputVoltage+" V";
-   gateVolt.innerHTML = expt_values.gateVoltage+" V";
-   current.innerHTML = expt_values.loadCurrent.toFixed(2)+" A";
-   comVolt.innerHTML = expt_values.commonVoltage+" V";
-   loadRes.innerHTML = expt_values.loadresistor+" ohm";
-   gateRes.innerHTML = expt_values.gateResistor+" ohm";
+    inVolt.innerHTML = expt_values.inputVoltage+" V";
+    outVolt.innerHTML = expt_values.inputVoltage+" V";
+    gateVolt.innerHTML = expt_values.gateVoltage+" V";
+    current.innerHTML = expt_values.loadCurrent.toFixed(2)+" A";
+    comVolt.innerHTML = expt_values.commonVoltage+" V";
+    loadRes.innerHTML = expt_values.loadresistor+" ohm";
+    gateRes.innerHTML = expt_values.gateResistor+" ohm";
 
     voltageCom.onclick = changeCircuit;
     currentCom.onclick = changeCircuit;
@@ -58,12 +59,21 @@ function changeCircuit(){
     circuitName = clickedButton.value;
     
     if(circuitName === "VC"){
+<<<<<<< HEAD
         pushCircuit.src = "../../Assets/Images/Commutation/Circuit_Unpushed_V.PNG"
     }else if (circuitName === "CC"){
         pushCircuit.src = "../..//Assets/Images/Commutation/Circuit_Unpushed_C.PNG"
     }
 
     triSwitchCircuit.src = "../../Assets/Images/Commutation/Circuit_Position0.PNG";
+=======
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_V.png"
+    }else if (circuitName === "CC"){
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_C.png"
+    }
+
+    triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position0.png";
+>>>>>>> db90a1b35a57dd875614ffcbab859cc5ded346bb
     position =0;
 }
 
@@ -74,17 +84,29 @@ function changePushCircuit(){
        pushFlag = true;
        alert("Release the push button after few seconds");
        if(circuitName === "VC"){
+<<<<<<< HEAD
         pushCircuit.src = "../../Assets/Images/Commutation/Circuit_Pushed_V.PNG"
        }else if (circuitName === "CC"){
         pushCircuit.src = "../../Assets/Images/Commutation/Circuit_Pushed_C.PNG"
+=======
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Pushed_V.png"
+       }else if (circuitName === "CC"){
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Pushed_C.png"
+>>>>>>> db90a1b35a57dd875614ffcbab859cc5ded346bb
        }
        pushCondition = "pushed";
    } 
    else if(pushCondition==="pushed"){
         if(circuitName === "VC"){
+<<<<<<< HEAD
         pushCircuit.src = "../../Assets/Images/Commutation/Circuit_Unpushed_V.PNG"
         }else if (circuitName === "CC"){
         pushCircuit.src = "../../Assets/Images/Commutation/Circuit_Unpushed_C.PNG"
+=======
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_V.png"
+        }else if (circuitName === "CC"){
+        pushCircuit.src = "/Assets/Images/Commutation/Circuit_Unpushed_C.png"
+>>>>>>> db90a1b35a57dd875614ffcbab859cc5ded346bb
         }
         pushCondition = "unpushed";
    }  
@@ -94,7 +116,11 @@ function changePushCircuit(){
 function changeTriSwitchCircuit(){
    
     if(position===0){
+<<<<<<< HEAD
         triSwitchCircuit.src = "../../Assets/Images/Commutation/Circuit_Position1.PNG";
+=======
+        triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position1.png";
+>>>>>>> db90a1b35a57dd875614ffcbab859cc5ded346bb
         position = 1;
     }else if(position===1){
         if(!pushFlag){
@@ -104,11 +130,19 @@ function changeTriSwitchCircuit(){
              alert("Release the push button, Capacitor is charged");
          }
         else{        
+<<<<<<< HEAD
             triSwitchCircuit.src = "../../Assets/Images/Commutation/Circuit_Position2.PNG";
             position = 2;
          }
     }else if(position===2){   
         triSwitchCircuit.src = "../../Assets/Images/Commutation/Circuit_Position0.PNG";
+=======
+            triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position2.png";
+            position = 2;
+         }
+    }else if(position===2){   
+        triSwitchCircuit.src = "/Assets/Images/Commutation/Circuit_Position0.png";
+>>>>>>> db90a1b35a57dd875614ffcbab859cc5ded346bb
         position = 0;
         pushFlag = false;
         pushCondition = "unpushed";

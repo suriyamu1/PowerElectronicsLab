@@ -143,7 +143,7 @@ function verification() {
         voltmeterName: voltmeter.value,
         loadInductance: inductSlider.value
     }
-    localStorage.setItem("expt2Values",JSON.stringify(expt2Values));
+    localStorage.setItem("expt2_values",JSON.stringify(expt2Values));
     console.log(expt2Values);
 }
 

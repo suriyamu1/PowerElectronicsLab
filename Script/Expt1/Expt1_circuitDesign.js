@@ -154,7 +154,7 @@ function verification() {
         ammeterName: ammeter.value,
         voltmeterName: voltmeter.value
     };
-    localStorage.setItem("expt1_values", expt1_values);
+    localStorage.setItem("expt1_values",JSON.stringify(expt1_values));
     console.log(expt1_values);
 }
 
